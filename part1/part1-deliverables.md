@@ -142,3 +142,54 @@ This means the problem DSL provides the board structure and puzzle constraints, 
 In other words, the board defines the domain of the problem, and the solution model defines how that domain is encoded as a satisfiability problem.
 
 ---
+
+
+## 2. Solution DSL
+
+### 2.1 Concept List
+
+| Concept | Intrinsic Properties | Extrinsic Properties |
+|---------|----------------------|----------------------|
+| `Formula` | `name: String` | Contains Variables, Clauses, EncodingTable; has one SolverConfiguration |
+| `Variable` | `id: String` | Belongs to one Formula |
+| `Clause` | `id: String`, `origin: String` | Contains 1..* Literals; belongs to one Formula |
+| `Literal` | `sign: Boolean` | References one Variable; belongs to one Clause |
+| `EncodingEntry` | `cellId: String`, `bitIndex: Integer` | Maps to one Variable; belongs to one Formula |
+| `SolverConfiguration` | `encodingStrategy: String`, `solutionsCount: Integer`, `rounds: Integer`, `shots: Integer` | Belongs to one Formula |
+
+### 2.2 Metamodel
+
+```mermaid
+classDiagram
+    class Formula {
+        +String name
+    }
+    class Variable {
+        +String id
+    }
+    class Clause {
+        +String id
+        +String origin
+    }
+    class Literal {
+        +Boolean sign
+    }
+    class EncodingEntry {
+        +String cellId
+        +Integer bitIndex
+    }
+    class SolverConfiguration {
+        +String encodingStrategy
+        +Integer solutionsCount
+        +Integer rounds
+        +Integer shots
+    }
+
+    Formula "1" *-- "*" Variable : variables
+    Formula "1" *-- "*" Clause : clauses
+    Formula "1" *-- "*" EncodingEntry : encodingTable
+    Formula "1" *-- "1" SolverConfiguration : solverConfig
+    Clause "1" *-- "1..*" Literal : literals
+    Literal "*" --> "1" Variable : variable
+    EncodingEntry "*" --> "1" Variable : variable
+```
