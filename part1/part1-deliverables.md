@@ -35,6 +35,8 @@ Figure 1: Sudoku problem metamodel created in BESSER.
 
 The following diagram displays the class diagram created in Besser in order to represent the metamodel of the problem.
 
+The implamentation of the metamodel can be found in `besser_sudoku_problem_metamodel.py`.
+
 ### 1.3 OCL Constraints
 
 Here follows the list of OLC constraints inserted into the model (grouped by context):
@@ -66,7 +68,7 @@ inv ValueValid: self.value.oclIsUndefined() or (self.value >= 1 and self.value <
 
 ## 1.4 Example Model for Problem Instance
 
-A very simple valid problem instance is the 4x4 Sudoku board with `size = 4` and `boxSize = 2`. This board has 16 positions, grouped into 4 boxes of 2x2 cells.
+A very simple valid problem instance is the 4x4 Sudoku board with `size = 4` and `boxSize = 2`. This board has 16 positions, grouped into 4 boxes of 2x2 cells (from 0 to 3).
 
 A minimal example is:
 
@@ -86,6 +88,10 @@ This corresponds to the following givens:
 
 All other cells are empty, represented by an undefined `value`. The board is still valid because the given values are not repeated in the same row, column or 2x2 box, and the board respects the structural rules of the model.
 
-This example is intentionally small: it is enough to show the semantics of the DSL without making the puzzle harder to read. The same idea scales to larger Sudoku boards and to the actual instances used in the assignment.
+With our metamodel, this problem instance can be represented by the following Besser object diagram:
+
+![Sudoku problem instance](Sudoku%20Problem%20Instance.png)
+
+Figure 2: Example Sudoku problem instance represented as a BESSER object diagram.
 
 ---
