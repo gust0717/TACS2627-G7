@@ -1,0 +1,606 @@
+{
+  "id": "86a51951-0098-4350-a666-86defa9d7c79",
+  "title": "Class Diagram",
+  "model": {
+    "version": "3.0.0",
+    "type": "ClassDiagram",
+    "size": {
+      "width": 1700,
+      "height": 960
+    },
+    "interactive": {
+      "elements": {},
+      "relationships": {}
+    },
+    "elements": {
+      "7c9390dc-d359-430c-8a70-b1192eb698db": {
+        "id": "7c9390dc-d359-430c-8a70-b1192eb698db",
+        "name": "Formula",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": -470,
+          "y": -380,
+          "width": 160,
+          "height": 70
+        },
+        "attributes": [
+          "2c6dcd36-34d7-4773-a396-8288069c7768"
+        ],
+        "methods": []
+      },
+      "2c6dcd36-34d7-4773-a396-8288069c7768": {
+        "id": "2c6dcd36-34d7-4773-a396-8288069c7768",
+        "name": "name",
+        "type": "ClassAttribute",
+        "owner": "7c9390dc-d359-430c-8a70-b1192eb698db",
+        "bounds": {
+          "x": -469.5,
+          "y": -339.5,
+          "width": 159,
+          "height": 30
+        },
+        "code": "",
+        "visibility": "public",
+        "attributeType": "str",
+        "implementationType": "none",
+        "stateMachineId": "",
+        "quantumCircuitId": "",
+        "neuralNetworkId": "",
+        "isOptional": false,
+        "isDerived": false,
+        "isId": false,
+        "isExternalId": false
+      },
+      "43306ab3-d6cd-490e-8dd6-93b630368257": {
+        "id": "43306ab3-d6cd-490e-8dd6-93b630368257",
+        "name": "Variable",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": -140,
+          "y": -210,
+          "width": 160,
+          "height": 70
+        },
+        "attributes": [
+          "830d5c89-f437-4716-81f2-667cd06aef82"
+        ],
+        "methods": []
+      },
+      "830d5c89-f437-4716-81f2-667cd06aef82": {
+        "id": "830d5c89-f437-4716-81f2-667cd06aef82",
+        "name": "id",
+        "type": "ClassAttribute",
+        "owner": "43306ab3-d6cd-490e-8dd6-93b630368257",
+        "bounds": {
+          "x": -139.5,
+          "y": -169.5,
+          "width": 159,
+          "height": 30
+        },
+        "code": "",
+        "visibility": "public",
+        "attributeType": "int",
+        "implementationType": "none",
+        "stateMachineId": "",
+        "quantumCircuitId": "",
+        "neuralNetworkId": "",
+        "isOptional": false,
+        "isDerived": false,
+        "isId": false,
+        "isExternalId": false
+      },
+      "5c31afb9-71f5-4e8a-a65e-98955f4a0a19": {
+        "id": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+        "name": "Clause",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": -470,
+          "y": -200,
+          "width": 160,
+          "height": 40
+        },
+        "attributes": [],
+        "methods": []
+      },
+      "000ba462-65ae-4fec-8f55-00816015218a": {
+        "id": "000ba462-65ae-4fec-8f55-00816015218a",
+        "name": "Literal",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": -310,
+          "y": 0,
+          "width": 160,
+          "height": 70
+        },
+        "attributes": [
+          "286720b0-2458-4729-933a-5875b688d280"
+        ],
+        "methods": []
+      },
+      "286720b0-2458-4729-933a-5875b688d280": {
+        "id": "286720b0-2458-4729-933a-5875b688d280",
+        "name": "isNegated",
+        "type": "ClassAttribute",
+        "owner": "000ba462-65ae-4fec-8f55-00816015218a",
+        "bounds": {
+          "x": -309.5,
+          "y": 40.5,
+          "width": 159,
+          "height": 30
+        },
+        "code": "",
+        "visibility": "public",
+        "attributeType": "bool",
+        "implementationType": "none",
+        "stateMachineId": "",
+        "quantumCircuitId": "",
+        "neuralNetworkId": "",
+        "isOptional": false,
+        "isDerived": false,
+        "isId": false,
+        "isExternalId": false
+      },
+      "ba3e8858-45be-4acc-9d1e-988980838248": {
+        "id": "ba3e8858-45be-4acc-9d1e-988980838248",
+        "name": "This holds the conjunction of all clauses",
+        "type": "Comments",
+        "owner": null,
+        "bounds": {
+          "x": -190,
+          "y": -460,
+          "width": 160,
+          "height": 80
+        }
+      },
+      "cc16000d-a002-48b0-a54a-691a5cc5d2b2": {
+        "id": "cc16000d-a002-48b0-a54a-691a5cc5d2b2",
+        "name": "This holds all the disjunction of all the literals",
+        "type": "Comments",
+        "owner": null,
+        "bounds": {
+          "x": -190,
+          "y": -340,
+          "width": 160,
+          "height": 80
+        }
+      },
+      "5259e7f1-6695-4188-b073-6c0ea0952f2b": {
+        "id": "5259e7f1-6695-4188-b073-6c0ea0952f2b",
+        "name": "",
+        "type": "ClassOCLConstraint",
+        "owner": null,
+        "bounds": {
+          "x": -830,
+          "y": -350,
+          "width": 160,
+          "height": 100
+        },
+        "description": "Clause Not Empty",
+        "constraint": "context Clause\ninv ClauseNotEmpty:\n  self.literal->size() > 0"
+      },
+      "85f2cca2-78bf-4b3a-8975-b6af6168bb39": {
+        "id": "85f2cca2-78bf-4b3a-8975-b6af6168bb39",
+        "name": "This id encodes the cell properties (value, column and row) to be represented as a unique variable",
+        "type": "Comments",
+        "owner": null,
+        "bounds": {
+          "x": 90,
+          "y": -370,
+          "width": 220,
+          "height": 110
+        }
+      },
+      "281d3355-c6a2-47e5-b8a9-c468f26c9281": {
+        "id": "281d3355-c6a2-47e5-b8a9-c468f26c9281",
+        "name": "",
+        "type": "ClassOCLConstraint",
+        "owner": null,
+        "bounds": {
+          "x": -830,
+          "y": -230,
+          "width": 160,
+          "height": 100
+        },
+        "description": "",
+        "constraint": "context Clause\ninv UniqueLiteral:\n  self.literal->forAll(l1, l2 | \n    l1 <> l2 implies (l1.variable <> l2.variable or l1.isNegated <> l2.isNegated)\n  )"
+      },
+      "034c920d-be8d-4574-86ee-bb75e3ae8eda": {
+        "id": "034c920d-be8d-4574-86ee-bb75e3ae8eda",
+        "name": "",
+        "type": "ClassOCLConstraint",
+        "owner": null,
+        "bounds": {
+          "x": -830,
+          "y": -100,
+          "width": 160,
+          "height": 100
+        },
+        "description": "",
+        "constraint": "context Clause\ninv NoTautology: \n  self.literal->forAll(l1, l2 | \n    (l1 <> l2 and l1.variable = l2.variable) \n    implies l1.isNegated = l2.isNegated\n  )"
+      }
+    },
+    "relationships": {
+      "979a0c2d-79d3-4b0c-a465-98c2cbe5ee0e": {
+        "id": "979a0c2d-79d3-4b0c-a465-98c2cbe5ee0e",
+        "name": "",
+        "type": "ClassComposition",
+        "owner": null,
+        "bounds": {
+          "x": -395,
+          "y": -310,
+          "width": 18.90625,
+          "height": 120.65625
+        },
+        "path": [
+          {
+            "x": 5,
+            "y": 110
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "source": {
+          "direction": "Up",
+          "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+          "multiplicity": "*",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Down",
+          "element": "7c9390dc-d359-430c-8a70-b1192eb698db",
+          "multiplicity": "1",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "1a9dd8dc-1297-4523-8c86-fe31c5140c50": {
+        "id": "1a9dd8dc-1297-4523-8c86-fe31c5140c50",
+        "name": null,
+        "type": "ClassBidirectional",
+        "owner": null,
+        "bounds": {
+          "x": -150,
+          "y": -140,
+          "width": 103.90625,
+          "height": 214.65625
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 175
+          },
+          {
+            "x": 90,
+            "y": 175
+          },
+          {
+            "x": 90,
+            "y": 0
+          }
+        ],
+        "source": {
+          "direction": "Right",
+          "element": "000ba462-65ae-4fec-8f55-00816015218a",
+          "multiplicity": "*",
+          "role": "",
+          "navigable": false
+        },
+        "target": {
+          "direction": "Down",
+          "element": "43306ab3-d6cd-490e-8dd6-93b630368257",
+          "multiplicity": "1",
+          "role": null,
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "0bbbcfce-a22d-4b00-a672-9f46722bb3f6": {
+        "id": "0bbbcfce-a22d-4b00-a672-9f46722bb3f6",
+        "name": "",
+        "type": "Link",
+        "owner": null,
+        "bounds": {
+          "x": -395,
+          "y": -430,
+          "width": 205,
+          "height": 50
+        },
+        "path": [
+          {
+            "x": 205,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 10
+          },
+          {
+            "x": 5,
+            "y": 50
+          }
+        ],
+        "source": {
+          "direction": "Left",
+          "element": "ba3e8858-45be-4acc-9d1e-988980838248",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Up",
+          "element": "7c9390dc-d359-430c-8a70-b1192eb698db",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "34df0610-57e7-4539-8629-ee07f1f38d7b": {
+        "id": "34df0610-57e7-4539-8629-ee07f1f38d7b",
+        "name": "",
+        "type": "Link",
+        "owner": null,
+        "bounds": {
+          "x": -310,
+          "y": -290,
+          "width": 120,
+          "height": 141
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 120
+          },
+          {
+            "x": 60,
+            "y": 120
+          },
+          {
+            "x": 60,
+            "y": 10
+          },
+          {
+            "x": 120,
+            "y": 10
+          }
+        ],
+        "source": {
+          "direction": "Downright",
+          "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Downleft",
+          "element": "cc16000d-a002-48b0-a54a-691a5cc5d2b2",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "904f2743-db28-45fa-9be7-2a623d640bb9": {
+        "id": "904f2743-db28-45fa-9be7-2a623d640bb9",
+        "name": "",
+        "type": "ClassComposition",
+        "owner": null,
+        "bounds": {
+          "x": -395,
+          "y": -160,
+          "width": 85,
+          "height": 234.65625
+        },
+        "path": [
+          {
+            "x": 85,
+            "y": 195
+          },
+          {
+            "x": 5,
+            "y": 195
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "source": {
+          "direction": "Left",
+          "element": "000ba462-65ae-4fec-8f55-00816015218a",
+          "multiplicity": "0..*",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Down",
+          "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+          "multiplicity": "1",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "18678bb3-75f3-4955-9b37-42b588c713a2": {
+        "id": "18678bb3-75f3-4955-9b37-42b588c713a2",
+        "name": "",
+        "type": "ClassOCLLink",
+        "owner": null,
+        "bounds": {
+          "x": -670,
+          "y": -310,
+          "width": 200,
+          "height": 151
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 10
+          },
+          {
+            "x": 100,
+            "y": 10
+          },
+          {
+            "x": 100,
+            "y": 130
+          },
+          {
+            "x": 200,
+            "y": 130
+          }
+        ],
+        "source": {
+          "direction": "Right",
+          "element": "5259e7f1-6695-4188-b073-6c0ea0952f2b",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Left",
+          "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "a27c7236-1c8b-433d-a14e-5496d7671948": {
+        "id": "a27c7236-1c8b-433d-a14e-5496d7671948",
+        "name": "",
+        "type": "Link",
+        "owner": null,
+        "bounds": {
+          "x": 20,
+          "y": -260,
+          "width": 185,
+          "height": 106
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 85
+          },
+          {
+            "x": 180,
+            "y": 85
+          },
+          {
+            "x": 180,
+            "y": 0
+          }
+        ],
+        "source": {
+          "direction": "Right",
+          "element": "43306ab3-d6cd-490e-8dd6-93b630368257",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Down",
+          "element": "85f2cca2-78bf-4b3a-8975-b6af6168bb39",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "6d451cf7-fc0f-4d8d-b386-e4b86ab9037d": {
+        "id": "6d451cf7-fc0f-4d8d-b386-e4b86ab9037d",
+        "name": "",
+        "type": "ClassOCLLink",
+        "owner": null,
+        "bounds": {
+          "x": -670,
+          "y": -190,
+          "width": 200,
+          "height": 31
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 10
+          },
+          {
+            "x": 200,
+            "y": 10
+          }
+        ],
+        "source": {
+          "direction": "Right",
+          "element": "281d3355-c6a2-47e5-b8a9-c468f26c9281",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Downleft",
+          "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      },
+      "d14362a9-aa63-4fd5-8b6f-a6cfbdde4dad": {
+        "id": "d14362a9-aa63-4fd5-8b6f-a6cfbdde4dad",
+        "name": "",
+        "type": "ClassOCLLink",
+        "owner": null,
+        "bounds": {
+          "x": -670,
+          "y": -190,
+          "width": 200,
+          "height": 161
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 140
+          },
+          {
+            "x": 100,
+            "y": 140
+          },
+          {
+            "x": 100,
+            "y": 10
+          },
+          {
+            "x": 200,
+            "y": 10
+          }
+        ],
+        "source": {
+          "direction": "Right",
+          "element": "034c920d-be8d-4574-86ee-bb75e3ae8eda",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "target": {
+          "direction": "Left",
+          "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+          "multiplicity": "",
+          "role": "",
+          "navigable": true
+        },
+        "isManuallyLayouted": false
+      }
+    },
+    "assessments": {}
+  },
+  "lastUpdate": "2026-10-15T20:22:42.132Z",
+  "besserVersion": "8.1.0",
+  "editorVersion": "1.0.0"
+}
