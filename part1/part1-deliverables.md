@@ -29,27 +29,11 @@ Or in other words:
 
 ### 1.2 Metamodel
 
-The following diagram displays a conceptual model, which was used as base to implement the besser metamodel given by `besser_sudoku_problem_metamodel.py`.
+![Sudoku problem metamodel](Sudoku%20Problem%20Metamodel.png)
 
-```mermaid
-classDiagram
-    class Board {
-        +String name
-        +Integer size
-        +Integer boxSize
-    }
-    class Cell {
-        +Integer row
-        +Integer column
-        +Integer box
-        +Integer value
-        +Boolean isGiven
-    }
+Figure 1: Sudoku problem metamodel created in BESSER.
 
-    Board "1" *-- "*" Cell : cells
-```
-
-`value` is optional ([0..1]): a Cell without a value is an empty cell. `isGiven` is a Boolean flag that indicates whether the cell is a fixed clue from the original puzzle. Rows, columns and boxes are not entities of the metamodel; they are derived from the position of each Cell. Boxes are numbered row by row, left to right, top to bottom, starting at 0.
+The following diagram displays the class diagram created in Besser in order to represent the metamodel of the problem.
 
 ### 1.3 OCL Constraints
 
