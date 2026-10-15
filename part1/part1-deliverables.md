@@ -37,27 +37,21 @@ The following diagram displays the class diagram created in Besser in order to r
 
 ### 1.3 OCL Constraints
 
+Here follows the list of OLC constraints inserted into the model (grouped by context):
+
 ```ocl
 context Board
 inv BoxSizePositive: self.boxSize >= 1
 inv SizeConsistent: self.size = self.boxSize * self.boxSize
-inv CellCount: self.cells->size() = self.size * self.size
-inv UniquePositions: self.cells->forAll(c1, c2 |
-    c1 <> c2 implies (c1.row <> c2.row or c1.column <> c2.column))
-inv ConsistentValues: self.cells->forAll(c1, c2 |
-    (c1 <> c2
-     and not c1.value.oclIsUndefined() and not c2.value.oclIsUndefined()
-     and (c1.row = c2.row or c1.column = c2.column or c1.box = c2.box))
-    implies c1.value <> c2.value)
+inv CellCount: self.cell->size() = self.size * self.size
+inv UniquePositions: self.cell->forAll(c1, c2 | c1 <> c2 implies (c1.row <> c2.row or c1.column <> c2.column))
+inv ConsistentValues: self.cell->forAll(c1, c2 | (c1 <> c2 and not c1.value.oclIsUndefined() and not c2.value.oclIsUndefined() and (c1.row = c2.row or c1.column = c2.column or c1.box = c2.box)) implies c1.value <> c2.value)
 
 context Cell
-inv PositionValid: self.row >= 0 and self.row < self.board.size
-                   and self.column >= 0 and self.column < self.board.size
-inv BoxCoherent: self.box = (self.row div self.board.boxSize) * self.board.boxSize
-                            + (self.column div self.board.boxSize)
-inv GivenFlagValid: self.isGiven = true or self.isGiven = false
-inv ValueValid: self.value.oclIsUndefined()
-                or (self.value >= 1 and self.value <= self.board.size)
+inv PositionValid: self.row >= 0 and self.row < self.board.size and self.column >= 0 and self.column < self.board.size 
+inv BoxCoherent: self.box = (self.row / self.board.boxSize).floor() * self.board.boxSize + (self.column / self.board.boxSize).floor()
+inv GivenFlagValid: self.isGiven = True or self.isGiven = False
+inv ValueValid: self.value.oclIsUndefined() or (self.value >= 1 and self.value <= self.board.size)
 ```
 
 | Constraint | Rule it enforces |
@@ -93,34 +87,5 @@ This corresponds to the following givens:
 All other cells are empty, represented by an undefined `value`. The board is still valid because the given values are not repeated in the same row, column or 2x2 box, and the board respects the structural rules of the model.
 
 This example is intentionally small: it is enough to show the semantics of the DSL without making the puzzle harder to read. The same idea scales to larger Sudoku boards and to the actual instances used in the assignment.
-
-### 1.5 Validation of a Well-Formed Problem Instance
-
-A problem instance is well formed if all Board and Cell constraints hold simultaneously:
-
-1. `Board.size = Board.boxSize * Board.boxSize`
-2. `Board.cells->size() = Board.size * Board.size`
-3. no duplicate positions in the board
-4. every cell is inside the valid row/column range
-5. every computed `box` is consistent with the position of the cell
-6. all filled values belong to the range `{1..size}`
-7. two different non-empty cells that share a row, column, or box cannot contain the same value
-
-These conditions ensure that the model describes a valid Sudoku board and not an arbitrary matrix of values. They are the base invariants used to detect invalid boards before any CNF encoding is produced.
-
-### 1.7 Mapping to the Solution DSL
-
-The problem DSL is the input to the solution DSL. The transformation from problem to solution is conceptually defined as follows:
-
-- each `Cell` becomes a candidate assignment domain for values in `{1..size}`
-- each valid assignment is represented as a logical variable in the CNF model
-- each row, column and box restriction becomes one or more clauses
-- each clause is a disjunction of literals, and each literal is a positive or negative variable reference
-- the encoding table maps a cell/value assignment to a solver variable
-- the solver configuration defines the strategy and execution parameters used to search for a valid model
-
-This means the problem DSL provides the board structure and puzzle constraints, while the solution DSL translates them into a formula suitable for SAT/CNF and later for a quantum encoding or execution pipeline.
-
-In other words, the board defines the domain of the problem, and the solution model defines how that domain is encoded as a satisfiability problem.
 
 ---
