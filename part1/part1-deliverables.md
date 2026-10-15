@@ -11,6 +11,22 @@ This document presents the deliverables of the part I of the project
 | **Board** | `name`: String<br>`size`: Integer<br>`boxSize`: Integer | Contains `size × size` Cells<br>`size = boxSize²` |
 | **Cell** | `row`: Integer {0..size-1}<br>`column`: Integer {0..size-1}<br>`box`: Integer {0..size-1}<br>`value`: Integer {1..size} [0..1]<br>`isGiven`: Boolean | Belongs to exactly one Board<br>`box` is derived from `row` and `column`<br>`isGiven` marks a fixed clue from the initial puzzle |
 
+#### 1.1.1 Given and Empty Cells
+
+In the Sudoku problem, some cells are initially filled while others are empty. These filled cells are clues for the problem resolution and differently from the other cells, their values may not be changed.
+
+We chose to add a property `isGiven` to the `Cell` class in order to capture this concept and differentiate the types of cells, so that:
+
+- a fixed clue: `value` is defined, `isGiven = true`, and the value belongs to `{1..size}`
+- an empty cell: `value` is undefined and `isGiven = false`
+- a filled but non-given cell: `value` is defined after solving, while `isGiven = false`
+
+Or in other words:
+
+- if `isGiven = true`, the value is part of the initial puzzle and must not be changed
+- if `isGiven = false` and `value` is defined, the value was derived during solving
+- if `value` is absent, the cell is still a valid board position but is currently unassigned
+
 ### 1.2 Metamodel
 
 The following diagram displays a conceptual model, which was used as base to implement the besser metamodel given by `besser_sudoku_problem_metamodel.py`.
@@ -94,25 +110,7 @@ All other cells are empty, represented by an undefined `value`. The board is sti
 
 This example is intentionally small: it is enough to show the semantics of the DSL without making the puzzle harder to read. The same idea scales to larger Sudoku boards and to the actual instances used in the assignment.
 
-### 1.5 Givens and Empty Cells
-
-In the problem DSL, a cell may be either:
-
-- a fixed clue: `value` is defined, `isGiven = true`, and the value belongs to `{1..size}`
-- an empty cell: `value` is undefined and `isGiven = false`
-- a filled but non-given cell: `value` is defined after solving, while `isGiven = false`
-
-This distinction is important because the problem instance contains a set of givens and a set of unknown cells. The model does not require a separate `Given` class: `value` and `isGiven` together make the semantics explicit and precise.
-
-For clarity, the semantics are:
-
-- if `isGiven = true`, the value is part of the initial puzzle and must not be changed
-- if `isGiven = false` and `value` is defined, the value was derived during solving
-- if `value` is absent, the cell is still a valid board position but is currently unassigned
-
-This matches the assignment requirement for Sudoku: a board is a grid of positions, some initially fixed and some to be solved.
-
-### 1.6 Validation of a Well-Formed Problem Instance
+### 1.5 Validation of a Well-Formed Problem Instance
 
 A problem instance is well formed if all Board and Cell constraints hold simultaneously:
 
