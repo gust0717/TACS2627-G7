@@ -106,7 +106,7 @@ Figure 2: Example Sudoku problem instance represented as a BESSER object diagram
 | **Formula** | `name`: String | Contains Clauses; holds the conjunction ($\bigwedge$) of all clauses in the CNF formula |
 | **Clause** | *(none)* | Belongs to a Formula; contains Literals; holds the disjunction ($\bigvee$) of all its literals |
 | **Literal** | `isNegated`: Boolean | Belongs to a Clause; references a Variable; represents a variable or its negation |
-| **Variable** | `id`: Integer | Referenced by Literals; represents a unique Boolean variable whose `id` encodes cell properties (value, column, and row) |
+| **Variable** | `id`: Integer | Referenced by Literals; represents a unique Boolean variable whose `id` encodes cell $(r, c)$ and candidate value $v$ via $100(r+1) + 10(c+1) + v$ (e.g., $111$ for cell $(0,0)=1$) |
 
 ### 2.2 Metamodel
 
@@ -139,6 +139,10 @@ inv NoTautology:
 
 ## 2.4 Example Model for Solution Instance
 
+To keep the diagram readable and avoid excessive visual complexity, this example only models the constraints for `cell(0,0)`. In a complete solution model, the same pattern applied here must be repeated for all remaining cells across the board.
+
+The following CNF formula $\Phi$ captures these constraints:
+
 $$
 \begin{aligned}
 \Phi = & \underbrace{(x_{111})}_{\text{Given Clue}} \\
@@ -148,6 +152,6 @@ $$
 \end{aligned}
 $$
 
-![Sudoku Solution Instance](Sudoku%20Solution%20Instance.png)
+This formula is represented in the solution instance diagram below:
 
-> Note: To keep the diagram readable and avoid excessive visual complexity, this example only models the constraints for `cell(0,0)`. In a complete solution model, the same pattern applied here must be repeated for all remaining cells across the board.
+![Sudoku Solution Instance](Sudoku%20Solution%20Instance.png)
