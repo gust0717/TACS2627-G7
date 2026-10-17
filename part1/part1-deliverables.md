@@ -110,7 +110,7 @@ Figure 2: Example Sudoku problem instance represented as a BESSER object diagram
 
 ### 2.2 Metamodel
 
-![CNF Metamodel](CNF%20Problem%20Metamodel.png)
+![Sudoku Solution Metamodel](Sudoku%20Solution%20Metamodel.png)
 
 ### 2.3 OCL Constraints
 
@@ -136,3 +136,18 @@ inv NoTautology:
     implies l1.isNegated = l2.isNegated
   )
 ```
+
+## 2.4 Example Model for Solution Instance
+
+$$
+\begin{aligned}
+\Phi = & \underbrace{(x_{111})}_{\text{Given Clue}} \\
+& \land \underbrace{(\neg x_{111} \lor \neg x_{121}) \land (\neg x_{111} \lor \neg x_{131}) \land (\neg x_{111} \lor \neg x_{141})}_{\text{Row 0 Uniqueness}} \\
+& \land \underbrace{(\neg x_{111} \lor \neg x_{211}) \land (\neg x_{111} \lor \neg x_{311}) \land (\neg x_{111} \lor \neg x_{411})}_{\text{Column 0 Uniqueness}} \\
+& \land \underbrace{(\neg x_{111} \lor \neg x_{221})}_{\text{Box 0 Uniqueness}}
+\end{aligned}
+$$
+
+![Sudoku Solution Instance](Sudoku%20Solution%20Instance.png)
+
+> Note: To keep the diagram readable and avoid excessive visual complexity, this example only models the constraints for `cell(0,0)`. In a complete solution model, the same pattern applied here must be repeated for all remaining cells across the board.

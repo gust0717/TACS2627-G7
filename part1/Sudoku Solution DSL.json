@@ -1,0 +1,4278 @@
+{
+  "project": {
+    "id": "project_1792259896915_i2h54vp1r",
+    "type": "Project",
+    "schemaVersion": 5,
+    "name": "Sudoku",
+    "description": "Modern workspace project for UML, GUI and quantum modeling.",
+    "owner": "BESSER User",
+    "createdAt": "2026-10-17T17:58:16.915Z",
+    "currentDiagramType": "ObjectDiagram",
+    "currentDiagramIndices": {
+      "ClassDiagram": 0,
+      "ObjectDiagram": 0,
+      "StateMachineDiagram": 0,
+      "AgentDiagram": 0,
+      "ComponentDiagram": 0,
+      "DeploymentDiagram": 0,
+      "NNDiagram": 0,
+      "UserDiagram": 0,
+      "GUINoCodeDiagram": 0,
+      "QuantumCircuitDiagram": 0,
+      "BPMN": 0
+    },
+    "diagrams": {
+      "ObjectDiagram": [
+        {
+          "id": "1e1e7ae2-6f86-4e50-9f63-0c44aaa0cead",
+          "title": "Object Diagram",
+          "model": {
+            "version": "3.0.0",
+            "type": "ObjectDiagram",
+            "size": {
+              "width": 2720,
+              "height": 980
+            },
+            "interactive": {
+              "elements": {},
+              "relationships": {}
+            },
+            "elements": {
+              "16e3c2f9-8d16-4775-a83b-ea698ef6d478": {
+                "id": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                "name": "sudoku_cnf",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -90,
+                  "y": -450,
+                  "width": 180,
+                  "height": 70
+                },
+                "attributes": [
+                  "f3fbf7e0-2d1c-46e9-98f2-dee496d4e4df"
+                ],
+                "methods": [],
+                "classId": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                "className": "Formula"
+              },
+              "f3fbf7e0-2d1c-46e9-98f2-dee496d4e4df": {
+                "id": "f3fbf7e0-2d1c-46e9-98f2-dee496d4e4df",
+                "name": "name = sudoku_4x4",
+                "type": "ObjectAttribute",
+                "owner": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                "bounds": {
+                  "x": -89.5,
+                  "y": -409.5,
+                  "width": 179,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "str",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1f538ab2-27b5-497d-8a13-17a914c47c6a": {
+                "id": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                "name": "var_111",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -1340,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "0a645d00-5ad1-4d44-9444-5171a8392df1"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "0a645d00-5ad1-4d44-9444-5171a8392df1": {
+                "id": "0a645d00-5ad1-4d44-9444-5171a8392df1",
+                "name": "id = 111",
+                "type": "ObjectAttribute",
+                "owner": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                "bounds": {
+                  "x": -1339.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1d25d560-3b29-493e-ab67-9ee06e8dc23c": {
+                "id": "1d25d560-3b29-493e-ab67-9ee06e8dc23c",
+                "name": "c_given",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -1340,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "84d2f9eb-0667-4428-89aa-a4c55d83c2e9": {
+                "id": "84d2f9eb-0667-4428-89aa-a4c55d83c2e9",
+                "name": "lit_g",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -1340,
+                  "y": -60,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "22cbd3f1-b804-47a9-b059-3c5bc4a0a1e6"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "22cbd3f1-b804-47a9-b059-3c5bc4a0a1e6": {
+                "id": "22cbd3f1-b804-47a9-b059-3c5bc4a0a1e6",
+                "name": "isNegated = false",
+                "type": "ObjectAttribute",
+                "owner": "84d2f9eb-0667-4428-89aa-a4c55d83c2e9",
+                "bounds": {
+                  "x": -1339.5,
+                  "y": -19.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "9ae3d982-0a48-4c0d-813d-7c5069692661": {
+                "id": "9ae3d982-0a48-4c0d-813d-7c5069692661",
+                "name": "c_row_01",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -1060,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "639fc104-cb1f-4c16-9762-d350febb1dec": {
+                "id": "639fc104-cb1f-4c16-9762-d350febb1dec",
+                "name": "var_121",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -980,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "953e6149-2ec4-4586-b5ab-7da7c85b3ee0"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "953e6149-2ec4-4586-b5ab-7da7c85b3ee0": {
+                "id": "953e6149-2ec4-4586-b5ab-7da7c85b3ee0",
+                "name": "id = 121",
+                "type": "ObjectAttribute",
+                "owner": "639fc104-cb1f-4c16-9762-d350febb1dec",
+                "bounds": {
+                  "x": -979.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "9a5f7e1e-bbdb-46cb-a35a-3e2279ae7e96": {
+                "id": "9a5f7e1e-bbdb-46cb-a35a-3e2279ae7e96",
+                "name": "lit_r1_a",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -1140,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "211d3ff6-0fbe-4441-8a04-6bfa8a0d77e4"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "211d3ff6-0fbe-4441-8a04-6bfa8a0d77e4": {
+                "id": "211d3ff6-0fbe-4441-8a04-6bfa8a0d77e4",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "9a5f7e1e-bbdb-46cb-a35a-3e2279ae7e96",
+                "bounds": {
+                  "x": -1139.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "22333516-2771-484d-a906-0ccc812a4842": {
+                "id": "22333516-2771-484d-a906-0ccc812a4842",
+                "name": "lit_r1_b",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -970,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "6ec9c513-94a7-461c-b418-c1d5612cd16b"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "6ec9c513-94a7-461c-b418-c1d5612cd16b": {
+                "id": "6ec9c513-94a7-461c-b418-c1d5612cd16b",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "22333516-2771-484d-a906-0ccc812a4842",
+                "bounds": {
+                  "x": -969.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "ac89457d-731a-4eee-98ec-48948cfc5bfa": {
+                "id": "ac89457d-731a-4eee-98ec-48948cfc5bfa",
+                "name": "c_row_02",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -700,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "bb39f0f1-b0c0-4183-986a-3e30e514033d": {
+                "id": "bb39f0f1-b0c0-4183-986a-3e30e514033d",
+                "name": "var_131",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -620,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "503bb136-f5b2-438c-9629-bdf6ec4e74f7"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "503bb136-f5b2-438c-9629-bdf6ec4e74f7": {
+                "id": "503bb136-f5b2-438c-9629-bdf6ec4e74f7",
+                "name": "id = 131",
+                "type": "ObjectAttribute",
+                "owner": "bb39f0f1-b0c0-4183-986a-3e30e514033d",
+                "bounds": {
+                  "x": -619.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "79877b36-cb48-4576-bdb7-fa95c8f43c09": {
+                "id": "79877b36-cb48-4576-bdb7-fa95c8f43c09",
+                "name": "lit_r2_a",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -780,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "032f268e-4e48-473b-8274-2d99af12fcb9"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "032f268e-4e48-473b-8274-2d99af12fcb9": {
+                "id": "032f268e-4e48-473b-8274-2d99af12fcb9",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "79877b36-cb48-4576-bdb7-fa95c8f43c09",
+                "bounds": {
+                  "x": -779.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "04ca32f8-b04e-4d9a-a532-a8daafa78596": {
+                "id": "04ca32f8-b04e-4d9a-a532-a8daafa78596",
+                "name": "lit_r2_b",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -610,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "3681afbe-af6a-4259-b84c-3b9f69a005ad"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "3681afbe-af6a-4259-b84c-3b9f69a005ad": {
+                "id": "3681afbe-af6a-4259-b84c-3b9f69a005ad",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "04ca32f8-b04e-4d9a-a532-a8daafa78596",
+                "bounds": {
+                  "x": -609.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "4f264eca-e224-4670-a4dc-ec0bb9a84af3": {
+                "id": "4f264eca-e224-4670-a4dc-ec0bb9a84af3",
+                "name": "c_row_03",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -340,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "88db1be2-0601-4b66-b35f-6c6be5fb8c7f": {
+                "id": "88db1be2-0601-4b66-b35f-6c6be5fb8c7f",
+                "name": "var_141",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "ebb14931-43d0-47c7-b746-8faa954fbfef"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "ebb14931-43d0-47c7-b746-8faa954fbfef": {
+                "id": "ebb14931-43d0-47c7-b746-8faa954fbfef",
+                "name": "id = 141",
+                "type": "ObjectAttribute",
+                "owner": "88db1be2-0601-4b66-b35f-6c6be5fb8c7f",
+                "bounds": {
+                  "x": -259.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1c5a5db9-462d-4880-986b-bfefe21321b4": {
+                "id": "1c5a5db9-462d-4880-986b-bfefe21321b4",
+                "name": "lit_r3_a",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -420,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "bc3e53e8-ddb4-47d5-9d31-94582f0eddea"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "bc3e53e8-ddb4-47d5-9d31-94582f0eddea": {
+                "id": "bc3e53e8-ddb4-47d5-9d31-94582f0eddea",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "1c5a5db9-462d-4880-986b-bfefe21321b4",
+                "bounds": {
+                  "x": -419.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "a2fec22b-3cdc-4360-976b-959860e5faae": {
+                "id": "a2fec22b-3cdc-4360-976b-959860e5faae",
+                "name": "lit_r3_b",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -250,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "ff9a745e-b187-424e-a819-bf0cab15829d"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "ff9a745e-b187-424e-a819-bf0cab15829d": {
+                "id": "ff9a745e-b187-424e-a819-bf0cab15829d",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "a2fec22b-3cdc-4360-976b-959860e5faae",
+                "bounds": {
+                  "x": -249.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "5fc6549e-8646-4039-8b78-445f7558259e": {
+                "id": "5fc6549e-8646-4039-8b78-445f7558259e",
+                "name": "c_col_10",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 20,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "cdf04026-a68c-49e7-a054-5810bf5aae7b": {
+                "id": "cdf04026-a68c-49e7-a054-5810bf5aae7b",
+                "name": "var_211",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 100,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "7d4ee961-54c9-4858-ab6a-b4200616e4b3"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "7d4ee961-54c9-4858-ab6a-b4200616e4b3": {
+                "id": "7d4ee961-54c9-4858-ab6a-b4200616e4b3",
+                "name": "id = 211",
+                "type": "ObjectAttribute",
+                "owner": "cdf04026-a68c-49e7-a054-5810bf5aae7b",
+                "bounds": {
+                  "x": 100.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "effa3d80-0bc8-4de8-a013-e2a33ba5d3d0": {
+                "id": "effa3d80-0bc8-4de8-a013-e2a33ba5d3d0",
+                "name": "lit_c1_a",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -60,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "fce3a4c5-b198-4af6-8147-89b0c8adfcc6"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "fce3a4c5-b198-4af6-8147-89b0c8adfcc6": {
+                "id": "fce3a4c5-b198-4af6-8147-89b0c8adfcc6",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "effa3d80-0bc8-4de8-a013-e2a33ba5d3d0",
+                "bounds": {
+                  "x": -59.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "2067303d-f8ec-4683-9472-8d64e715a918": {
+                "id": "2067303d-f8ec-4683-9472-8d64e715a918",
+                "name": "lit_c1_b",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 110,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "0c8e1b58-3f2e-425b-9efc-ef72faab33bb"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "0c8e1b58-3f2e-425b-9efc-ef72faab33bb": {
+                "id": "0c8e1b58-3f2e-425b-9efc-ef72faab33bb",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "2067303d-f8ec-4683-9472-8d64e715a918",
+                "bounds": {
+                  "x": 110.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "3f8e7110-9cab-4804-be38-f642f41edb31": {
+                "id": "3f8e7110-9cab-4804-be38-f642f41edb31",
+                "name": "c_col_20",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 380,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "424e369b-8233-4102-ba36-d4c07c003f7c": {
+                "id": "424e369b-8233-4102-ba36-d4c07c003f7c",
+                "name": "var_311",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 460,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "56c740ef-697a-443a-aff2-01b7310d6dd7"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "56c740ef-697a-443a-aff2-01b7310d6dd7": {
+                "id": "56c740ef-697a-443a-aff2-01b7310d6dd7",
+                "name": "id = 311",
+                "type": "ObjectAttribute",
+                "owner": "424e369b-8233-4102-ba36-d4c07c003f7c",
+                "bounds": {
+                  "x": 460.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "a3312afb-4fe6-46ee-8117-6dd9865abc57": {
+                "id": "a3312afb-4fe6-46ee-8117-6dd9865abc57",
+                "name": "lit_c2_a",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 300,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "05b2992a-c579-4107-9988-c02303b3a29d"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "05b2992a-c579-4107-9988-c02303b3a29d": {
+                "id": "05b2992a-c579-4107-9988-c02303b3a29d",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "a3312afb-4fe6-46ee-8117-6dd9865abc57",
+                "bounds": {
+                  "x": 300.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "83fec90b-7f91-4798-be09-27a6fa376bf0": {
+                "id": "83fec90b-7f91-4798-be09-27a6fa376bf0",
+                "name": "lit_c2_b",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 470,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "8c38963b-4dd8-4a29-a73b-b6c0cbaa40aa"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "8c38963b-4dd8-4a29-a73b-b6c0cbaa40aa": {
+                "id": "8c38963b-4dd8-4a29-a73b-b6c0cbaa40aa",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "83fec90b-7f91-4798-be09-27a6fa376bf0",
+                "bounds": {
+                  "x": 470.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "f9c7fb0a-16fc-461c-8a4e-357d1960e5e3": {
+                "id": "f9c7fb0a-16fc-461c-8a4e-357d1960e5e3",
+                "name": "c_col_30",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 740,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "d5a673fd-7386-48fc-ae36-737fcd48f796": {
+                "id": "d5a673fd-7386-48fc-ae36-737fcd48f796",
+                "name": "var_411",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 820,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "1e8d94ef-d656-4273-9a03-f4e6afafcf68"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "1e8d94ef-d656-4273-9a03-f4e6afafcf68": {
+                "id": "1e8d94ef-d656-4273-9a03-f4e6afafcf68",
+                "name": "id = 411",
+                "type": "ObjectAttribute",
+                "owner": "d5a673fd-7386-48fc-ae36-737fcd48f796",
+                "bounds": {
+                  "x": 820.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "943559be-b4d9-4519-84fb-2d64326ee772": {
+                "id": "943559be-b4d9-4519-84fb-2d64326ee772",
+                "name": "lit_c3_a",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 660,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "7cb24704-41f0-46d3-ab7c-d10cb2ce445a"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "7cb24704-41f0-46d3-ab7c-d10cb2ce445a": {
+                "id": "7cb24704-41f0-46d3-ab7c-d10cb2ce445a",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "943559be-b4d9-4519-84fb-2d64326ee772",
+                "bounds": {
+                  "x": 660.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "92b4bdf5-51ea-47cc-a8a2-3165ebbe2f16": {
+                "id": "92b4bdf5-51ea-47cc-a8a2-3165ebbe2f16",
+                "name": "lit_c3_b",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 830,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "3843e0e5-dd82-4fb9-b9cb-77c7e61830e6"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "3843e0e5-dd82-4fb9-b9cb-77c7e61830e6": {
+                "id": "3843e0e5-dd82-4fb9-b9cb-77c7e61830e6",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "92b4bdf5-51ea-47cc-a8a2-3165ebbe2f16",
+                "bounds": {
+                  "x": 830.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1916e2ca-565b-44d3-84c1-c978db2d7b8a": {
+                "id": "1916e2ca-565b-44d3-84c1-c978db2d7b8a",
+                "name": "c_box_11",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 1100,
+                  "y": -280,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": [],
+                "classId": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "className": "Clause"
+              },
+              "b34d7f6f-cd2d-4579-a04f-7d10073dc765": {
+                "id": "b34d7f6f-cd2d-4579-a04f-7d10073dc765",
+                "name": "var_221",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 1180,
+                  "y": 200,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "d9a38001-f9db-4d9b-bcca-0db2a6149bca"
+                ],
+                "methods": [],
+                "classId": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "className": "Variable"
+              },
+              "d9a38001-f9db-4d9b-bcca-0db2a6149bca": {
+                "id": "d9a38001-f9db-4d9b-bcca-0db2a6149bca",
+                "name": "id = 221",
+                "type": "ObjectAttribute",
+                "owner": "b34d7f6f-cd2d-4579-a04f-7d10073dc765",
+                "bounds": {
+                  "x": 1180.5,
+                  "y": 240.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "b55b008c-33f0-40f0-8a9a-bdab12c8a3dc": {
+                "id": "b55b008c-33f0-40f0-8a9a-bdab12c8a3dc",
+                "name": "lit_b_a",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 1020,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "b89af8cb-d3c3-44f2-9c09-7fb64aab8f17"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "b89af8cb-d3c3-44f2-9c09-7fb64aab8f17": {
+                "id": "b89af8cb-d3c3-44f2-9c09-7fb64aab8f17",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "b55b008c-33f0-40f0-8a9a-bdab12c8a3dc",
+                "bounds": {
+                  "x": 1020.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "6f463d77-6e2e-4c4c-b9c3-e05ada83a780": {
+                "id": "6f463d77-6e2e-4c4c-b9c3-e05ada83a780",
+                "name": "lit_b_b",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 1190,
+                  "y": -60,
+                  "width": 150,
+                  "height": 70
+                },
+                "attributes": [
+                  "40f0c9ca-8f5d-4473-a693-5a733c84bfe7"
+                ],
+                "methods": [],
+                "classId": "000ba462-65ae-4fec-8f55-00816015218a",
+                "className": "Literal"
+              },
+              "40f0c9ca-8f5d-4473-a693-5a733c84bfe7": {
+                "id": "40f0c9ca-8f5d-4473-a693-5a733c84bfe7",
+                "name": "isNegated = true",
+                "type": "ObjectAttribute",
+                "owner": "6f463d77-6e2e-4c4c-b9c3-e05ada83a780",
+                "bounds": {
+                  "x": 1190.5,
+                  "y": -19.5,
+                  "width": 149,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "00f22e74-500f-4002-a16b-5a3af9eb6bea": {
+                "id": "00f22e74-500f-4002-a16b-5a3af9eb6bea",
+                "name": "Cell(0,0) must be 1",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": -1220,
+                  "y": -410,
+                  "width": 160,
+                  "height": 50
+                }
+              },
+              "ec663a89-59ac-45b3-8771-9eb135f0e658": {
+                "id": "ec663a89-59ac-45b3-8771-9eb135f0e658",
+                "name": "Cell(0,0) and Cell(0,1) cannot be both 1",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": -900,
+                  "y": -430,
+                  "width": 160,
+                  "height": 70
+                }
+              },
+              "bda8ec61-ac96-480f-804e-53dc63d49e66": {
+                "id": "bda8ec61-ac96-480f-804e-53dc63d49e66",
+                "name": "Cell(0,0) and Cell(1,0) cannot be both 1",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": 170,
+                  "y": -430,
+                  "width": 160,
+                  "height": 70
+                }
+              },
+              "79d85fd7-7022-4750-b4e1-4857c14d192c": {
+                "id": "79d85fd7-7022-4750-b4e1-4857c14d192c",
+                "name": "Remaining cells in box (as Cell(0,1) and Cell(1,0) were already tested) cannot be 1 (in this case is Cell(1,1))",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": 880,
+                  "y": -450,
+                  "width": 250,
+                  "height": 90
+                }
+              },
+              "f5dea10f-b9f2-481f-9821-52176c8f1070": {
+                "id": "f5dea10f-b9f2-481f-9821-52176c8f1070",
+                "name": "CNF only understands True or False. So the triple row, column, value are converted into a single integer to represent each cell with a value in the board. The formula used is reversible and human readable id = 100×(row+1)+10×(column+1)+value",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": -1020,
+                  "y": 310,
+                  "width": 350,
+                  "height": 140
+                }
+              },
+              "e2197a62-b03e-4f51-8ad8-2d6933135b4b": {
+                "id": "e2197a62-b03e-4f51-8ad8-2d6933135b4b",
+                "name": "To simplify this diagram we are only validating Cell(0,0) however this must be done for each cell in the board",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": -1340,
+                  "y": 310,
+                  "width": 280,
+                  "height": 90
+                }
+              },
+              "43955e98-d256-41c2-811c-70a34da3e18b": {
+                "id": "43955e98-d256-41c2-811c-70a34da3e18b",
+                "name": "This CNF formula is the conjunction of the following clauses: C1) Given clue; C2) Row uniqueness, C3) Column uniqueness; C4) Box uniqueness ",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": -470,
+                  "y": -470,
+                  "width": 300,
+                  "height": 110
+                }
+              }
+            },
+            "relationships": {
+              "4691e076-5f97-4a06-9e86-6956f5c68052": {
+                "id": "4691e076-5f97-4a06-9e86-6956f5c68052",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": -380,
+                  "width": 1260,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 100
+                  },
+                  {
+                    "x": 0,
+                    "y": 50
+                  },
+                  {
+                    "x": 1260,
+                    "y": 50
+                  },
+                  {
+                    "x": 1260,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "1d25d560-3b29-493e-ab67-9ee06e8dc23c",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "107f0150-4895-4ba1-9271-d3b11626407d": {
+                "id": "107f0150-4895-4ba1-9271-d3b11626407d",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "84d2f9eb-0667-4428-89aa-a4c55d83c2e9",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "1d25d560-3b29-493e-ab67-9ee06e8dc23c",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "15e0ae19-d6ea-4296-9683-942c97e8c181": {
+                "id": "15e0ae19-d6ea-4296-9683-942c97e8c181",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "84d2f9eb-0667-4428-89aa-a4c55d83c2e9",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "b5261900-08a7-4e5e-bddd-6160acb82cd3": {
+                "id": "b5261900-08a7-4e5e-bddd-6160acb82cd3",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -980,
+                  "y": -380,
+                  "width": 980,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 100
+                  },
+                  {
+                    "x": 0,
+                    "y": 50
+                  },
+                  {
+                    "x": 980,
+                    "y": 50
+                  },
+                  {
+                    "x": 980,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "9ae3d982-0a48-4c0d-813d-7c5069692661",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "03797081-f68e-409d-b651-624e3c7fb68e": {
+                "id": "03797081-f68e-409d-b651-624e3c7fb68e",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1025,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "9a5f7e1e-bbdb-46cb-a35a-3e2279ae7e96",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "9ae3d982-0a48-4c0d-813d-7c5069692661",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "de884e42-495a-42a6-8728-89415f77748d": {
+                "id": "de884e42-495a-42a6-8728-89415f77748d",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 195,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 195,
+                    "y": 0
+                  },
+                  {
+                    "x": 195,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "9a5f7e1e-bbdb-46cb-a35a-3e2279ae7e96",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "5fbb1ec3-2490-4941-88fc-1bff75b3dbdc": {
+                "id": "5fbb1ec3-2490-4941-88fc-1bff75b3dbdc",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -935,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "22333516-2771-484d-a906-0ccc812a4842",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "9ae3d982-0a48-4c0d-813d-7c5069692661",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "0c9c31e0-8377-4d4e-bfb3-de98e4570e46": {
+                "id": "0c9c31e0-8377-4d4e-bfb3-de98e4570e46",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -895,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "22333516-2771-484d-a906-0ccc812a4842",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "639fc104-cb1f-4c16-9762-d350febb1dec",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "40404194-977f-4308-827c-6476cf62b453": {
+                "id": "40404194-977f-4308-827c-6476cf62b453",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -620,
+                  "y": -380,
+                  "width": 620,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 100
+                  },
+                  {
+                    "x": 0,
+                    "y": 50
+                  },
+                  {
+                    "x": 620,
+                    "y": 50
+                  },
+                  {
+                    "x": 620,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "ac89457d-731a-4eee-98ec-48948cfc5bfa",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "7e189737-0a8b-4e98-a636-d9a0ab0f6379": {
+                "id": "7e189737-0a8b-4e98-a636-d9a0ab0f6379",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -665,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "79877b36-cb48-4576-bdb7-fa95c8f43c09",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "ac89457d-731a-4eee-98ec-48948cfc5bfa",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "2f5ddd26-151d-4cec-b47e-2382a73671c6": {
+                "id": "2f5ddd26-151d-4cec-b47e-2382a73671c6",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 555,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 555,
+                    "y": 0
+                  },
+                  {
+                    "x": 555,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "79877b36-cb48-4576-bdb7-fa95c8f43c09",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "fb61578a-0050-4cc4-8ce0-1d6462bf1758": {
+                "id": "fb61578a-0050-4cc4-8ce0-1d6462bf1758",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -575,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "04ca32f8-b04e-4d9a-a532-a8daafa78596",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "ac89457d-731a-4eee-98ec-48948cfc5bfa",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "817d52c0-bef2-4707-9b64-bdc606a691b9": {
+                "id": "817d52c0-bef2-4707-9b64-bdc606a691b9",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -535,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "04ca32f8-b04e-4d9a-a532-a8daafa78596",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "bb39f0f1-b0c0-4183-986a-3e30e514033d",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "9f692d20-eb67-4333-8e35-a6f3b50b25d1": {
+                "id": "9f692d20-eb67-4333-8e35-a6f3b50b25d1",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -380,
+                  "width": 260,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 100
+                  },
+                  {
+                    "x": 0,
+                    "y": 50
+                  },
+                  {
+                    "x": 260,
+                    "y": 50
+                  },
+                  {
+                    "x": 260,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "4f264eca-e224-4670-a4dc-ec0bb9a84af3",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "85b6ad66-8dbe-43ff-9e61-80a5ad4bbfaf": {
+                "id": "85b6ad66-8dbe-43ff-9e61-80a5ad4bbfaf",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -305,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "1c5a5db9-462d-4880-986b-bfefe21321b4",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "4f264eca-e224-4670-a4dc-ec0bb9a84af3",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "20bc202d-7d04-4688-b609-a71076ad995b": {
+                "id": "20bc202d-7d04-4688-b609-a71076ad995b",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 915,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 915,
+                    "y": 0
+                  },
+                  {
+                    "x": 915,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "1c5a5db9-462d-4880-986b-bfefe21321b4",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "fcd9f493-ef9a-49cf-b2c3-d469d8e02c80": {
+                "id": "fcd9f493-ef9a-49cf-b2c3-d469d8e02c80",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -215,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "a2fec22b-3cdc-4360-976b-959860e5faae",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "4f264eca-e224-4670-a4dc-ec0bb9a84af3",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "2a9a3a86-1935-4f6d-a44c-60a1349d4d12": {
+                "id": "2a9a3a86-1935-4f6d-a44c-60a1349d4d12",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -175,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "a2fec22b-3cdc-4360-976b-959860e5faae",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "88db1be2-0601-4b66-b35f-6c6be5fb8c7f",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "6aa781a4-bb9f-4df2-a3e0-2f39ed12dd31": {
+                "id": "6aa781a4-bb9f-4df2-a3e0-2f39ed12dd31",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 55,
+                  "y": -380,
+                  "width": 1,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 100
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "5fc6549e-8646-4039-8b78-445f7558259e",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "445cdea6-cc8b-4932-bf25-fd826a0b5324": {
+                "id": "445cdea6-cc8b-4932-bf25-fd826a0b5324",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 55,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "effa3d80-0bc8-4de8-a013-e2a33ba5d3d0",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "5fc6549e-8646-4039-8b78-445f7558259e",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "283dfb77-d630-414a-833b-d63c6faed42b": {
+                "id": "283dfb77-d630-414a-833b-d63c6faed42b",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 1275,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 1275,
+                    "y": 0
+                  },
+                  {
+                    "x": 1275,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "effa3d80-0bc8-4de8-a013-e2a33ba5d3d0",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "64548d34-7721-4916-8900-9e3524fed273": {
+                "id": "64548d34-7721-4916-8900-9e3524fed273",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 145,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "2067303d-f8ec-4683-9472-8d64e715a918",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "5fc6549e-8646-4039-8b78-445f7558259e",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "21f8d1e0-682e-4e89-aed0-b2874ab0be2b": {
+                "id": "21f8d1e0-682e-4e89-aed0-b2874ab0be2b",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 185,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "2067303d-f8ec-4683-9472-8d64e715a918",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "cdf04026-a68c-49e7-a054-5810bf5aae7b",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "aafe3c1d-0f77-45ba-8658-5882b6a23fe5": {
+                "id": "aafe3c1d-0f77-45ba-8658-5882b6a23fe5",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 0,
+                  "y": -380,
+                  "width": 460,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 460,
+                    "y": 100
+                  },
+                  {
+                    "x": 460,
+                    "y": 50
+                  },
+                  {
+                    "x": 0,
+                    "y": 50
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "3f8e7110-9cab-4804-be38-f642f41edb31",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "aa4c9458-bc7b-467e-a0ba-71d7988ea90f": {
+                "id": "aa4c9458-bc7b-467e-a0ba-71d7988ea90f",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 415,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "a3312afb-4fe6-46ee-8117-6dd9865abc57",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "3f8e7110-9cab-4804-be38-f642f41edb31",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "f91a626e-31c1-40f2-abc7-af51afb6a641": {
+                "id": "f91a626e-31c1-40f2-abc7-af51afb6a641",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 1635,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 1635,
+                    "y": 0
+                  },
+                  {
+                    "x": 1635,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "a3312afb-4fe6-46ee-8117-6dd9865abc57",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "4a93b43b-5776-4d34-a481-37fa1a3604be": {
+                "id": "4a93b43b-5776-4d34-a481-37fa1a3604be",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 505,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "83fec90b-7f91-4798-be09-27a6fa376bf0",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "3f8e7110-9cab-4804-be38-f642f41edb31",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "462b7413-05eb-41e6-92a6-ca5adea913fc": {
+                "id": "462b7413-05eb-41e6-92a6-ca5adea913fc",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 545,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "83fec90b-7f91-4798-be09-27a6fa376bf0",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "424e369b-8233-4102-ba36-d4c07c003f7c",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "89140e3d-b4fd-4cd4-94b9-7a751f741077": {
+                "id": "89140e3d-b4fd-4cd4-94b9-7a751f741077",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 0,
+                  "y": -380,
+                  "width": 820,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 820,
+                    "y": 100
+                  },
+                  {
+                    "x": 820,
+                    "y": 50
+                  },
+                  {
+                    "x": 0,
+                    "y": 50
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "f9c7fb0a-16fc-461c-8a4e-357d1960e5e3",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "a00e1c66-dfcd-4f7b-9715-5edb73b497bc": {
+                "id": "a00e1c66-dfcd-4f7b-9715-5edb73b497bc",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 775,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "943559be-b4d9-4519-84fb-2d64326ee772",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "f9c7fb0a-16fc-461c-8a4e-357d1960e5e3",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "28b85965-4729-4069-bd7f-d92c3094aaee": {
+                "id": "28b85965-4729-4069-bd7f-d92c3094aaee",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 1995,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 1995,
+                    "y": 0
+                  },
+                  {
+                    "x": 1995,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "943559be-b4d9-4519-84fb-2d64326ee772",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "66c74419-11c9-4971-8aad-8f32ca056fd5": {
+                "id": "66c74419-11c9-4971-8aad-8f32ca056fd5",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 865,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "92b4bdf5-51ea-47cc-a8a2-3165ebbe2f16",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "f9c7fb0a-16fc-461c-8a4e-357d1960e5e3",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "3f5f11c9-8b18-439c-b0ff-5fb05a493451": {
+                "id": "3f5f11c9-8b18-439c-b0ff-5fb05a493451",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 905,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "92b4bdf5-51ea-47cc-a8a2-3165ebbe2f16",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "d5a673fd-7386-48fc-ae36-737fcd48f796",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "f7bb100e-785d-4f45-b8e1-7c2d9af01f0e": {
+                "id": "f7bb100e-785d-4f45-b8e1-7c2d9af01f0e",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 0,
+                  "y": -380,
+                  "width": 1180,
+                  "height": 100
+                },
+                "path": [
+                  {
+                    "x": 1180,
+                    "y": 100
+                  },
+                  {
+                    "x": 1180,
+                    "y": 50
+                  },
+                  {
+                    "x": 0,
+                    "y": 50
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "1916e2ca-565b-44d3-84c1-c978db2d7b8a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "af95989b-3cfa-4ddc-b17b-292142225604": {
+                "id": "af95989b-3cfa-4ddc-b17b-292142225604",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 1135,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "b55b008c-33f0-40f0-8a9a-bdab12c8a3dc",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "1916e2ca-565b-44d3-84c1-c978db2d7b8a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "dfb1f1a0-f1b3-4fea-a543-d0d44febeb53": {
+                "id": "dfb1f1a0-f1b3-4fea-a543-d0d44febeb53",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -1260,
+                  "y": 10,
+                  "width": 2355,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 2355,
+                    "y": 0
+                  },
+                  {
+                    "x": 2355,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 95
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "b55b008c-33f0-40f0-8a9a-bdab12c8a3dc",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "905bfa23-de3e-4177-9ce1-3840e8994f04": {
+                "id": "905bfa23-de3e-4177-9ce1-3840e8994f04",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 1225,
+                  "y": -240,
+                  "width": 1,
+                  "height": 180
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 180
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "6f463d77-6e2e-4c4c-b9c3-e05ada83a780",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "1916e2ca-565b-44d3-84c1-c978db2d7b8a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "4a9e6ad0-e398-47a3-9cce-f9af5c8786d6": {
+                "id": "4a9e6ad0-e398-47a3-9cce-f9af5c8786d6",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": 1265,
+                  "y": 10,
+                  "width": 1,
+                  "height": 190
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 0,
+                    "y": 190
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "6f463d77-6e2e-4c4c-b9c3-e05ada83a780",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "b34d7f6f-cd2d-4579-a04f-7d10073dc765",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "d5684231-0f23-4bf9-81e7-bb7eb006aeb5": {
+                "id": "d5684231-0f23-4bf9-81e7-bb7eb006aeb5",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": -1180,
+                  "y": -360,
+                  "width": 45,
+                  "height": 121
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 100
+                  },
+                  {
+                    "x": 40,
+                    "y": 100
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "1d25d560-3b29-493e-ab67-9ee06e8dc23c",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "00f22e74-500f-4002-a16b-5a3af9eb6bea",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "2b621cc4-dd0e-4068-b968-27ae93e3f656": {
+                "id": "2b621cc4-dd0e-4068-b968-27ae93e3f656",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": -900,
+                  "y": -360,
+                  "width": 85,
+                  "height": 121
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 100
+                  },
+                  {
+                    "x": 80,
+                    "y": 100
+                  },
+                  {
+                    "x": 80,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "9ae3d982-0a48-4c0d-813d-7c5069692661",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "ec663a89-59ac-45b3-8771-9eb135f0e658",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "24a644a2-985e-4811-8cca-afcf89c281b1": {
+                "id": "24a644a2-985e-4811-8cca-afcf89c281b1",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": 180,
+                  "y": -360,
+                  "width": 75,
+                  "height": 131
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 110
+                  },
+                  {
+                    "x": 70,
+                    "y": 110
+                  },
+                  {
+                    "x": 70,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Downright",
+                  "element": "5fc6549e-8646-4039-8b78-445f7558259e",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "bda8ec61-ac96-480f-804e-53dc63d49e66",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "873132fd-93e5-4204-b9cf-b993a0ec804a": {
+                "id": "873132fd-93e5-4204-b9cf-b993a0ec804a",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": 1000,
+                  "y": -360,
+                  "width": 100,
+                  "height": 121
+                },
+                "path": [
+                  {
+                    "x": 100,
+                    "y": 100
+                  },
+                  {
+                    "x": 5,
+                    "y": 100
+                  },
+                  {
+                    "x": 5,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "1916e2ca-565b-44d3-84c1-c978db2d7b8a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "79d85fd7-7022-4750-b4e1-4857c14d192c",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "b60811a1-995d-47cb-8f49-13a3a7af803c": {
+                "id": "b60811a1-995d-47cb-8f49-13a3a7af803c",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": -1180,
+                  "y": 225,
+                  "width": 55,
+                  "height": 85
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 10
+                  },
+                  {
+                    "x": 50,
+                    "y": 10
+                  },
+                  {
+                    "x": 50,
+                    "y": 85
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "1f538ab2-27b5-497d-8a13-17a914c47c6a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Topright",
+                  "element": "e2197a62-b03e-4f51-8ad8-2d6933135b4b",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "469875a5-f184-4a6d-9965-564f69c41959": {
+                "id": "469875a5-f184-4a6d-9965-564f69c41959",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": -820,
+                  "y": 225,
+                  "width": 67.5,
+                  "height": 85
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 10
+                  },
+                  {
+                    "x": 62.5,
+                    "y": 10
+                  },
+                  {
+                    "x": 62.5,
+                    "y": 85
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "639fc104-cb1f-4c16-9762-d350febb1dec",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Topright",
+                  "element": "f5dea10f-b9f2-481f-9821-52176c8f1070",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "ee26a325-6909-4b76-80b3-f5940294ffd1": {
+                "id": "ee26a325-6909-4b76-80b3-f5940294ffd1",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": -170,
+                  "y": -425,
+                  "width": 80,
+                  "height": 31
+                },
+                "path": [
+                  {
+                    "x": 80,
+                    "y": 10
+                  },
+                  {
+                    "x": 0,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "16e3c2f9-8d16-4775-a83b-ea698ef6d478",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Downright",
+                  "element": "43955e98-d256-41c2-811c-70a34da3e18b",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              }
+            },
+            "assessments": {},
+            "referenceDiagramData": {
+              "version": "3.0.0",
+              "type": "ClassDiagram",
+              "size": {
+                "width": 1700,
+                "height": 960
+              },
+              "interactive": {
+                "elements": {},
+                "relationships": {}
+              },
+              "elements": {
+                "7c9390dc-d359-430c-8a70-b1192eb698db": {
+                  "id": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                  "name": "Formula",
+                  "type": "Class",
+                  "owner": null,
+                  "bounds": {
+                    "x": -470,
+                    "y": -380,
+                    "width": 160,
+                    "height": 70
+                  },
+                  "attributes": [
+                    "2c6dcd36-34d7-4773-a396-8288069c7768"
+                  ],
+                  "methods": []
+                },
+                "2c6dcd36-34d7-4773-a396-8288069c7768": {
+                  "id": "2c6dcd36-34d7-4773-a396-8288069c7768",
+                  "name": "name",
+                  "type": "ClassAttribute",
+                  "owner": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                  "bounds": {
+                    "x": -469.5,
+                    "y": -339.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "str",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "43306ab3-d6cd-490e-8dd6-93b630368257": {
+                  "id": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                  "name": "Variable",
+                  "type": "Class",
+                  "owner": null,
+                  "bounds": {
+                    "x": -140,
+                    "y": -210,
+                    "width": 160,
+                    "height": 70
+                  },
+                  "attributes": [
+                    "830d5c89-f437-4716-81f2-667cd06aef82"
+                  ],
+                  "methods": []
+                },
+                "830d5c89-f437-4716-81f2-667cd06aef82": {
+                  "id": "830d5c89-f437-4716-81f2-667cd06aef82",
+                  "name": "id",
+                  "type": "ClassAttribute",
+                  "owner": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                  "bounds": {
+                    "x": -139.5,
+                    "y": -169.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "int",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "5c31afb9-71f5-4e8a-a65e-98955f4a0a19": {
+                  "id": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                  "name": "Clause",
+                  "type": "Class",
+                  "owner": null,
+                  "bounds": {
+                    "x": -470,
+                    "y": -200,
+                    "width": 160,
+                    "height": 40
+                  },
+                  "attributes": [],
+                  "methods": []
+                },
+                "000ba462-65ae-4fec-8f55-00816015218a": {
+                  "id": "000ba462-65ae-4fec-8f55-00816015218a",
+                  "name": "Literal",
+                  "type": "Class",
+                  "owner": null,
+                  "bounds": {
+                    "x": -310,
+                    "y": 0,
+                    "width": 160,
+                    "height": 70
+                  },
+                  "attributes": [
+                    "286720b0-2458-4729-933a-5875b688d280"
+                  ],
+                  "methods": []
+                },
+                "286720b0-2458-4729-933a-5875b688d280": {
+                  "id": "286720b0-2458-4729-933a-5875b688d280",
+                  "name": "isNegated",
+                  "type": "ClassAttribute",
+                  "owner": "000ba462-65ae-4fec-8f55-00816015218a",
+                  "bounds": {
+                    "x": -309.5,
+                    "y": 40.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "bool",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "ba3e8858-45be-4acc-9d1e-988980838248": {
+                  "id": "ba3e8858-45be-4acc-9d1e-988980838248",
+                  "name": "This holds the conjunction of all clauses",
+                  "type": "Comments",
+                  "owner": null,
+                  "bounds": {
+                    "x": -190,
+                    "y": -460,
+                    "width": 160,
+                    "height": 80
+                  }
+                },
+                "cc16000d-a002-48b0-a54a-691a5cc5d2b2": {
+                  "id": "cc16000d-a002-48b0-a54a-691a5cc5d2b2",
+                  "name": "This holds all the disjunction of all the literals",
+                  "type": "Comments",
+                  "owner": null,
+                  "bounds": {
+                    "x": -190,
+                    "y": -340,
+                    "width": 160,
+                    "height": 80
+                  }
+                },
+                "5259e7f1-6695-4188-b073-6c0ea0952f2b": {
+                  "id": "5259e7f1-6695-4188-b073-6c0ea0952f2b",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -830,
+                    "y": -350,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "Clause Not Empty",
+                  "constraint": "context Clause\ninv ClauseNotEmpty:\n  self.literal->size() > 0"
+                },
+                "85f2cca2-78bf-4b3a-8975-b6af6168bb39": {
+                  "id": "85f2cca2-78bf-4b3a-8975-b6af6168bb39",
+                  "name": "This id encodes the cell properties (value, column and row) to be represented as a unique variable",
+                  "type": "Comments",
+                  "owner": null,
+                  "bounds": {
+                    "x": 90,
+                    "y": -370,
+                    "width": 220,
+                    "height": 110
+                  }
+                },
+                "281d3355-c6a2-47e5-b8a9-c468f26c9281": {
+                  "id": "281d3355-c6a2-47e5-b8a9-c468f26c9281",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -830,
+                    "y": -230,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "",
+                  "constraint": "context Clause\ninv UniqueLiteral:\n  self.literal->forAll(l1, l2 | \n    l1 <> l2 implies (l1.variable <> l2.variable or l1.isNegated <> l2.isNegated)\n  )"
+                },
+                "034c920d-be8d-4574-86ee-bb75e3ae8eda": {
+                  "id": "034c920d-be8d-4574-86ee-bb75e3ae8eda",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -830,
+                    "y": -100,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "",
+                  "constraint": "context Clause\ninv NoTautology: \n  self.literal->forAll(l1, l2 | \n    (l1 <> l2 and l1.variable = l2.variable) \n    implies l1.isNegated = l2.isNegated\n  )"
+                }
+              },
+              "relationships": {
+                "979a0c2d-79d3-4b0c-a465-98c2cbe5ee0e": {
+                  "id": "979a0c2d-79d3-4b0c-a465-98c2cbe5ee0e",
+                  "name": "",
+                  "type": "ClassComposition",
+                  "owner": null,
+                  "bounds": {
+                    "x": -395,
+                    "y": -310,
+                    "width": 18.90625,
+                    "height": 120.65625
+                  },
+                  "path": [
+                    {
+                      "x": 5,
+                      "y": 110
+                    },
+                    {
+                      "x": 5,
+                      "y": 0
+                    }
+                  ],
+                  "source": {
+                    "direction": "Up",
+                    "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                    "multiplicity": "*",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Down",
+                    "element": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                    "multiplicity": "1",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "1a9dd8dc-1297-4523-8c86-fe31c5140c50": {
+                  "id": "1a9dd8dc-1297-4523-8c86-fe31c5140c50",
+                  "name": null,
+                  "type": "ClassBidirectional",
+                  "owner": null,
+                  "bounds": {
+                    "x": -150,
+                    "y": -140,
+                    "width": 103.90625,
+                    "height": 214.65625
+                  },
+                  "path": [
+                    {
+                      "x": 0,
+                      "y": 175
+                    },
+                    {
+                      "x": 90,
+                      "y": 175
+                    },
+                    {
+                      "x": 90,
+                      "y": 0
+                    }
+                  ],
+                  "source": {
+                    "direction": "Right",
+                    "element": "000ba462-65ae-4fec-8f55-00816015218a",
+                    "multiplicity": "*",
+                    "role": "",
+                    "navigable": false
+                  },
+                  "target": {
+                    "direction": "Down",
+                    "element": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                    "multiplicity": "1",
+                    "role": null,
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "0bbbcfce-a22d-4b00-a672-9f46722bb3f6": {
+                  "id": "0bbbcfce-a22d-4b00-a672-9f46722bb3f6",
+                  "name": "",
+                  "type": "Link",
+                  "owner": null,
+                  "bounds": {
+                    "x": -395,
+                    "y": -430,
+                    "width": 205,
+                    "height": 50
+                  },
+                  "path": [
+                    {
+                      "x": 205,
+                      "y": 10
+                    },
+                    {
+                      "x": 5,
+                      "y": 10
+                    },
+                    {
+                      "x": 5,
+                      "y": 50
+                    }
+                  ],
+                  "source": {
+                    "direction": "Left",
+                    "element": "ba3e8858-45be-4acc-9d1e-988980838248",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Up",
+                    "element": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "34df0610-57e7-4539-8629-ee07f1f38d7b": {
+                  "id": "34df0610-57e7-4539-8629-ee07f1f38d7b",
+                  "name": "",
+                  "type": "Link",
+                  "owner": null,
+                  "bounds": {
+                    "x": -310,
+                    "y": -290,
+                    "width": 120,
+                    "height": 141
+                  },
+                  "path": [
+                    {
+                      "x": 0,
+                      "y": 120
+                    },
+                    {
+                      "x": 60,
+                      "y": 120
+                    },
+                    {
+                      "x": 60,
+                      "y": 10
+                    },
+                    {
+                      "x": 120,
+                      "y": 10
+                    }
+                  ],
+                  "source": {
+                    "direction": "Downright",
+                    "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Downleft",
+                    "element": "cc16000d-a002-48b0-a54a-691a5cc5d2b2",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "904f2743-db28-45fa-9be7-2a623d640bb9": {
+                  "id": "904f2743-db28-45fa-9be7-2a623d640bb9",
+                  "name": "",
+                  "type": "ClassComposition",
+                  "owner": null,
+                  "bounds": {
+                    "x": -395,
+                    "y": -160,
+                    "width": 85,
+                    "height": 234.65625
+                  },
+                  "path": [
+                    {
+                      "x": 85,
+                      "y": 195
+                    },
+                    {
+                      "x": 5,
+                      "y": 195
+                    },
+                    {
+                      "x": 5,
+                      "y": 0
+                    }
+                  ],
+                  "source": {
+                    "direction": "Left",
+                    "element": "000ba462-65ae-4fec-8f55-00816015218a",
+                    "multiplicity": "0..*",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Down",
+                    "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                    "multiplicity": "1",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "18678bb3-75f3-4955-9b37-42b588c713a2": {
+                  "id": "18678bb3-75f3-4955-9b37-42b588c713a2",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -670,
+                    "y": -310,
+                    "width": 200,
+                    "height": 151
+                  },
+                  "path": [
+                    {
+                      "x": 0,
+                      "y": 10
+                    },
+                    {
+                      "x": 100,
+                      "y": 10
+                    },
+                    {
+                      "x": 100,
+                      "y": 130
+                    },
+                    {
+                      "x": 200,
+                      "y": 130
+                    }
+                  ],
+                  "source": {
+                    "direction": "Right",
+                    "element": "5259e7f1-6695-4188-b073-6c0ea0952f2b",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Left",
+                    "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "a27c7236-1c8b-433d-a14e-5496d7671948": {
+                  "id": "a27c7236-1c8b-433d-a14e-5496d7671948",
+                  "name": "",
+                  "type": "Link",
+                  "owner": null,
+                  "bounds": {
+                    "x": 20,
+                    "y": -260,
+                    "width": 185,
+                    "height": 106
+                  },
+                  "path": [
+                    {
+                      "x": 0,
+                      "y": 85
+                    },
+                    {
+                      "x": 180,
+                      "y": 85
+                    },
+                    {
+                      "x": 180,
+                      "y": 0
+                    }
+                  ],
+                  "source": {
+                    "direction": "Right",
+                    "element": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Down",
+                    "element": "85f2cca2-78bf-4b3a-8975-b6af6168bb39",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "6d451cf7-fc0f-4d8d-b386-e4b86ab9037d": {
+                  "id": "6d451cf7-fc0f-4d8d-b386-e4b86ab9037d",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -670,
+                    "y": -190,
+                    "width": 200,
+                    "height": 31
+                  },
+                  "path": [
+                    {
+                      "x": 0,
+                      "y": 10
+                    },
+                    {
+                      "x": 200,
+                      "y": 10
+                    }
+                  ],
+                  "source": {
+                    "direction": "Right",
+                    "element": "281d3355-c6a2-47e5-b8a9-c468f26c9281",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Downleft",
+                    "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "d14362a9-aa63-4fd5-8b6f-a6cfbdde4dad": {
+                  "id": "d14362a9-aa63-4fd5-8b6f-a6cfbdde4dad",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -670,
+                    "y": -190,
+                    "width": 200,
+                    "height": 161
+                  },
+                  "path": [
+                    {
+                      "x": 0,
+                      "y": 140
+                    },
+                    {
+                      "x": 100,
+                      "y": 140
+                    },
+                    {
+                      "x": 100,
+                      "y": 10
+                    },
+                    {
+                      "x": 200,
+                      "y": 10
+                    }
+                  ],
+                  "source": {
+                    "direction": "Right",
+                    "element": "034c920d-be8d-4574-86ee-bb75e3ae8eda",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Left",
+                    "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                }
+              },
+              "assessments": {}
+            }
+          },
+          "lastUpdate": "2026-10-17T18:38:26.194Z"
+        }
+      ],
+      "ClassDiagram": [
+        {
+          "id": "86a51951-0098-4350-a666-86defa9d7c79",
+          "title": "Class Diagram",
+          "model": {
+            "version": "3.0.0",
+            "type": "ClassDiagram",
+            "size": {
+              "width": 1700,
+              "height": 960
+            },
+            "interactive": {
+              "elements": {},
+              "relationships": {}
+            },
+            "elements": {
+              "7c9390dc-d359-430c-8a70-b1192eb698db": {
+                "id": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                "name": "Formula",
+                "type": "Class",
+                "owner": null,
+                "bounds": {
+                  "x": -470,
+                  "y": -380,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "2c6dcd36-34d7-4773-a396-8288069c7768"
+                ],
+                "methods": []
+              },
+              "2c6dcd36-34d7-4773-a396-8288069c7768": {
+                "id": "2c6dcd36-34d7-4773-a396-8288069c7768",
+                "name": "name",
+                "type": "ClassAttribute",
+                "owner": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                "bounds": {
+                  "x": -469.5,
+                  "y": -339.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "str",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "43306ab3-d6cd-490e-8dd6-93b630368257": {
+                "id": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "name": "Variable",
+                "type": "Class",
+                "owner": null,
+                "bounds": {
+                  "x": -140,
+                  "y": -210,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "830d5c89-f437-4716-81f2-667cd06aef82"
+                ],
+                "methods": []
+              },
+              "830d5c89-f437-4716-81f2-667cd06aef82": {
+                "id": "830d5c89-f437-4716-81f2-667cd06aef82",
+                "name": "id",
+                "type": "ClassAttribute",
+                "owner": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                "bounds": {
+                  "x": -139.5,
+                  "y": -169.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "5c31afb9-71f5-4e8a-a65e-98955f4a0a19": {
+                "id": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                "name": "Clause",
+                "type": "Class",
+                "owner": null,
+                "bounds": {
+                  "x": -470,
+                  "y": -200,
+                  "width": 160,
+                  "height": 40
+                },
+                "attributes": [],
+                "methods": []
+              },
+              "000ba462-65ae-4fec-8f55-00816015218a": {
+                "id": "000ba462-65ae-4fec-8f55-00816015218a",
+                "name": "Literal",
+                "type": "Class",
+                "owner": null,
+                "bounds": {
+                  "x": -310,
+                  "y": 0,
+                  "width": 160,
+                  "height": 70
+                },
+                "attributes": [
+                  "286720b0-2458-4729-933a-5875b688d280"
+                ],
+                "methods": []
+              },
+              "286720b0-2458-4729-933a-5875b688d280": {
+                "id": "286720b0-2458-4729-933a-5875b688d280",
+                "name": "isNegated",
+                "type": "ClassAttribute",
+                "owner": "000ba462-65ae-4fec-8f55-00816015218a",
+                "bounds": {
+                  "x": -309.5,
+                  "y": 40.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "ba3e8858-45be-4acc-9d1e-988980838248": {
+                "id": "ba3e8858-45be-4acc-9d1e-988980838248",
+                "name": "This holds the conjunction of all clauses",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": -190,
+                  "y": -460,
+                  "width": 160,
+                  "height": 80
+                }
+              },
+              "cc16000d-a002-48b0-a54a-691a5cc5d2b2": {
+                "id": "cc16000d-a002-48b0-a54a-691a5cc5d2b2",
+                "name": "This holds all the disjunction of all the literals",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": -190,
+                  "y": -340,
+                  "width": 160,
+                  "height": 80
+                }
+              },
+              "5259e7f1-6695-4188-b073-6c0ea0952f2b": {
+                "id": "5259e7f1-6695-4188-b073-6c0ea0952f2b",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -830,
+                  "y": -350,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "Clause Not Empty",
+                "constraint": "context Clause\ninv ClauseNotEmpty:\n  self.literal->size() > 0"
+              },
+              "85f2cca2-78bf-4b3a-8975-b6af6168bb39": {
+                "id": "85f2cca2-78bf-4b3a-8975-b6af6168bb39",
+                "name": "This id encodes the cell properties (value, column and row) to be represented as a unique variable",
+                "type": "Comments",
+                "owner": null,
+                "bounds": {
+                  "x": 90,
+                  "y": -370,
+                  "width": 220,
+                  "height": 110
+                }
+              },
+              "281d3355-c6a2-47e5-b8a9-c468f26c9281": {
+                "id": "281d3355-c6a2-47e5-b8a9-c468f26c9281",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -830,
+                  "y": -230,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "",
+                "constraint": "context Clause\ninv UniqueLiteral:\n  self.literal->forAll(l1, l2 | \n    l1 <> l2 implies (l1.variable <> l2.variable or l1.isNegated <> l2.isNegated)\n  )"
+              },
+              "034c920d-be8d-4574-86ee-bb75e3ae8eda": {
+                "id": "034c920d-be8d-4574-86ee-bb75e3ae8eda",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -830,
+                  "y": -100,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "",
+                "constraint": "context Clause\ninv NoTautology: \n  self.literal->forAll(l1, l2 | \n    (l1 <> l2 and l1.variable = l2.variable) \n    implies l1.isNegated = l2.isNegated\n  )"
+              }
+            },
+            "relationships": {
+              "979a0c2d-79d3-4b0c-a465-98c2cbe5ee0e": {
+                "id": "979a0c2d-79d3-4b0c-a465-98c2cbe5ee0e",
+                "name": "",
+                "type": "ClassComposition",
+                "owner": null,
+                "bounds": {
+                  "x": -395,
+                  "y": -310,
+                  "width": 18.90625,
+                  "height": 120.65625
+                },
+                "path": [
+                  {
+                    "x": 5,
+                    "y": 110
+                  },
+                  {
+                    "x": 5,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                  "multiplicity": "*",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                  "multiplicity": "1",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "1a9dd8dc-1297-4523-8c86-fe31c5140c50": {
+                "id": "1a9dd8dc-1297-4523-8c86-fe31c5140c50",
+                "name": null,
+                "type": "ClassBidirectional",
+                "owner": null,
+                "bounds": {
+                  "x": -150,
+                  "y": -140,
+                  "width": 103.90625,
+                  "height": 214.65625
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 175
+                  },
+                  {
+                    "x": 90,
+                    "y": 175
+                  },
+                  {
+                    "x": 90,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "000ba462-65ae-4fec-8f55-00816015218a",
+                  "multiplicity": "*",
+                  "role": "",
+                  "navigable": false
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                  "multiplicity": "1",
+                  "role": null,
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "0bbbcfce-a22d-4b00-a672-9f46722bb3f6": {
+                "id": "0bbbcfce-a22d-4b00-a672-9f46722bb3f6",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": -395,
+                  "y": -430,
+                  "width": 205,
+                  "height": 50
+                },
+                "path": [
+                  {
+                    "x": 205,
+                    "y": 10
+                  },
+                  {
+                    "x": 5,
+                    "y": 10
+                  },
+                  {
+                    "x": 5,
+                    "y": 50
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "ba3e8858-45be-4acc-9d1e-988980838248",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "7c9390dc-d359-430c-8a70-b1192eb698db",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "34df0610-57e7-4539-8629-ee07f1f38d7b": {
+                "id": "34df0610-57e7-4539-8629-ee07f1f38d7b",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": -310,
+                  "y": -290,
+                  "width": 120,
+                  "height": 141
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 120
+                  },
+                  {
+                    "x": 60,
+                    "y": 120
+                  },
+                  {
+                    "x": 60,
+                    "y": 10
+                  },
+                  {
+                    "x": 120,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Downright",
+                  "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Downleft",
+                  "element": "cc16000d-a002-48b0-a54a-691a5cc5d2b2",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "904f2743-db28-45fa-9be7-2a623d640bb9": {
+                "id": "904f2743-db28-45fa-9be7-2a623d640bb9",
+                "name": "",
+                "type": "ClassComposition",
+                "owner": null,
+                "bounds": {
+                  "x": -395,
+                  "y": -160,
+                  "width": 85,
+                  "height": 234.65625
+                },
+                "path": [
+                  {
+                    "x": 85,
+                    "y": 195
+                  },
+                  {
+                    "x": 5,
+                    "y": 195
+                  },
+                  {
+                    "x": 5,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "000ba462-65ae-4fec-8f55-00816015218a",
+                  "multiplicity": "0..*",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                  "multiplicity": "1",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "18678bb3-75f3-4955-9b37-42b588c713a2": {
+                "id": "18678bb3-75f3-4955-9b37-42b588c713a2",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -670,
+                  "y": -310,
+                  "width": 200,
+                  "height": 151
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 10
+                  },
+                  {
+                    "x": 100,
+                    "y": 10
+                  },
+                  {
+                    "x": 100,
+                    "y": 130
+                  },
+                  {
+                    "x": 200,
+                    "y": 130
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "5259e7f1-6695-4188-b073-6c0ea0952f2b",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Left",
+                  "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "a27c7236-1c8b-433d-a14e-5496d7671948": {
+                "id": "a27c7236-1c8b-433d-a14e-5496d7671948",
+                "name": "",
+                "type": "Link",
+                "owner": null,
+                "bounds": {
+                  "x": 20,
+                  "y": -260,
+                  "width": 185,
+                  "height": 106
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 85
+                  },
+                  {
+                    "x": 180,
+                    "y": 85
+                  },
+                  {
+                    "x": 180,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "43306ab3-d6cd-490e-8dd6-93b630368257",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "85f2cca2-78bf-4b3a-8975-b6af6168bb39",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "6d451cf7-fc0f-4d8d-b386-e4b86ab9037d": {
+                "id": "6d451cf7-fc0f-4d8d-b386-e4b86ab9037d",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -670,
+                  "y": -190,
+                  "width": 200,
+                  "height": 31
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 10
+                  },
+                  {
+                    "x": 200,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "281d3355-c6a2-47e5-b8a9-c468f26c9281",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Downleft",
+                  "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "d14362a9-aa63-4fd5-8b6f-a6cfbdde4dad": {
+                "id": "d14362a9-aa63-4fd5-8b6f-a6cfbdde4dad",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -670,
+                  "y": -190,
+                  "width": 200,
+                  "height": 161
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 140
+                  },
+                  {
+                    "x": 100,
+                    "y": 140
+                  },
+                  {
+                    "x": 100,
+                    "y": 10
+                  },
+                  {
+                    "x": 200,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "034c920d-be8d-4574-86ee-bb75e3ae8eda",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Left",
+                  "element": "5c31afb9-71f5-4e8a-a65e-98955f4a0a19",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              }
+            },
+            "assessments": {}
+          },
+          "lastUpdate": "2026-10-17T18:38:21.933Z",
+          "besserVersion": "8.1.0",
+          "editorVersion": "1.0.0"
+        }
+      ]
+    },
+    "settings": {
+      "defaultDiagramType": "ClassDiagram",
+      "autoSave": true,
+      "collaborationEnabled": false,
+      "perspectives": {
+        "ClassDiagram": true,
+        "ObjectDiagram": true,
+        "StateMachineDiagram": true,
+        "AgentDiagram": true,
+        "UserDiagram": true,
+        "GUINoCodeDiagram": true,
+        "QuantumCircuitDiagram": true,
+        "NNDiagram": true,
+        "BPMN": true,
+        "ComponentDiagram": true,
+        "DeploymentDiagram": true
+      },
+      "preferredInterface": "model"
+    }
+  },
+  "exportedAt": "2026-10-17T18:38:46.128Z",
+  "version": "2.0.0",
+  "besserVersion": "8.1.0",
+  "editorVersion": "1.0.0"
+}
