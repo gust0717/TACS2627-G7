@@ -35,7 +35,7 @@ Figure 1: Sudoku problem metamodel created in BESSER.
 
 The following diagram displays the class diagram created in Besser in order to represent the metamodel of the problem.
 
-The implamentation of the metamodel can be found in `besser_sudoku_problem_metamodel.py`.
+The implementation of the metamodel can be found in `Sudoku Problem DSL.py` and `Sudoku Problem DSL.json`.
 
 ### 1.3 OCL Constraints
 
