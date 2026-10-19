@@ -141,21 +141,3 @@ This means the problem DSL provides the board structure and puzzle constraints, 
 
 In other words, the board defines the domain of the problem, and the solution model defines how that domain is encoded as a satisfiability problem.
 
----
-
-## 2. Report (in progress!)
-For the metamodels, we drew inspiration from the intermediate model given, SAT - Satisfiability of Boolean formulas in CNF [[1]](#1).
-
-The main book of the course, Model-drivel software engineering in practice was essential to understand the concepts which lead us to the creation of the Concept list [[2]](#2).
-
-Since we used OCL in our work, the OCL 2.0 quick reference was used to help create and use quickly the OCL to express our constraints [[3]](#3).
-
-Modeling our project, we decided to go with a generic approach to adapt different Sudoku's boards sizes, but, in our examples and tests, we will work exclusively with a 4x4 board, that is because using bigger boards would cause us overflow problems in the Quantum phase.
-
-**References**
-<a id="1">[1]</a> https://en.wikipedia.org/wiki/Boolean_satisfiability_problem
-
-<a id="2">[2]</a> Brambilla, M., Cabot, J., & Wimmer, M. (2017). Model-driven software engineering in practice. Morgan & Claypool Publishers.
-
-<a id="3">[3]</a> https://www.yumpu.com/s/buQVEM6xXBag1KvA
-
