@@ -8,7 +8,7 @@
 
 ## Introduction
 For this project, our problem DSL focuses on **Sudoku**, which belongs to Class B: Search with Logical Constraints. Sudoku is a traditional game based 
-on numbers in which the final objective is to complete a board, to do that, the user must place each number only once per row and per column, as seen in 
+on numbers in which the final objective is to complete a board, to do that, the user must place each number only once per row, per column and per box, as seen in 
 Image 1. The base Sudoku board is a 4x4 square, but there are many variations of the game [[1]](#1). 
 
 <img width="1145" height="533" alt="image" src="https://github.com/user-attachments/assets/17ec27d4-0f14-4aaa-8113-9b3d1e65b966" />
