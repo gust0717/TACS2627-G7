@@ -94,4 +94,3 @@ With our metamodel, this problem instance can be represented by the following Be
 
 Figure 2: Example Sudoku problem instance represented as a BESSER object diagram.
 
----
