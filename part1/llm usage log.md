@@ -10,4 +10,6 @@ In the development of the Problem DSL, LLMs were used:
 * To write the problem instance: given the metamodel, the group specified a simple problem instance to a LLM (Copilot), which then wrote the text, which was reviewed by the group.
 
 In the development of the Solution DSL, LLMs were used:
-*
+* To understand the CNF formula: LLMs were used to study how the CNF formulas work and how the group could implement them
+* To create the Solution Metamodel in BESSER: the team first created the Solution Metamodel in draw.io. Then we used LLMs in order to convert said metamodel into a JSON that could be imported into BESSER, where the group would finalize the metamodel.
+* To create the OCL constraints: with the metamodel in BESSER, the team used LLMs in order to develop the OCL constraints of the solution metamodel, which were then added to metamodel.
