@@ -1,0 +1,4563 @@
+{
+  "project": {
+    "id": "project_1792060115043_1a2ajtis1",
+    "type": "Project",
+    "schemaVersion": 5,
+    "name": "TACS_Projeto_G7_-_Problem_Metamodel",
+    "description": "Modern workspace project for UML, GUI and quantum modeling.",
+    "owner": "BESSER User",
+    "createdAt": "2026-10-15T10:28:35.043Z",
+    "currentDiagramType": "ObjectDiagram",
+    "currentDiagramIndices": {
+      "ClassDiagram": 0,
+      "ObjectDiagram": 0,
+      "StateMachineDiagram": 0,
+      "AgentDiagram": 0,
+      "ComponentDiagram": 0,
+      "DeploymentDiagram": 0,
+      "NNDiagram": 0,
+      "UserDiagram": 0,
+      "GUINoCodeDiagram": 0,
+      "QuantumCircuitDiagram": 0,
+      "BPMN": 0
+    },
+    "diagrams": {
+      "ClassDiagram": [
+        {
+          "id": "2cd0eb43-d604-47eb-9e80-a206ae627773",
+          "title": "Sudoku",
+          "model": {
+            "version": "3.0.0",
+            "type": "ClassDiagram",
+            "size": {
+              "width": 1720,
+              "height": 960
+            },
+            "interactive": {
+              "elements": {},
+              "relationships": {}
+            },
+            "elements": {
+              "e80038b8-0e7b-48af-bb12-b0751a2dc949": {
+                "id": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                "name": "Board",
+                "type": "Class",
+                "owner": null,
+                "bounds": {
+                  "x": -600,
+                  "y": -300,
+                  "width": 160,
+                  "height": 130
+                },
+                "attributes": [
+                  "3caf0a6f-fc32-4304-bc3e-95fe72ac52bd",
+                  "59ecfa09-edd5-443c-bc24-9565d96233c9",
+                  "3fabc4fc-7531-41b7-bbf8-8ce67fe72292"
+                ],
+                "methods": []
+              },
+              "3caf0a6f-fc32-4304-bc3e-95fe72ac52bd": {
+                "id": "3caf0a6f-fc32-4304-bc3e-95fe72ac52bd",
+                "name": "boxSize",
+                "type": "ClassAttribute",
+                "owner": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                "bounds": {
+                  "x": -599.5,
+                  "y": -259.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "59ecfa09-edd5-443c-bc24-9565d96233c9": {
+                "id": "59ecfa09-edd5-443c-bc24-9565d96233c9",
+                "name": "name",
+                "type": "ClassAttribute",
+                "owner": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                "bounds": {
+                  "x": -599.5,
+                  "y": -229.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "str",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "3fabc4fc-7531-41b7-bbf8-8ce67fe72292": {
+                "id": "3fabc4fc-7531-41b7-bbf8-8ce67fe72292",
+                "name": "size",
+                "type": "ClassAttribute",
+                "owner": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                "bounds": {
+                  "x": -599.5,
+                  "y": -199.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "c5fc683a-024c-4f82-89db-44e33a4ea2ab": {
+                "id": "c5fc683a-024c-4f82-89db-44e33a4ea2ab",
+                "name": "BoxSizePositive",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -350,
+                  "y": -450,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "The size of the boxes must be positive",
+                "constraint": "context Board inv BoxSizePositive: self.boxSize >= 1"
+              },
+              "14a277d4-8e49-47fb-9011-0fe0e31d2edd": {
+                "id": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "name": "Cell",
+                "type": "Class",
+                "owner": null,
+                "bounds": {
+                  "x": 0,
+                  "y": -300,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "ff99f552-06ff-43a5-b923-bda4576ab7ef",
+                  "1e086b6a-8512-4dd4-ae3a-3b3d6cfa0fd1",
+                  "f136b5d8-776a-4566-8f23-45a75cc24cbd",
+                  "be228115-529d-48c4-803b-9135d558c26c",
+                  "9381258d-788a-4af2-b11a-cb296e4015db"
+                ],
+                "methods": []
+              },
+              "ff99f552-06ff-43a5-b923-bda4576ab7ef": {
+                "id": "ff99f552-06ff-43a5-b923-bda4576ab7ef",
+                "name": "box",
+                "type": "ClassAttribute",
+                "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "bounds": {
+                  "x": 0.5,
+                  "y": -259.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1e086b6a-8512-4dd4-ae3a-3b3d6cfa0fd1": {
+                "id": "1e086b6a-8512-4dd4-ae3a-3b3d6cfa0fd1",
+                "name": "column",
+                "type": "ClassAttribute",
+                "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "bounds": {
+                  "x": 0.5,
+                  "y": -229.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "f136b5d8-776a-4566-8f23-45a75cc24cbd": {
+                "id": "f136b5d8-776a-4566-8f23-45a75cc24cbd",
+                "name": "isGiven",
+                "type": "ClassAttribute",
+                "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "bounds": {
+                  "x": 0.5,
+                  "y": -199.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "be228115-529d-48c4-803b-9135d558c26c": {
+                "id": "be228115-529d-48c4-803b-9135d558c26c",
+                "name": "row",
+                "type": "ClassAttribute",
+                "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "bounds": {
+                  "x": 0.5,
+                  "y": -169.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "9381258d-788a-4af2-b11a-cb296e4015db": {
+                "id": "9381258d-788a-4af2-b11a-cb296e4015db",
+                "name": "value",
+                "type": "ClassAttribute",
+                "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "bounds": {
+                  "x": 0.5,
+                  "y": -139.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": true,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "08580f2f-f15b-4f58-89c1-dd046dbd742d": {
+                "id": "08580f2f-f15b-4f58-89c1-dd046dbd742d",
+                "name": "SizeConsistent",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -350,
+                  "y": -160,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "The size of the board must be the sizes of the boxes squared.",
+                "constraint": "context Board  inv SizeConsistent: self.size = self.boxSize * self.boxSize"
+              },
+              "2457c27f-24b2-43f4-a1f6-f3faac2c6d6d": {
+                "id": "2457c27f-24b2-43f4-a1f6-f3faac2c6d6d",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": 0,
+                  "y": -450,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "The cell must be given on not",
+                "constraint": "context Cell\ninv GivenFlagValid: self.isGiven = True or self.isGiven = False "
+              },
+              "73e3110e-5fa9-48ee-8b7f-bf6d41819fc6": {
+                "id": "73e3110e-5fa9-48ee-8b7f-bf6d41819fc6",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -600,
+                  "y": -460,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "The amount of cells must be equal to size squared",
+                "constraint": "context Board\ninv CellCount: self.cell->size() = self.size * self.size"
+              },
+              "171a1ab2-8bd1-4132-950b-372f0550c3f6": {
+                "id": "171a1ab2-8bd1-4132-950b-372f0550c3f6",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -590,
+                  "y": -80,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "Each cell has an unique position",
+                "constraint": "context Board\ninv UniquePositions: self.cell->forAll(c1, c2 | c1 <> c2 implies (c1.row <> c2.row or c1.column <> c2.column))"
+              },
+              "ceb419e8-d028-487e-93c4-7ac693167e2a": {
+                "id": "ceb419e8-d028-487e-93c4-7ac693167e2a",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": -840,
+                  "y": -290,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "Different cells in the same row, column or box must have different value, as long as they are not empty",
+                "constraint": "context Board\ninv ConsistentValues: self.cell->forAll(c1, c2 | (c1 <> c2 and not c1.value.oclIsUndefined() and not c2.value.oclIsUndefined() and (c1.row = c2.row or c1.column = c2.column or c1.box = c2.box)) implies c1.value <> c2.value)"
+              },
+              "90e5354e-69af-414d-8831-cb99859efe83": {
+                "id": "90e5354e-69af-414d-8831-cb99859efe83",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": 10,
+                  "y": -20,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "The column and row fo the cell must be valid",
+                "constraint": "context Cell\ninv PositionValid: self.row >= 0 and self.row < self.board.size and self.column >= 0 and self.column < self.board.size "
+              },
+              "954d17f9-521c-47de-b5c2-8edd877b94e7": {
+                "id": "954d17f9-521c-47de-b5c2-8edd877b94e7",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": 240,
+                  "y": -360,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "The cell value must be empty or be between 1 and board size",
+                "constraint": "context Cell\ninv ValueValid: self.value.oclIsUndefined() or (self.value >= 1 and self.value <= self.board.size)"
+              },
+              "674ef263-cf44-46ed-9500-f0a80ea35471": {
+                "id": "674ef263-cf44-46ed-9500-f0a80ea35471",
+                "name": "",
+                "type": "ClassOCLConstraint",
+                "owner": null,
+                "bounds": {
+                  "x": 240,
+                  "y": -220,
+                  "width": 160,
+                  "height": 100
+                },
+                "description": "",
+                "constraint": "context Cell inv BoxCoherent: self.box = (self.row / self.board.boxSize).floor() * self.board.boxSize + (self.column / self.board.boxSize).floor()"
+              }
+            },
+            "relationships": {
+              "b94cae1d-8aa2-4a49-ab1d-bf0386724b5d": {
+                "id": "b94cae1d-8aa2-4a49-ab1d-bf0386724b5d",
+                "name": "Cell_Board",
+                "type": "ClassComposition",
+                "owner": null,
+                "bounds": {
+                  "x": -440,
+                  "y": -245,
+                  "width": 440,
+                  "height": 48.60000038146973
+                },
+                "path": [
+                  {
+                    "x": 440,
+                    "y": 10
+                  },
+                  {
+                    "x": 0,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "multiplicity": "0..*",
+                  "role": "cell",
+                  "navigable": true,
+                  "bounds": {
+                    "x": 0,
+                    "y": -205,
+                    "width": 0,
+                    "height": 0
+                  }
+                },
+                "target": {
+                  "direction": "Right",
+                  "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "multiplicity": "1",
+                  "role": "board",
+                  "navigable": true,
+                  "bounds": {
+                    "x": -440,
+                    "y": -235,
+                    "width": 0,
+                    "height": 0
+                  }
+                },
+                "isManuallyLayouted": false
+              },
+              "eef16dca-6a44-4c20-995a-2d9069654784": {
+                "id": "eef16dca-6a44-4c20-995a-2d9069654784",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -440,
+                  "y": -410,
+                  "width": 90,
+                  "height": 196
+                },
+                "path": [
+                  {
+                    "x": 90,
+                    "y": 10
+                  },
+                  {
+                    "x": 45,
+                    "y": 10
+                  },
+                  {
+                    "x": 45,
+                    "y": 175
+                  },
+                  {
+                    "x": 0,
+                    "y": 175
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "c5fc683a-024c-4f82-89db-44e33a4ea2ab",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Right",
+                  "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "c0e79644-5f04-4ca2-af5d-2765764d3101": {
+                "id": "c0e79644-5f04-4ca2-af5d-2765764d3101",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -440,
+                  "y": -245,
+                  "width": 90,
+                  "height": 156
+                },
+                "path": [
+                  {
+                    "x": 90,
+                    "y": 135
+                  },
+                  {
+                    "x": 45,
+                    "y": 135
+                  },
+                  {
+                    "x": 45,
+                    "y": 10
+                  },
+                  {
+                    "x": 0,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "08580f2f-f15b-4f58-89c1-dd046dbd742d",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Right",
+                  "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "429a8d69-5e45-499e-956b-3676735d6bcf": {
+                "id": "429a8d69-5e45-499e-956b-3676735d6bcf",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": 75,
+                  "y": -350,
+                  "width": 10,
+                  "height": 50
+                },
+                "path": [
+                  {
+                    "x": 5,
+                    "y": 0
+                  },
+                  {
+                    "x": 5,
+                    "y": 50
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "2457c27f-24b2-43f4-a1f6-f3faac2c6d6d",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "79bf0846-bb3d-4e08-9f07-18a21f5cdd68": {
+                "id": "79bf0846-bb3d-4e08-9f07-18a21f5cdd68",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -525,
+                  "y": -360,
+                  "width": 10,
+                  "height": 60
+                },
+                "path": [
+                  {
+                    "x": 5,
+                    "y": 0
+                  },
+                  {
+                    "x": 5,
+                    "y": 60
+                  }
+                ],
+                "source": {
+                  "direction": "Down",
+                  "element": "73e3110e-5fa9-48ee-8b7f-bf6d41819fc6",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Up",
+                  "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "c0da5d90-5c19-492f-8073-de3d08bd2404": {
+                "id": "c0da5d90-5c19-492f-8073-de3d08bd2404",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -520,
+                  "y": -170,
+                  "width": 10,
+                  "height": 90
+                },
+                "path": [
+                  {
+                    "x": 5,
+                    "y": 90
+                  },
+                  {
+                    "x": 5,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "171a1ab2-8bd1-4132-950b-372f0550c3f6",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "65ec3b08-b845-4bc2-b2f8-19af6ef74314": {
+                "id": "65ec3b08-b845-4bc2-b2f8-19af6ef74314",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": -680,
+                  "y": -250,
+                  "width": 80,
+                  "height": 31
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 10
+                  },
+                  {
+                    "x": 80,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Right",
+                  "element": "ceb419e8-d028-487e-93c4-7ac693167e2a",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Left",
+                  "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "9ea1a064-2790-4817-93a2-bb5c29e2eaad": {
+                "id": "9ea1a064-2790-4817-93a2-bb5c29e2eaad",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": 80,
+                  "y": -110,
+                  "width": 10,
+                  "height": 90
+                },
+                "path": [
+                  {
+                    "x": 5,
+                    "y": 90
+                  },
+                  {
+                    "x": 5,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "90e5354e-69af-414d-8831-cb99859efe83",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "7f43c95c-5ed3-4cba-b6be-44c05f8e98a1": {
+                "id": "7f43c95c-5ed3-4cba-b6be-44c05f8e98a1",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": 160,
+                  "y": -290,
+                  "width": 80,
+                  "height": 31
+                },
+                "path": [
+                  {
+                    "x": 80,
+                    "y": 10
+                  },
+                  {
+                    "x": 0,
+                    "y": 10
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "954d17f9-521c-47de-b5c2-8edd877b94e7",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Upright",
+                  "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              },
+              "4f9eb405-a5a6-41cc-bf2a-c47818548df9": {
+                "id": "4f9eb405-a5a6-41cc-bf2a-c47818548df9",
+                "name": "",
+                "type": "ClassOCLLink",
+                "owner": null,
+                "bounds": {
+                  "x": 115,
+                  "y": -180,
+                  "width": 125,
+                  "height": 110
+                },
+                "path": [
+                  {
+                    "x": 125,
+                    "y": 10
+                  },
+                  {
+                    "x": 85,
+                    "y": 10
+                  },
+                  {
+                    "x": 85,
+                    "y": 110
+                  },
+                  {
+                    "x": 5,
+                    "y": 110
+                  },
+                  {
+                    "x": 5,
+                    "y": 70
+                  }
+                ],
+                "source": {
+                  "direction": "Left",
+                  "element": "674ef263-cf44-46ed-9500-f0a80ea35471",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "target": {
+                  "direction": "Bottomright",
+                  "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "multiplicity": "",
+                  "role": "",
+                  "navigable": true
+                },
+                "isManuallyLayouted": false
+              }
+            },
+            "assessments": {}
+          },
+          "lastUpdate": "2026-10-15T13:21:41.665Z"
+        }
+      ],
+      "ObjectDiagram": [
+        {
+          "id": "e08d825a-b565-45ae-88a8-3782ec9c5bd1",
+          "title": "Object Diagram",
+          "model": {
+            "version": "3.0.0",
+            "type": "ObjectDiagram",
+            "size": {
+              "width": 1140,
+              "height": 1840
+            },
+            "interactive": {
+              "elements": {},
+              "relationships": {}
+            },
+            "elements": {
+              "a549f28f-5c57-4e27-87bf-fb063a8f6c9e": {
+                "id": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e",
+                "name": "sudoku_2x2",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -220,
+                  "y": -290,
+                  "width": 160,
+                  "height": 130
+                },
+                "attributes": [
+                  "1387f1ad-3825-423d-a614-298514162cce",
+                  "2423de20-429d-40e1-81ed-f279a58e5c5c",
+                  "f4534958-786f-4e67-bb87-9624c993ef2a"
+                ],
+                "methods": [],
+                "classId": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                "className": "Board"
+              },
+              "1387f1ad-3825-423d-a614-298514162cce": {
+                "id": "1387f1ad-3825-423d-a614-298514162cce",
+                "name": "boxSize = 2",
+                "type": "ObjectAttribute",
+                "owner": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e",
+                "bounds": {
+                  "x": -219.5,
+                  "y": -249.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "2423de20-429d-40e1-81ed-f279a58e5c5c": {
+                "id": "2423de20-429d-40e1-81ed-f279a58e5c5c",
+                "name": "name = sudoku_2x2",
+                "type": "ObjectAttribute",
+                "owner": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e",
+                "bounds": {
+                  "x": -219.5,
+                  "y": -219.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "str",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "f4534958-786f-4e67-bb87-9624c993ef2a": {
+                "id": "f4534958-786f-4e67-bb87-9624c993ef2a",
+                "name": "size = 4",
+                "type": "ObjectAttribute",
+                "owner": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e",
+                "bounds": {
+                  "x": -219.5,
+                  "y": -189.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "bc03fb06-436c-422f-8418-a2fbd114f50c": {
+                "id": "bc03fb06-436c-422f-8418-a2fbd114f50c",
+                "name": "cell_0_0",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -230,
+                  "y": -30,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "4e7f2faa-fed8-4855-bffc-66ab69112b69",
+                  "ced49bd8-8833-4377-8e36-5f53328e060d",
+                  "dae8ce76-7153-4212-a4c2-e3839432c353",
+                  "ce1ee27b-fddc-4642-8401-eb67037205dc",
+                  "5a5fba04-377d-487e-8614-a47e9fa87cd4"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "4e7f2faa-fed8-4855-bffc-66ab69112b69": {
+                "id": "4e7f2faa-fed8-4855-bffc-66ab69112b69",
+                "name": "box = 0",
+                "type": "ObjectAttribute",
+                "owner": "bc03fb06-436c-422f-8418-a2fbd114f50c",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 10.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "ced49bd8-8833-4377-8e36-5f53328e060d": {
+                "id": "ced49bd8-8833-4377-8e36-5f53328e060d",
+                "name": "column = 0",
+                "type": "ObjectAttribute",
+                "owner": "bc03fb06-436c-422f-8418-a2fbd114f50c",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 40.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "dae8ce76-7153-4212-a4c2-e3839432c353": {
+                "id": "dae8ce76-7153-4212-a4c2-e3839432c353",
+                "name": "isGiven = True",
+                "type": "ObjectAttribute",
+                "owner": "bc03fb06-436c-422f-8418-a2fbd114f50c",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 70.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "ce1ee27b-fddc-4642-8401-eb67037205dc": {
+                "id": "ce1ee27b-fddc-4642-8401-eb67037205dc",
+                "name": "row = 0",
+                "type": "ObjectAttribute",
+                "owner": "bc03fb06-436c-422f-8418-a2fbd114f50c",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 100.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "5a5fba04-377d-487e-8614-a47e9fa87cd4": {
+                "id": "5a5fba04-377d-487e-8614-a47e9fa87cd4",
+                "name": "value = 1",
+                "type": "ObjectAttribute",
+                "owner": "bc03fb06-436c-422f-8418-a2fbd114f50c",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 130.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "f515a9a5-f32a-4ae7-8cc4-e46e043e1224": {
+                "id": "f515a9a5-f32a-4ae7-8cc4-e46e043e1224",
+                "name": "cell_0_1",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -30,
+                  "y": -30,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "0656662d-3609-41cb-8dcd-8ea5a49ae9a4",
+                  "88fa3dd1-79e9-4746-8d7e-44dbb76d2ecb",
+                  "fcaba3fc-2cf1-47d3-815b-97833468eb25",
+                  "b4723ee5-cb68-4e27-a617-225adad99946",
+                  "53b433db-4bb9-492b-b42a-7fd530f26564"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "0656662d-3609-41cb-8dcd-8ea5a49ae9a4": {
+                "id": "0656662d-3609-41cb-8dcd-8ea5a49ae9a4",
+                "name": "box = 0",
+                "type": "ObjectAttribute",
+                "owner": "f515a9a5-f32a-4ae7-8cc4-e46e043e1224",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 10.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "88fa3dd1-79e9-4746-8d7e-44dbb76d2ecb": {
+                "id": "88fa3dd1-79e9-4746-8d7e-44dbb76d2ecb",
+                "name": "column = 1",
+                "type": "ObjectAttribute",
+                "owner": "f515a9a5-f32a-4ae7-8cc4-e46e043e1224",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 40.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "fcaba3fc-2cf1-47d3-815b-97833468eb25": {
+                "id": "fcaba3fc-2cf1-47d3-815b-97833468eb25",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "f515a9a5-f32a-4ae7-8cc4-e46e043e1224",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 70.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "b4723ee5-cb68-4e27-a617-225adad99946": {
+                "id": "b4723ee5-cb68-4e27-a617-225adad99946",
+                "name": "row = 0",
+                "type": "ObjectAttribute",
+                "owner": "f515a9a5-f32a-4ae7-8cc4-e46e043e1224",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 100.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "53b433db-4bb9-492b-b42a-7fd530f26564": {
+                "id": "53b433db-4bb9-492b-b42a-7fd530f26564",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "f515a9a5-f32a-4ae7-8cc4-e46e043e1224",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 130.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1f6111f7-f36e-4fda-8dfe-827ada5d3db7": {
+                "id": "1f6111f7-f36e-4fda-8dfe-827ada5d3db7",
+                "name": "cell_0_2",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 180,
+                  "y": -30,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "e8e75072-8eb3-4d7b-929f-e7fbf52c7dd0",
+                  "fd801bb4-a573-4ac9-a350-b7ac5183324a",
+                  "6503a1e7-a0ec-40cd-bd8d-b4b90ded0373",
+                  "d6bbfa47-79c7-4987-8fae-2860cc8a928a",
+                  "27108186-f254-4c4c-8c51-a4f8e2e8068f"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "e8e75072-8eb3-4d7b-929f-e7fbf52c7dd0": {
+                "id": "e8e75072-8eb3-4d7b-929f-e7fbf52c7dd0",
+                "name": "box = 1",
+                "type": "ObjectAttribute",
+                "owner": "1f6111f7-f36e-4fda-8dfe-827ada5d3db7",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 10.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "fd801bb4-a573-4ac9-a350-b7ac5183324a": {
+                "id": "fd801bb4-a573-4ac9-a350-b7ac5183324a",
+                "name": "column = 2",
+                "type": "ObjectAttribute",
+                "owner": "1f6111f7-f36e-4fda-8dfe-827ada5d3db7",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 40.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "6503a1e7-a0ec-40cd-bd8d-b4b90ded0373": {
+                "id": "6503a1e7-a0ec-40cd-bd8d-b4b90ded0373",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "1f6111f7-f36e-4fda-8dfe-827ada5d3db7",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 70.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "d6bbfa47-79c7-4987-8fae-2860cc8a928a": {
+                "id": "d6bbfa47-79c7-4987-8fae-2860cc8a928a",
+                "name": "row = 0",
+                "type": "ObjectAttribute",
+                "owner": "1f6111f7-f36e-4fda-8dfe-827ada5d3db7",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 100.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "27108186-f254-4c4c-8c51-a4f8e2e8068f": {
+                "id": "27108186-f254-4c4c-8c51-a4f8e2e8068f",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "1f6111f7-f36e-4fda-8dfe-827ada5d3db7",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 130.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "0e04d5d0-3554-42e0-9704-1620619d38c8": {
+                "id": "0e04d5d0-3554-42e0-9704-1620619d38c8",
+                "name": "cell_0_3",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 390,
+                  "y": -30,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "d1c38241-20b5-49ee-a531-dc6210299210",
+                  "34b43308-97fd-4efd-9512-2123fc2a44e0",
+                  "645551b4-2ada-4f22-ac2e-47cdd1e30507",
+                  "a892460b-7bf8-4961-bb62-377d1c84edc5",
+                  "033ac11a-30c0-4cae-8fe7-f3ebab49b2ee"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "d1c38241-20b5-49ee-a531-dc6210299210": {
+                "id": "d1c38241-20b5-49ee-a531-dc6210299210",
+                "name": "box = 1",
+                "type": "ObjectAttribute",
+                "owner": "0e04d5d0-3554-42e0-9704-1620619d38c8",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 10.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "34b43308-97fd-4efd-9512-2123fc2a44e0": {
+                "id": "34b43308-97fd-4efd-9512-2123fc2a44e0",
+                "name": "column = 3",
+                "type": "ObjectAttribute",
+                "owner": "0e04d5d0-3554-42e0-9704-1620619d38c8",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 40.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "645551b4-2ada-4f22-ac2e-47cdd1e30507": {
+                "id": "645551b4-2ada-4f22-ac2e-47cdd1e30507",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "0e04d5d0-3554-42e0-9704-1620619d38c8",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 70.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "a892460b-7bf8-4961-bb62-377d1c84edc5": {
+                "id": "a892460b-7bf8-4961-bb62-377d1c84edc5",
+                "name": "row = 0",
+                "type": "ObjectAttribute",
+                "owner": "0e04d5d0-3554-42e0-9704-1620619d38c8",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 100.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "033ac11a-30c0-4cae-8fe7-f3ebab49b2ee": {
+                "id": "033ac11a-30c0-4cae-8fe7-f3ebab49b2ee",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "0e04d5d0-3554-42e0-9704-1620619d38c8",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 130.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "df5e5c09-b835-4f0f-84e0-2d683e915d7b": {
+                "id": "df5e5c09-b835-4f0f-84e0-2d683e915d7b",
+                "name": "cell_1_0",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -230,
+                  "y": 220,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "17da3b84-52a1-4c4b-a79b-63d2ec07e99f",
+                  "bd842873-fdf5-4b63-bc86-0a161d303146",
+                  "76aa1173-6c0b-43fe-be7c-474bd61f62b5",
+                  "b5beab78-d5c5-40ff-a959-9cdf6ee3b6a5",
+                  "96356d37-769d-46b5-8200-565dc90128a3"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "17da3b84-52a1-4c4b-a79b-63d2ec07e99f": {
+                "id": "17da3b84-52a1-4c4b-a79b-63d2ec07e99f",
+                "name": "box = 0",
+                "type": "ObjectAttribute",
+                "owner": "df5e5c09-b835-4f0f-84e0-2d683e915d7b",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 260.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "bd842873-fdf5-4b63-bc86-0a161d303146": {
+                "id": "bd842873-fdf5-4b63-bc86-0a161d303146",
+                "name": "column = 0",
+                "type": "ObjectAttribute",
+                "owner": "df5e5c09-b835-4f0f-84e0-2d683e915d7b",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 290.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "76aa1173-6c0b-43fe-be7c-474bd61f62b5": {
+                "id": "76aa1173-6c0b-43fe-be7c-474bd61f62b5",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "df5e5c09-b835-4f0f-84e0-2d683e915d7b",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 320.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "b5beab78-d5c5-40ff-a959-9cdf6ee3b6a5": {
+                "id": "b5beab78-d5c5-40ff-a959-9cdf6ee3b6a5",
+                "name": "row = 1",
+                "type": "ObjectAttribute",
+                "owner": "df5e5c09-b835-4f0f-84e0-2d683e915d7b",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 350.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "96356d37-769d-46b5-8200-565dc90128a3": {
+                "id": "96356d37-769d-46b5-8200-565dc90128a3",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "df5e5c09-b835-4f0f-84e0-2d683e915d7b",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 380.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "291168c4-49d2-4598-84dc-02b54398cb95": {
+                "id": "291168c4-49d2-4598-84dc-02b54398cb95",
+                "name": "cell_1_1",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -30,
+                  "y": 220,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "31c6bca2-1bbf-44db-a6de-1ea76d78c26b",
+                  "1848afc6-2ec1-44cc-83b9-6e0918afe284",
+                  "359ad3b6-e5c5-49c3-95b8-ee287c2a8162",
+                  "d29b9c22-0b25-4e6a-80c1-805763709114",
+                  "be40bd8a-1f4a-4733-a7b2-b6e8704b0ee3"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "31c6bca2-1bbf-44db-a6de-1ea76d78c26b": {
+                "id": "31c6bca2-1bbf-44db-a6de-1ea76d78c26b",
+                "name": "box = 0",
+                "type": "ObjectAttribute",
+                "owner": "291168c4-49d2-4598-84dc-02b54398cb95",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 260.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1848afc6-2ec1-44cc-83b9-6e0918afe284": {
+                "id": "1848afc6-2ec1-44cc-83b9-6e0918afe284",
+                "name": "column = 1",
+                "type": "ObjectAttribute",
+                "owner": "291168c4-49d2-4598-84dc-02b54398cb95",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 290.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "359ad3b6-e5c5-49c3-95b8-ee287c2a8162": {
+                "id": "359ad3b6-e5c5-49c3-95b8-ee287c2a8162",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "291168c4-49d2-4598-84dc-02b54398cb95",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 320.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "d29b9c22-0b25-4e6a-80c1-805763709114": {
+                "id": "d29b9c22-0b25-4e6a-80c1-805763709114",
+                "name": "row = 1",
+                "type": "ObjectAttribute",
+                "owner": "291168c4-49d2-4598-84dc-02b54398cb95",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 350.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "be40bd8a-1f4a-4733-a7b2-b6e8704b0ee3": {
+                "id": "be40bd8a-1f4a-4733-a7b2-b6e8704b0ee3",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "291168c4-49d2-4598-84dc-02b54398cb95",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 380.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "23720aa3-e23f-4dee-b57b-eb4d2527ba28": {
+                "id": "23720aa3-e23f-4dee-b57b-eb4d2527ba28",
+                "name": "cell_1_2",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 180,
+                  "y": 220,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "171cf74c-cbd3-4b74-882d-070596f4ed00",
+                  "471ffcba-c27a-4749-b72e-e3db7faa107d",
+                  "25b3d754-d1e3-41fe-8f09-e3156ec18859",
+                  "6b9ac4f0-53e0-4591-8893-9ffc6744d7a5",
+                  "11ef5711-f7ba-44bd-a75d-9bca61ea76f5"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "171cf74c-cbd3-4b74-882d-070596f4ed00": {
+                "id": "171cf74c-cbd3-4b74-882d-070596f4ed00",
+                "name": "box = 1",
+                "type": "ObjectAttribute",
+                "owner": "23720aa3-e23f-4dee-b57b-eb4d2527ba28",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 260.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "471ffcba-c27a-4749-b72e-e3db7faa107d": {
+                "id": "471ffcba-c27a-4749-b72e-e3db7faa107d",
+                "name": "column = 2",
+                "type": "ObjectAttribute",
+                "owner": "23720aa3-e23f-4dee-b57b-eb4d2527ba28",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 290.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "25b3d754-d1e3-41fe-8f09-e3156ec18859": {
+                "id": "25b3d754-d1e3-41fe-8f09-e3156ec18859",
+                "name": "isGiven = True",
+                "type": "ObjectAttribute",
+                "owner": "23720aa3-e23f-4dee-b57b-eb4d2527ba28",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 320.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "6b9ac4f0-53e0-4591-8893-9ffc6744d7a5": {
+                "id": "6b9ac4f0-53e0-4591-8893-9ffc6744d7a5",
+                "name": "row = 1",
+                "type": "ObjectAttribute",
+                "owner": "23720aa3-e23f-4dee-b57b-eb4d2527ba28",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 350.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "11ef5711-f7ba-44bd-a75d-9bca61ea76f5": {
+                "id": "11ef5711-f7ba-44bd-a75d-9bca61ea76f5",
+                "name": "value = 2",
+                "type": "ObjectAttribute",
+                "owner": "23720aa3-e23f-4dee-b57b-eb4d2527ba28",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 380.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "60089e90-e81a-4cda-b5e8-e1d68316d15c": {
+                "id": "60089e90-e81a-4cda-b5e8-e1d68316d15c",
+                "name": "cell_1_3",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 390,
+                  "y": 220,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "6d11d384-6dd4-4aaf-b6a9-a559a874515d",
+                  "92b76f5e-9e02-4ed5-a3f0-c1829b544c11",
+                  "41e6f665-4a30-4374-a547-00ac97ec807e",
+                  "08be208d-da42-4b5f-8da5-180c55c5f378",
+                  "72ab50db-899e-417d-aef5-3d9ea9439513"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "6d11d384-6dd4-4aaf-b6a9-a559a874515d": {
+                "id": "6d11d384-6dd4-4aaf-b6a9-a559a874515d",
+                "name": "box = 1",
+                "type": "ObjectAttribute",
+                "owner": "60089e90-e81a-4cda-b5e8-e1d68316d15c",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 260.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "92b76f5e-9e02-4ed5-a3f0-c1829b544c11": {
+                "id": "92b76f5e-9e02-4ed5-a3f0-c1829b544c11",
+                "name": "column = 3",
+                "type": "ObjectAttribute",
+                "owner": "60089e90-e81a-4cda-b5e8-e1d68316d15c",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 290.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "41e6f665-4a30-4374-a547-00ac97ec807e": {
+                "id": "41e6f665-4a30-4374-a547-00ac97ec807e",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "60089e90-e81a-4cda-b5e8-e1d68316d15c",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 320.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "08be208d-da42-4b5f-8da5-180c55c5f378": {
+                "id": "08be208d-da42-4b5f-8da5-180c55c5f378",
+                "name": "row = 1",
+                "type": "ObjectAttribute",
+                "owner": "60089e90-e81a-4cda-b5e8-e1d68316d15c",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 350.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "72ab50db-899e-417d-aef5-3d9ea9439513": {
+                "id": "72ab50db-899e-417d-aef5-3d9ea9439513",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "60089e90-e81a-4cda-b5e8-e1d68316d15c",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 380.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "04295e10-a127-40ab-bc4d-9030c763243e": {
+                "id": "04295e10-a127-40ab-bc4d-9030c763243e",
+                "name": "cell_2_0",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -230,
+                  "y": 470,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "06406ec3-618c-4597-8741-73fd1114a2a5",
+                  "59330bdc-1ed8-477b-b78a-3d509bb5845f",
+                  "156e9733-f163-4a1f-8519-ff8a5b793847",
+                  "f61d69b6-770d-4c2a-bfc4-1af0dfa433fc",
+                  "0acdf5f7-11b5-4ed3-90fa-a032a26e7cdb"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "06406ec3-618c-4597-8741-73fd1114a2a5": {
+                "id": "06406ec3-618c-4597-8741-73fd1114a2a5",
+                "name": "box = 2",
+                "type": "ObjectAttribute",
+                "owner": "04295e10-a127-40ab-bc4d-9030c763243e",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 510.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "59330bdc-1ed8-477b-b78a-3d509bb5845f": {
+                "id": "59330bdc-1ed8-477b-b78a-3d509bb5845f",
+                "name": "column = 0",
+                "type": "ObjectAttribute",
+                "owner": "04295e10-a127-40ab-bc4d-9030c763243e",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 540.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "156e9733-f163-4a1f-8519-ff8a5b793847": {
+                "id": "156e9733-f163-4a1f-8519-ff8a5b793847",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "04295e10-a127-40ab-bc4d-9030c763243e",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 570.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "f61d69b6-770d-4c2a-bfc4-1af0dfa433fc": {
+                "id": "f61d69b6-770d-4c2a-bfc4-1af0dfa433fc",
+                "name": "row = 2",
+                "type": "ObjectAttribute",
+                "owner": "04295e10-a127-40ab-bc4d-9030c763243e",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 600.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "0acdf5f7-11b5-4ed3-90fa-a032a26e7cdb": {
+                "id": "0acdf5f7-11b5-4ed3-90fa-a032a26e7cdb",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "04295e10-a127-40ab-bc4d-9030c763243e",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 630.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "7257cf7c-16d0-4b07-89c3-3633e3e60a86": {
+                "id": "7257cf7c-16d0-4b07-89c3-3633e3e60a86",
+                "name": "cell_2_1",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -30,
+                  "y": 470,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "5e7474ff-7a85-4f89-89a0-a840efd89271",
+                  "3061ad32-b47a-46eb-9644-128482eaca8e",
+                  "a68a11fd-ec82-4aee-8c6b-c6efd02ab1c5",
+                  "4c994e07-dd3c-43ff-8ae7-13287e07cadd",
+                  "cbc9f1c5-295b-4d37-ac12-63495752294d"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "5e7474ff-7a85-4f89-89a0-a840efd89271": {
+                "id": "5e7474ff-7a85-4f89-89a0-a840efd89271",
+                "name": "box = 2",
+                "type": "ObjectAttribute",
+                "owner": "7257cf7c-16d0-4b07-89c3-3633e3e60a86",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 510.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "3061ad32-b47a-46eb-9644-128482eaca8e": {
+                "id": "3061ad32-b47a-46eb-9644-128482eaca8e",
+                "name": "column = 1",
+                "type": "ObjectAttribute",
+                "owner": "7257cf7c-16d0-4b07-89c3-3633e3e60a86",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 540.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "a68a11fd-ec82-4aee-8c6b-c6efd02ab1c5": {
+                "id": "a68a11fd-ec82-4aee-8c6b-c6efd02ab1c5",
+                "name": "isGiven = True",
+                "type": "ObjectAttribute",
+                "owner": "7257cf7c-16d0-4b07-89c3-3633e3e60a86",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 570.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "4c994e07-dd3c-43ff-8ae7-13287e07cadd": {
+                "id": "4c994e07-dd3c-43ff-8ae7-13287e07cadd",
+                "name": "row = 2",
+                "type": "ObjectAttribute",
+                "owner": "7257cf7c-16d0-4b07-89c3-3633e3e60a86",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 600.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "cbc9f1c5-295b-4d37-ac12-63495752294d": {
+                "id": "cbc9f1c5-295b-4d37-ac12-63495752294d",
+                "name": "value = 3",
+                "type": "ObjectAttribute",
+                "owner": "7257cf7c-16d0-4b07-89c3-3633e3e60a86",
+                "bounds": {
+                  "x": -29.5,
+                  "y": 630.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "51ddb0e2-042d-4f3d-b59f-737cf228d50b": {
+                "id": "51ddb0e2-042d-4f3d-b59f-737cf228d50b",
+                "name": "cell_2_2",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 180,
+                  "y": 470,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "44490b45-bad2-4661-9eaf-cadfdcf5f02f",
+                  "8c649e07-d525-4a2f-807b-5d2e16359198",
+                  "bab52ce5-8e19-4b03-a4b1-2f141c10ec5d",
+                  "5ad927ed-2aeb-4aec-925a-5f3e24cbc047",
+                  "aabc9b98-7532-4ebd-9c9a-a89df111341c"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "44490b45-bad2-4661-9eaf-cadfdcf5f02f": {
+                "id": "44490b45-bad2-4661-9eaf-cadfdcf5f02f",
+                "name": "box = 3",
+                "type": "ObjectAttribute",
+                "owner": "51ddb0e2-042d-4f3d-b59f-737cf228d50b",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 510.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "8c649e07-d525-4a2f-807b-5d2e16359198": {
+                "id": "8c649e07-d525-4a2f-807b-5d2e16359198",
+                "name": "column = 2",
+                "type": "ObjectAttribute",
+                "owner": "51ddb0e2-042d-4f3d-b59f-737cf228d50b",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 540.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "bab52ce5-8e19-4b03-a4b1-2f141c10ec5d": {
+                "id": "bab52ce5-8e19-4b03-a4b1-2f141c10ec5d",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "51ddb0e2-042d-4f3d-b59f-737cf228d50b",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 570.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "5ad927ed-2aeb-4aec-925a-5f3e24cbc047": {
+                "id": "5ad927ed-2aeb-4aec-925a-5f3e24cbc047",
+                "name": "row = 2",
+                "type": "ObjectAttribute",
+                "owner": "51ddb0e2-042d-4f3d-b59f-737cf228d50b",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 600.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "aabc9b98-7532-4ebd-9c9a-a89df111341c": {
+                "id": "aabc9b98-7532-4ebd-9c9a-a89df111341c",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "51ddb0e2-042d-4f3d-b59f-737cf228d50b",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 630.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "2033f76c-bd2b-4cf0-8cef-5f682405866d": {
+                "id": "2033f76c-bd2b-4cf0-8cef-5f682405866d",
+                "name": "cell_2_3",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 390,
+                  "y": 470,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "fccdba71-0b64-4f8f-bfea-18374c788aff",
+                  "20371f07-0eed-4c9e-8e9b-1e689f6ae7d2",
+                  "034ee0af-006a-4e5b-baab-d71e69ebcccc",
+                  "fed9c754-bb93-4566-88fb-9f684ec4cbd9",
+                  "28b1993d-c366-46ad-9efa-678c2656dd5b"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "fccdba71-0b64-4f8f-bfea-18374c788aff": {
+                "id": "fccdba71-0b64-4f8f-bfea-18374c788aff",
+                "name": "box = 3",
+                "type": "ObjectAttribute",
+                "owner": "2033f76c-bd2b-4cf0-8cef-5f682405866d",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 510.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "20371f07-0eed-4c9e-8e9b-1e689f6ae7d2": {
+                "id": "20371f07-0eed-4c9e-8e9b-1e689f6ae7d2",
+                "name": "column = 3",
+                "type": "ObjectAttribute",
+                "owner": "2033f76c-bd2b-4cf0-8cef-5f682405866d",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 540.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "034ee0af-006a-4e5b-baab-d71e69ebcccc": {
+                "id": "034ee0af-006a-4e5b-baab-d71e69ebcccc",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "2033f76c-bd2b-4cf0-8cef-5f682405866d",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 570.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "fed9c754-bb93-4566-88fb-9f684ec4cbd9": {
+                "id": "fed9c754-bb93-4566-88fb-9f684ec4cbd9",
+                "name": "row = 2",
+                "type": "ObjectAttribute",
+                "owner": "2033f76c-bd2b-4cf0-8cef-5f682405866d",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 600.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "28b1993d-c366-46ad-9efa-678c2656dd5b": {
+                "id": "28b1993d-c366-46ad-9efa-678c2656dd5b",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "2033f76c-bd2b-4cf0-8cef-5f682405866d",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 630.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "2a5e79ff-37d9-430d-b9c9-0d767967f8e2": {
+                "id": "2a5e79ff-37d9-430d-b9c9-0d767967f8e2",
+                "name": "cell_3_0",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -230,
+                  "y": 710,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "139391ff-d45b-4dcf-8676-57901f3a4929",
+                  "f20a04c8-24e7-4699-81e9-ebb5403e457e",
+                  "51777e45-ef47-46b2-b463-3679d7724e16",
+                  "6bc53b72-7f2f-4fab-bf11-70daca69f3ac",
+                  "e503be69-d809-4028-a5bc-7579ed46503c"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "139391ff-d45b-4dcf-8676-57901f3a4929": {
+                "id": "139391ff-d45b-4dcf-8676-57901f3a4929",
+                "name": "box = 2",
+                "type": "ObjectAttribute",
+                "owner": "2a5e79ff-37d9-430d-b9c9-0d767967f8e2",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 750.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "f20a04c8-24e7-4699-81e9-ebb5403e457e": {
+                "id": "f20a04c8-24e7-4699-81e9-ebb5403e457e",
+                "name": "column = 0",
+                "type": "ObjectAttribute",
+                "owner": "2a5e79ff-37d9-430d-b9c9-0d767967f8e2",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 780.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "51777e45-ef47-46b2-b463-3679d7724e16": {
+                "id": "51777e45-ef47-46b2-b463-3679d7724e16",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "2a5e79ff-37d9-430d-b9c9-0d767967f8e2",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 810.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "6bc53b72-7f2f-4fab-bf11-70daca69f3ac": {
+                "id": "6bc53b72-7f2f-4fab-bf11-70daca69f3ac",
+                "name": "row = 3",
+                "type": "ObjectAttribute",
+                "owner": "2a5e79ff-37d9-430d-b9c9-0d767967f8e2",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 840.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "e503be69-d809-4028-a5bc-7579ed46503c": {
+                "id": "e503be69-d809-4028-a5bc-7579ed46503c",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "2a5e79ff-37d9-430d-b9c9-0d767967f8e2",
+                "bounds": {
+                  "x": -229.5,
+                  "y": 870.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "308fb0ee-d29a-4d6c-a09f-54d367201bd9": {
+                "id": "308fb0ee-d29a-4d6c-a09f-54d367201bd9",
+                "name": "cell_3_1",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": -20,
+                  "y": 710,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "982c7a7e-76b3-471b-a49f-d1b916488ed0",
+                  "94eb9fcb-650e-41de-ae58-d68bf0053fd0",
+                  "c1e028cd-0a53-4bc5-8cf6-faabceb46826",
+                  "fb08d16a-b725-40db-bad6-7911b695d12e",
+                  "3c695140-02b2-41b6-93d6-3924d7f365aa"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "982c7a7e-76b3-471b-a49f-d1b916488ed0": {
+                "id": "982c7a7e-76b3-471b-a49f-d1b916488ed0",
+                "name": "box = 2",
+                "type": "ObjectAttribute",
+                "owner": "308fb0ee-d29a-4d6c-a09f-54d367201bd9",
+                "bounds": {
+                  "x": -19.5,
+                  "y": 750.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "94eb9fcb-650e-41de-ae58-d68bf0053fd0": {
+                "id": "94eb9fcb-650e-41de-ae58-d68bf0053fd0",
+                "name": "column = 1",
+                "type": "ObjectAttribute",
+                "owner": "308fb0ee-d29a-4d6c-a09f-54d367201bd9",
+                "bounds": {
+                  "x": -19.5,
+                  "y": 780.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "c1e028cd-0a53-4bc5-8cf6-faabceb46826": {
+                "id": "c1e028cd-0a53-4bc5-8cf6-faabceb46826",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "308fb0ee-d29a-4d6c-a09f-54d367201bd9",
+                "bounds": {
+                  "x": -19.5,
+                  "y": 810.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "fb08d16a-b725-40db-bad6-7911b695d12e": {
+                "id": "fb08d16a-b725-40db-bad6-7911b695d12e",
+                "name": "row = 3",
+                "type": "ObjectAttribute",
+                "owner": "308fb0ee-d29a-4d6c-a09f-54d367201bd9",
+                "bounds": {
+                  "x": -19.5,
+                  "y": 840.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "3c695140-02b2-41b6-93d6-3924d7f365aa": {
+                "id": "3c695140-02b2-41b6-93d6-3924d7f365aa",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "308fb0ee-d29a-4d6c-a09f-54d367201bd9",
+                "bounds": {
+                  "x": -19.5,
+                  "y": 870.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "8eb0d249-6567-46c0-aa6c-60043a6319ad": {
+                "id": "8eb0d249-6567-46c0-aa6c-60043a6319ad",
+                "name": "cell_3_2",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 180,
+                  "y": 710,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "486e99ff-813b-450c-b0bd-1020a44d3644",
+                  "88914090-1091-441b-94b2-7bbccab59e2d",
+                  "0c64d30e-450b-4cd6-8ce7-49ec83c5de15",
+                  "60a0af15-446f-414c-a471-8329766c8142",
+                  "a860833d-f643-4b51-9b48-d38aa11aaa3e"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "486e99ff-813b-450c-b0bd-1020a44d3644": {
+                "id": "486e99ff-813b-450c-b0bd-1020a44d3644",
+                "name": "box = 3",
+                "type": "ObjectAttribute",
+                "owner": "8eb0d249-6567-46c0-aa6c-60043a6319ad",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 750.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "88914090-1091-441b-94b2-7bbccab59e2d": {
+                "id": "88914090-1091-441b-94b2-7bbccab59e2d",
+                "name": "column = 2",
+                "type": "ObjectAttribute",
+                "owner": "8eb0d249-6567-46c0-aa6c-60043a6319ad",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 780.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "0c64d30e-450b-4cd6-8ce7-49ec83c5de15": {
+                "id": "0c64d30e-450b-4cd6-8ce7-49ec83c5de15",
+                "name": "isGiven = False",
+                "type": "ObjectAttribute",
+                "owner": "8eb0d249-6567-46c0-aa6c-60043a6319ad",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 810.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "60a0af15-446f-414c-a471-8329766c8142": {
+                "id": "60a0af15-446f-414c-a471-8329766c8142",
+                "name": "row = 3",
+                "type": "ObjectAttribute",
+                "owner": "8eb0d249-6567-46c0-aa6c-60043a6319ad",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 840.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "a860833d-f643-4b51-9b48-d38aa11aaa3e": {
+                "id": "a860833d-f643-4b51-9b48-d38aa11aaa3e",
+                "name": "value = ",
+                "type": "ObjectAttribute",
+                "owner": "8eb0d249-6567-46c0-aa6c-60043a6319ad",
+                "bounds": {
+                  "x": 180.5,
+                  "y": 870.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "1354644f-a2f6-4376-a89b-d81eaf8cb756": {
+                "id": "1354644f-a2f6-4376-a89b-d81eaf8cb756",
+                "name": "cell_3_3",
+                "type": "ObjectName",
+                "owner": null,
+                "bounds": {
+                  "x": 390,
+                  "y": 710,
+                  "width": 160,
+                  "height": 190
+                },
+                "attributes": [
+                  "f222e01f-678d-4aea-b8a5-2bc0cb3ab0aa",
+                  "75278627-5e97-4af6-ace1-7609fcf976df",
+                  "15a2e4ed-144f-4574-9b1e-a8f9c66730cb",
+                  "082dbd01-d2de-427b-bcd8-d3c94c00b479",
+                  "970f1733-a372-4db2-882a-95187fd8bb01"
+                ],
+                "methods": [],
+                "classId": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                "className": "Cell"
+              },
+              "f222e01f-678d-4aea-b8a5-2bc0cb3ab0aa": {
+                "id": "f222e01f-678d-4aea-b8a5-2bc0cb3ab0aa",
+                "name": "box = 3",
+                "type": "ObjectAttribute",
+                "owner": "1354644f-a2f6-4376-a89b-d81eaf8cb756",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 750.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "75278627-5e97-4af6-ace1-7609fcf976df": {
+                "id": "75278627-5e97-4af6-ace1-7609fcf976df",
+                "name": "column = 3",
+                "type": "ObjectAttribute",
+                "owner": "1354644f-a2f6-4376-a89b-d81eaf8cb756",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 780.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "15a2e4ed-144f-4574-9b1e-a8f9c66730cb": {
+                "id": "15a2e4ed-144f-4574-9b1e-a8f9c66730cb",
+                "name": "isGiven = True",
+                "type": "ObjectAttribute",
+                "owner": "1354644f-a2f6-4376-a89b-d81eaf8cb756",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 810.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "bool",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "082dbd01-d2de-427b-bcd8-d3c94c00b479": {
+                "id": "082dbd01-d2de-427b-bcd8-d3c94c00b479",
+                "name": "row = 3",
+                "type": "ObjectAttribute",
+                "owner": "1354644f-a2f6-4376-a89b-d81eaf8cb756",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 840.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              },
+              "970f1733-a372-4db2-882a-95187fd8bb01": {
+                "id": "970f1733-a372-4db2-882a-95187fd8bb01",
+                "name": "value = 4",
+                "type": "ObjectAttribute",
+                "owner": "1354644f-a2f6-4376-a89b-d81eaf8cb756",
+                "bounds": {
+                  "x": 390.5,
+                  "y": 870.5,
+                  "width": 159,
+                  "height": 30
+                },
+                "code": "",
+                "visibility": "public",
+                "attributeType": "int",
+                "implementationType": "none",
+                "stateMachineId": "",
+                "quantumCircuitId": "",
+                "neuralNetworkId": "",
+                "isOptional": false,
+                "isDerived": false,
+                "isId": false,
+                "isExternalId": false
+              }
+            },
+            "relationships": {
+              "e820c0a5-6920-48fb-9e60-206b6105f9ce": {
+                "id": "e820c0a5-6920-48fb-9e60-206b6105f9ce",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -145,
+                  "y": -160,
+                  "width": 1,
+                  "height": 130
+                },
+                "path": [
+                  {
+                    "x": 0,
+                    "y": 130
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "bc03fb06-436c-422f-8418-a2fbd114f50c"
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "ea74f683-d959-4585-a18f-534db3ec97f8": {
+                "id": "ea74f683-d959-4585-a18f-534db3ec97f8",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -140,
+                  "y": -160,
+                  "width": 190,
+                  "height": 130
+                },
+                "path": [
+                  {
+                    "x": 190,
+                    "y": 130
+                  },
+                  {
+                    "x": 190,
+                    "y": 65
+                  },
+                  {
+                    "x": 0,
+                    "y": 65
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "f515a9a5-f32a-4ae7-8cc4-e46e043e1224"
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "a258278e-ad36-42e4-a12a-85b9b6222c2a": {
+                "id": "a258278e-ad36-42e4-a12a-85b9b6222c2a",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -140,
+                  "y": -160,
+                  "width": 400,
+                  "height": 130
+                },
+                "path": [
+                  {
+                    "x": 400,
+                    "y": 130
+                  },
+                  {
+                    "x": 400,
+                    "y": 65
+                  },
+                  {
+                    "x": 0,
+                    "y": 65
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "1f6111f7-f36e-4fda-8dfe-827ada5d3db7"
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "2cd0cc78-fc9e-4fcc-88e0-37ad0579c856": {
+                "id": "2cd0cc78-fc9e-4fcc-88e0-37ad0579c856",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -140,
+                  "y": -160,
+                  "width": 610,
+                  "height": 130
+                },
+                "path": [
+                  {
+                    "x": 610,
+                    "y": 130
+                  },
+                  {
+                    "x": 610,
+                    "y": 65
+                  },
+                  {
+                    "x": 0,
+                    "y": 65
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Up",
+                  "element": "0e04d5d0-3554-42e0-9704-1620619d38c8"
+                },
+                "target": {
+                  "direction": "Down",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "1a174246-ccfe-47cf-9225-fbed9495eb0f": {
+                "id": "1a174246-ccfe-47cf-9225-fbed9495eb0f",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -270,
+                  "y": -257.5,
+                  "width": 50,
+                  "height": 525
+                },
+                "path": [
+                  {
+                    "x": 40,
+                    "y": 525
+                  },
+                  {
+                    "x": 0,
+                    "y": 525
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 50,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Upleft",
+                  "element": "df5e5c09-b835-4f0f-84e0-2d683e915d7b"
+                },
+                "target": {
+                  "direction": "Upleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "2035a621-548e-4608-9727-af5ff0edc4a9": {
+                "id": "2035a621-548e-4608-9727-af5ff0edc4a9",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -257.5,
+                  "width": 270,
+                  "height": 477.5
+                },
+                "path": [
+                  {
+                    "x": 270,
+                    "y": 477.5
+                  },
+                  {
+                    "x": 270,
+                    "y": 437.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 437.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "291168c4-49d2-4598-84dc-02b54398cb95"
+                },
+                "target": {
+                  "direction": "Upleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "6d670b1f-c326-43b0-8eee-5cbabdc352f2": {
+                "id": "6d670b1f-c326-43b0-8eee-5cbabdc352f2",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -257.5,
+                  "width": 480,
+                  "height": 477.5
+                },
+                "path": [
+                  {
+                    "x": 480,
+                    "y": 477.5
+                  },
+                  {
+                    "x": 480,
+                    "y": 437.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 437.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "23720aa3-e23f-4dee-b57b-eb4d2527ba28"
+                },
+                "target": {
+                  "direction": "Upleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "4031fe30-78c0-4708-b530-ec92346ba171": {
+                "id": "4031fe30-78c0-4708-b530-ec92346ba171",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -257.5,
+                  "width": 690,
+                  "height": 477.5
+                },
+                "path": [
+                  {
+                    "x": 690,
+                    "y": 477.5
+                  },
+                  {
+                    "x": 690,
+                    "y": 437.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 437.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "60089e90-e81a-4cda-b5e8-e1d68316d15c"
+                },
+                "target": {
+                  "direction": "Upleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "62ece403-68d8-4cf5-96e9-dfe19ad2f9e7": {
+                "id": "62ece403-68d8-4cf5-96e9-dfe19ad2f9e7",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -270,
+                  "y": -225,
+                  "width": 50,
+                  "height": 742.5
+                },
+                "path": [
+                  {
+                    "x": 40,
+                    "y": 742.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 742.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 50,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Upleft",
+                  "element": "04295e10-a127-40ab-bc4d-9030c763243e"
+                },
+                "target": {
+                  "direction": "Left",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "4ff50c70-ac42-4a1b-9e70-4d4148545553": {
+                "id": "4ff50c70-ac42-4a1b-9e70-4d4148545553",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -225,
+                  "width": 270,
+                  "height": 695
+                },
+                "path": [
+                  {
+                    "x": 270,
+                    "y": 695
+                  },
+                  {
+                    "x": 270,
+                    "y": 655
+                  },
+                  {
+                    "x": 0,
+                    "y": 655
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "7257cf7c-16d0-4b07-89c3-3633e3e60a86"
+                },
+                "target": {
+                  "direction": "Left",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "208f822b-3a55-45d3-a24e-5e64866bb876": {
+                "id": "208f822b-3a55-45d3-a24e-5e64866bb876",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -225,
+                  "width": 480,
+                  "height": 695
+                },
+                "path": [
+                  {
+                    "x": 480,
+                    "y": 695
+                  },
+                  {
+                    "x": 480,
+                    "y": 655
+                  },
+                  {
+                    "x": 0,
+                    "y": 655
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "51ddb0e2-042d-4f3d-b59f-737cf228d50b"
+                },
+                "target": {
+                  "direction": "Left",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "a715b40e-cda6-4506-98f8-4d6e12f2bc15": {
+                "id": "a715b40e-cda6-4506-98f8-4d6e12f2bc15",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -225,
+                  "width": 690,
+                  "height": 695
+                },
+                "path": [
+                  {
+                    "x": 690,
+                    "y": 695
+                  },
+                  {
+                    "x": 690,
+                    "y": 655
+                  },
+                  {
+                    "x": 0,
+                    "y": 655
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "2033f76c-bd2b-4cf0-8cef-5f682405866d"
+                },
+                "target": {
+                  "direction": "Left",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "f8b83747-e376-4c34-95f4-4ab805dceb13": {
+                "id": "f8b83747-e376-4c34-95f4-4ab805dceb13",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -265,
+                  "y": -192.5,
+                  "width": 45,
+                  "height": 950
+                },
+                "path": [
+                  {
+                    "x": 35,
+                    "y": 950
+                  },
+                  {
+                    "x": 0,
+                    "y": 950
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 45,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Upleft",
+                  "element": "2a5e79ff-37d9-430d-b9c9-0d767967f8e2"
+                },
+                "target": {
+                  "direction": "Downleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "617b792f-8529-49cf-bef6-c92bb5153bed": {
+                "id": "617b792f-8529-49cf-bef6-c92bb5153bed",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -192.5,
+                  "width": 280,
+                  "height": 902.5
+                },
+                "path": [
+                  {
+                    "x": 280,
+                    "y": 902.5
+                  },
+                  {
+                    "x": 280,
+                    "y": 862.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 862.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "308fb0ee-d29a-4d6c-a09f-54d367201bd9"
+                },
+                "target": {
+                  "direction": "Downleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "5e664d8b-6011-4724-892d-3cfcdd0d0227": {
+                "id": "5e664d8b-6011-4724-892d-3cfcdd0d0227",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -192.5,
+                  "width": 480,
+                  "height": 902.5
+                },
+                "path": [
+                  {
+                    "x": 480,
+                    "y": 902.5
+                  },
+                  {
+                    "x": 480,
+                    "y": 862.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 862.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "8eb0d249-6567-46c0-aa6c-60043a6319ad"
+                },
+                "target": {
+                  "direction": "Downleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              },
+              "15bddea2-ee15-4300-84e2-fda857543dc0": {
+                "id": "15bddea2-ee15-4300-84e2-fda857543dc0",
+                "name": "",
+                "type": "ObjectLink",
+                "owner": null,
+                "bounds": {
+                  "x": -260,
+                  "y": -192.5,
+                  "width": 690,
+                  "height": 902.5
+                },
+                "path": [
+                  {
+                    "x": 690,
+                    "y": 902.5
+                  },
+                  {
+                    "x": 690,
+                    "y": 862.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 862.5
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 40,
+                    "y": 0
+                  }
+                ],
+                "source": {
+                  "direction": "Topleft",
+                  "element": "1354644f-a2f6-4376-a89b-d81eaf8cb756"
+                },
+                "target": {
+                  "direction": "Downleft",
+                  "element": "a549f28f-5c57-4e27-87bf-fb063a8f6c9e"
+                },
+                "isManuallyLayouted": false
+              }
+            },
+            "assessments": {},
+            "referenceDiagramData": {
+              "version": "3.0.0",
+              "type": "ClassDiagram",
+              "size": {
+                "width": 1720,
+                "height": 960
+              },
+              "interactive": {
+                "elements": {},
+                "relationships": {}
+              },
+              "elements": {
+                "e80038b8-0e7b-48af-bb12-b0751a2dc949": {
+                  "id": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "name": "Board",
+                  "type": "Class",
+                  "owner": null,
+                  "bounds": {
+                    "x": -600,
+                    "y": -300,
+                    "width": 160,
+                    "height": 130
+                  },
+                  "attributes": [
+                    "3caf0a6f-fc32-4304-bc3e-95fe72ac52bd",
+                    "59ecfa09-edd5-443c-bc24-9565d96233c9",
+                    "3fabc4fc-7531-41b7-bbf8-8ce67fe72292"
+                  ],
+                  "methods": []
+                },
+                "3caf0a6f-fc32-4304-bc3e-95fe72ac52bd": {
+                  "id": "3caf0a6f-fc32-4304-bc3e-95fe72ac52bd",
+                  "name": "boxSize",
+                  "type": "ClassAttribute",
+                  "owner": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "bounds": {
+                    "x": -599.5,
+                    "y": -259.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "int",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "59ecfa09-edd5-443c-bc24-9565d96233c9": {
+                  "id": "59ecfa09-edd5-443c-bc24-9565d96233c9",
+                  "name": "name",
+                  "type": "ClassAttribute",
+                  "owner": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "bounds": {
+                    "x": -599.5,
+                    "y": -229.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "str",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "3fabc4fc-7531-41b7-bbf8-8ce67fe72292": {
+                  "id": "3fabc4fc-7531-41b7-bbf8-8ce67fe72292",
+                  "name": "size",
+                  "type": "ClassAttribute",
+                  "owner": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                  "bounds": {
+                    "x": -599.5,
+                    "y": -199.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "int",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "c5fc683a-024c-4f82-89db-44e33a4ea2ab": {
+                  "id": "c5fc683a-024c-4f82-89db-44e33a4ea2ab",
+                  "name": "BoxSizePositive",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -350,
+                    "y": -450,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "The size of the boxes must be positive",
+                  "constraint": "context Board inv BoxSizePositive: self.boxSize >= 1"
+                },
+                "14a277d4-8e49-47fb-9011-0fe0e31d2edd": {
+                  "id": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "name": "Cell",
+                  "type": "Class",
+                  "owner": null,
+                  "bounds": {
+                    "x": 0,
+                    "y": -300,
+                    "width": 160,
+                    "height": 190
+                  },
+                  "attributes": [
+                    "ff99f552-06ff-43a5-b923-bda4576ab7ef",
+                    "1e086b6a-8512-4dd4-ae3a-3b3d6cfa0fd1",
+                    "f136b5d8-776a-4566-8f23-45a75cc24cbd",
+                    "be228115-529d-48c4-803b-9135d558c26c",
+                    "9381258d-788a-4af2-b11a-cb296e4015db"
+                  ],
+                  "methods": []
+                },
+                "ff99f552-06ff-43a5-b923-bda4576ab7ef": {
+                  "id": "ff99f552-06ff-43a5-b923-bda4576ab7ef",
+                  "name": "box",
+                  "type": "ClassAttribute",
+                  "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "bounds": {
+                    "x": 0.5,
+                    "y": -259.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "int",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "1e086b6a-8512-4dd4-ae3a-3b3d6cfa0fd1": {
+                  "id": "1e086b6a-8512-4dd4-ae3a-3b3d6cfa0fd1",
+                  "name": "column",
+                  "type": "ClassAttribute",
+                  "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "bounds": {
+                    "x": 0.5,
+                    "y": -229.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "int",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "f136b5d8-776a-4566-8f23-45a75cc24cbd": {
+                  "id": "f136b5d8-776a-4566-8f23-45a75cc24cbd",
+                  "name": "isGiven",
+                  "type": "ClassAttribute",
+                  "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "bounds": {
+                    "x": 0.5,
+                    "y": -199.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "bool",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "be228115-529d-48c4-803b-9135d558c26c": {
+                  "id": "be228115-529d-48c4-803b-9135d558c26c",
+                  "name": "row",
+                  "type": "ClassAttribute",
+                  "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "bounds": {
+                    "x": 0.5,
+                    "y": -169.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "int",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": false,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "9381258d-788a-4af2-b11a-cb296e4015db": {
+                  "id": "9381258d-788a-4af2-b11a-cb296e4015db",
+                  "name": "value",
+                  "type": "ClassAttribute",
+                  "owner": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                  "bounds": {
+                    "x": 0.5,
+                    "y": -139.5,
+                    "width": 159,
+                    "height": 30
+                  },
+                  "code": "",
+                  "visibility": "public",
+                  "attributeType": "int",
+                  "implementationType": "none",
+                  "stateMachineId": "",
+                  "quantumCircuitId": "",
+                  "neuralNetworkId": "",
+                  "isOptional": true,
+                  "isDerived": false,
+                  "isId": false,
+                  "isExternalId": false
+                },
+                "08580f2f-f15b-4f58-89c1-dd046dbd742d": {
+                  "id": "08580f2f-f15b-4f58-89c1-dd046dbd742d",
+                  "name": "SizeConsistent",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -350,
+                    "y": -160,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "The size of the board must be the sizes of the boxes squared.",
+                  "constraint": "context Board  inv SizeConsistent: self.size = self.boxSize * self.boxSize"
+                },
+                "2457c27f-24b2-43f4-a1f6-f3faac2c6d6d": {
+                  "id": "2457c27f-24b2-43f4-a1f6-f3faac2c6d6d",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": 0,
+                    "y": -450,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "The cell must be given on not",
+                  "constraint": "context Cell\ninv GivenFlagValid: self.isGiven = True or self.isGiven = False "
+                },
+                "73e3110e-5fa9-48ee-8b7f-bf6d41819fc6": {
+                  "id": "73e3110e-5fa9-48ee-8b7f-bf6d41819fc6",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -600,
+                    "y": -460,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "The amount of cells must be equal to size squared",
+                  "constraint": "context Board\ninv CellCount: self.cell->size() = self.size * self.size"
+                },
+                "171a1ab2-8bd1-4132-950b-372f0550c3f6": {
+                  "id": "171a1ab2-8bd1-4132-950b-372f0550c3f6",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -590,
+                    "y": -80,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "Each cell has an unique position",
+                  "constraint": "context Board\ninv UniquePositions: self.cell->forAll(c1, c2 | c1 <> c2 implies (c1.row <> c2.row or c1.column <> c2.column))"
+                },
+                "ceb419e8-d028-487e-93c4-7ac693167e2a": {
+                  "id": "ceb419e8-d028-487e-93c4-7ac693167e2a",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": -840,
+                    "y": -290,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "Different cells in the same row, column or box must have different value, as long as they are not empty",
+                  "constraint": "context Board\ninv ConsistentValues: self.cell->forAll(c1, c2 | (c1 <> c2 and not c1.value.oclIsUndefined() and not c2.value.oclIsUndefined() and (c1.row = c2.row or c1.column = c2.column or c1.box = c2.box)) implies c1.value <> c2.value)"
+                },
+                "90e5354e-69af-414d-8831-cb99859efe83": {
+                  "id": "90e5354e-69af-414d-8831-cb99859efe83",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": 10,
+                    "y": -20,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "The column and row fo the cell must be valid",
+                  "constraint": "context Cell\ninv PositionValid: self.row >= 0 and self.row < self.board.size and self.column >= 0 and self.column < self.board.size "
+                },
+                "954d17f9-521c-47de-b5c2-8edd877b94e7": {
+                  "id": "954d17f9-521c-47de-b5c2-8edd877b94e7",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": 240,
+                    "y": -360,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "The cell value must be empty or be between 1 and board size",
+                  "constraint": "context Cell\ninv ValueValid: self.value.oclIsUndefined() or (self.value >= 1 and self.value <= self.board.size)"
+                },
+                "674ef263-cf44-46ed-9500-f0a80ea35471": {
+                  "id": "674ef263-cf44-46ed-9500-f0a80ea35471",
+                  "name": "",
+                  "type": "ClassOCLConstraint",
+                  "owner": null,
+                  "bounds": {
+                    "x": 240,
+                    "y": -220,
+                    "width": 160,
+                    "height": 100
+                  },
+                  "description": "",
+                  "constraint": "context Cell inv BoxCoherent: self.box = (self.row / self.board.boxSize).floor() * self.board.boxSize + (self.column / self.board.boxSize).floor()"
+                }
+              },
+              "relationships": {
+                "b94cae1d-8aa2-4a49-ab1d-bf0386724b5d": {
+                  "id": "b94cae1d-8aa2-4a49-ab1d-bf0386724b5d",
+                  "name": "Cell_Board",
+                  "type": "ClassComposition",
+                  "owner": null,
+                  "bounds": {
+                    "x": -440,
+                    "y": -245,
+                    "width": 440,
+                    "height": 48.60000038146973
+                  },
+                  "path": [
+                    {
+                      "x": 440,
+                      "y": 10
+                    },
+                    {
+                      "x": 0,
+                      "y": 10
+                    }
+                  ],
+                  "source": {
+                    "direction": "Left",
+                    "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                    "multiplicity": "0..*",
+                    "role": "cell",
+                    "navigable": true,
+                    "bounds": {
+                      "x": 0,
+                      "y": -205,
+                      "width": 0,
+                      "height": 0
+                    }
+                  },
+                  "target": {
+                    "direction": "Right",
+                    "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                    "multiplicity": "1",
+                    "role": "board",
+                    "navigable": true,
+                    "bounds": {
+                      "x": -440,
+                      "y": -235,
+                      "width": 0,
+                      "height": 0
+                    }
+                  },
+                  "isManuallyLayouted": false
+                },
+                "eef16dca-6a44-4c20-995a-2d9069654784": {
+                  "id": "eef16dca-6a44-4c20-995a-2d9069654784",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -440,
+                    "y": -410,
+                    "width": 90,
+                    "height": 196
+                  },
+                  "path": [
+                    {
+                      "x": 90,
+                      "y": 10
+                    },
+                    {
+                      "x": 45,
+                      "y": 10
+                    },
+                    {
+                      "x": 45,
+                      "y": 175
+                    },
+                    {
+                      "x": 0,
+                      "y": 175
+                    }
+                  ],
+                  "source": {
+                    "direction": "Left",
+                    "element": "c5fc683a-024c-4f82-89db-44e33a4ea2ab",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Right",
+                    "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "c0e79644-5f04-4ca2-af5d-2765764d3101": {
+                  "id": "c0e79644-5f04-4ca2-af5d-2765764d3101",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -440,
+                    "y": -245,
+                    "width": 90,
+                    "height": 156
+                  },
+                  "path": [
+                    {
+                      "x": 90,
+                      "y": 135
+                    },
+                    {
+                      "x": 45,
+                      "y": 135
+                    },
+                    {
+                      "x": 45,
+                      "y": 10
+                    },
+                    {
+                      "x": 0,
+                      "y": 10
+                    }
+                  ],
+                  "source": {
+                    "direction": "Left",
+                    "element": "08580f2f-f15b-4f58-89c1-dd046dbd742d",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Right",
+                    "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "429a8d69-5e45-499e-956b-3676735d6bcf": {
+                  "id": "429a8d69-5e45-499e-956b-3676735d6bcf",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": 75,
+                    "y": -350,
+                    "width": 10,
+                    "height": 50
+                  },
+                  "path": [
+                    {
+                      "x": 5,
+                      "y": 0
+                    },
+                    {
+                      "x": 5,
+                      "y": 50
+                    }
+                  ],
+                  "source": {
+                    "direction": "Down",
+                    "element": "2457c27f-24b2-43f4-a1f6-f3faac2c6d6d",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Up",
+                    "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "79bf0846-bb3d-4e08-9f07-18a21f5cdd68": {
+                  "id": "79bf0846-bb3d-4e08-9f07-18a21f5cdd68",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -525,
+                    "y": -360,
+                    "width": 10,
+                    "height": 60
+                  },
+                  "path": [
+                    {
+                      "x": 5,
+                      "y": 0
+                    },
+                    {
+                      "x": 5,
+                      "y": 60
+                    }
+                  ],
+                  "source": {
+                    "direction": "Down",
+                    "element": "73e3110e-5fa9-48ee-8b7f-bf6d41819fc6",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Up",
+                    "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "c0da5d90-5c19-492f-8073-de3d08bd2404": {
+                  "id": "c0da5d90-5c19-492f-8073-de3d08bd2404",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -520,
+                    "y": -170,
+                    "width": 10,
+                    "height": 90
+                  },
+                  "path": [
+                    {
+                      "x": 5,
+                      "y": 90
+                    },
+                    {
+                      "x": 5,
+                      "y": 0
+                    }
+                  ],
+                  "source": {
+                    "direction": "Up",
+                    "element": "171a1ab2-8bd1-4132-950b-372f0550c3f6",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Down",
+                    "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "65ec3b08-b845-4bc2-b2f8-19af6ef74314": {
+                  "id": "65ec3b08-b845-4bc2-b2f8-19af6ef74314",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": -680,
+                    "y": -250,
+                    "width": 80,
+                    "height": 31
+                  },
+                  "path": [
+                    {
+                      "x": 0,
+                      "y": 10
+                    },
+                    {
+                      "x": 80,
+                      "y": 10
+                    }
+                  ],
+                  "source": {
+                    "direction": "Right",
+                    "element": "ceb419e8-d028-487e-93c4-7ac693167e2a",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Left",
+                    "element": "e80038b8-0e7b-48af-bb12-b0751a2dc949",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "9ea1a064-2790-4817-93a2-bb5c29e2eaad": {
+                  "id": "9ea1a064-2790-4817-93a2-bb5c29e2eaad",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": 80,
+                    "y": -110,
+                    "width": 10,
+                    "height": 90
+                  },
+                  "path": [
+                    {
+                      "x": 5,
+                      "y": 90
+                    },
+                    {
+                      "x": 5,
+                      "y": 0
+                    }
+                  ],
+                  "source": {
+                    "direction": "Up",
+                    "element": "90e5354e-69af-414d-8831-cb99859efe83",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Down",
+                    "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "7f43c95c-5ed3-4cba-b6be-44c05f8e98a1": {
+                  "id": "7f43c95c-5ed3-4cba-b6be-44c05f8e98a1",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": 160,
+                    "y": -290,
+                    "width": 80,
+                    "height": 31
+                  },
+                  "path": [
+                    {
+                      "x": 80,
+                      "y": 10
+                    },
+                    {
+                      "x": 0,
+                      "y": 10
+                    }
+                  ],
+                  "source": {
+                    "direction": "Left",
+                    "element": "954d17f9-521c-47de-b5c2-8edd877b94e7",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Upright",
+                    "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                },
+                "4f9eb405-a5a6-41cc-bf2a-c47818548df9": {
+                  "id": "4f9eb405-a5a6-41cc-bf2a-c47818548df9",
+                  "name": "",
+                  "type": "ClassOCLLink",
+                  "owner": null,
+                  "bounds": {
+                    "x": 115,
+                    "y": -180,
+                    "width": 125,
+                    "height": 110
+                  },
+                  "path": [
+                    {
+                      "x": 125,
+                      "y": 10
+                    },
+                    {
+                      "x": 85,
+                      "y": 10
+                    },
+                    {
+                      "x": 85,
+                      "y": 110
+                    },
+                    {
+                      "x": 5,
+                      "y": 110
+                    },
+                    {
+                      "x": 5,
+                      "y": 70
+                    }
+                  ],
+                  "source": {
+                    "direction": "Left",
+                    "element": "674ef263-cf44-46ed-9500-f0a80ea35471",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "target": {
+                    "direction": "Bottomright",
+                    "element": "14a277d4-8e49-47fb-9011-0fe0e31d2edd",
+                    "multiplicity": "",
+                    "role": "",
+                    "navigable": true
+                  },
+                  "isManuallyLayouted": false
+                }
+              },
+              "assessments": {}
+            }
+          },
+          "lastUpdate": "2026-10-15T13:47:31.359Z"
+        }
+      ]
+    },
+    "settings": {
+      "defaultDiagramType": "ClassDiagram",
+      "autoSave": true,
+      "collaborationEnabled": false,
+      "perspectives": {
+        "ClassDiagram": true,
+        "ObjectDiagram": true,
+        "StateMachineDiagram": true,
+        "AgentDiagram": true,
+        "UserDiagram": true,
+        "GUINoCodeDiagram": true,
+        "QuantumCircuitDiagram": true,
+        "NNDiagram": true,
+        "BPMN": true,
+        "ComponentDiagram": true,
+        "DeploymentDiagram": true
+      }
+    }
+  },
+  "exportedAt": "2026-10-18T21:53:48.301Z",
+  "version": "2.0.0",
+  "besserVersion": "8.1.0",
+  "editorVersion": "1.0.0"
+}

@@ -35,7 +35,7 @@ Figure 1: Sudoku problem metamodel created in BESSER.
 
 The following diagram displays the class diagram created in Besser in order to represent the metamodel of the problem.
 
-The implamentation of the metamodel can be found in `besser_sudoku_problem_metamodel.py`.
+The implementation of the metamodel can be found in `Sudoku Problem DSL.py` and `Sudoku Problem DSL.json`.
 
 ### 1.3 OCL Constraints
 
@@ -94,3 +94,64 @@ With our metamodel, this problem instance can be represented by the following Be
 
 Figure 2: Example Sudoku problem instance represented as a BESSER object diagram.
 
+---
+
+
+## 2. Solution DSL
+
+### 2.1 Concept List
+
+| Concept | Intrinsic Properties | Extrinsic Properties |
+|---------|----------------------|----------------------|
+| **Formula** | `name`: String | Contains Clauses; holds the conjunction ($\bigwedge$) of all clauses in the CNF formula |
+| **Clause** | *(none)* | Belongs to a Formula; contains Literals; holds the disjunction ($\bigvee$) of all its literals |
+| **Literal** | `isNegated`: Boolean | Belongs to a Clause; references a Variable; represents a variable or its negation |
+| **Variable** | `id`: Integer | Referenced by Literals; represents a unique Boolean variable whose `id` encodes cell $(r, c)$ and candidate value $v$ via $100(r+1) + 10(c+1) + v$ (e.g., $111$ for cell $(0,0)=1$) |
+
+### 2.2 Metamodel
+
+![Sudoku Solution Metamodel](Sudoku%20Solution%20Metamodel.png)
+
+### 2.3 OCL Constraints
+
+| Constraint | Rule it enforces |
+|------------|------------------|
+| `ClauseNotEmpty` | A clause must contain at least one literal |
+| `UniqueLiteral` | No duplicate literals within a clause |
+| `NoTautology` | No complementary literals ($x$ and $\neg x$) within a clause |
+
+```ocl
+context Clause
+inv ClauseNotEmpty:
+  self.literal->size() > 0
+
+inv UniqueLiteral:
+  self.literal->forAll(l1, l2 | 
+    l1 <> l2 implies (l1.variable <> l2.variable or l1.isNegated <> l2.isNegated)
+  )
+
+inv NoTautology: 
+  self.literal->forAll(l1, l2 | 
+    (l1 <> l2 and l1.variable = l2.variable) 
+    implies l1.isNegated = l2.isNegated
+  )
+```
+
+## 2.4 Example Model for Solution Instance
+
+To keep the diagram readable and avoid excessive visual complexity, this example only models the constraints for `cell(0,0)`. In a complete solution model, the same pattern applied here must be repeated for all remaining cells across the board.
+
+The following CNF formula $\Phi$ captures these constraints:
+
+$$
+\begin{aligned}
+\Phi = & \underbrace{(x_{111})}_{\text{Given Clue}} \\
+& \land \underbrace{(\neg x_{111} \lor \neg x_{121}) \land (\neg x_{111} \lor \neg x_{131}) \land (\neg x_{111} \lor \neg x_{141})}_{\text{Row 0 Uniqueness}} \\
+& \land \underbrace{(\neg x_{111} \lor \neg x_{211}) \land (\neg x_{111} \lor \neg x_{311}) \land (\neg x_{111} \lor \neg x_{411})}_{\text{Column 0 Uniqueness}} \\
+& \land \underbrace{(\neg x_{111} \lor \neg x_{221})}_{\text{Box 0 Uniqueness}}
+\end{aligned}
+$$
+
+This formula is represented in the solution instance diagram below:
+
+![Sudoku Solution Instance](Sudoku%20Solution%20Instance.png)
