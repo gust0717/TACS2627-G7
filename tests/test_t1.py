@@ -43,6 +43,19 @@ from metamodels.problem_dsl import (
     problem_domain_model,
     validate_problem_model,
 )
+from metamodels.solution_dsl import (
+    Formula,
+    Variable,
+    validate_solution_model,
+)
+from transformations.t1_problem2solution import (
+    T1Trace,
+    rule_r2_empty_cells_to_variables,
+    rule_r4_given_clue_exclusion_clauses,
+    rule_r5_peer_uniqueness_clauses,
+    rule_r6_simplify_and_materialize_clauses,
+    transform_t1,
+)
 
 
 def test_problem_dsl_metamodel_structure():
@@ -268,3 +281,185 @@ def test_solver_config_grover_rounds():
 
     with pytest.raises(ValueError, match="encoding"):
         SolverConfig(encoding="invalid")
+
+
+def _extract_clauses_as_sorted_tuples(sol_model: ObjectModel) -> list[list[tuple[int, bool]]]:
+    """Helper to extract clauses from a Solution DSL ObjectModel as sorted (var_id, is_negated) lists."""
+    clauses = sorted(
+        [
+            obj
+            for obj in sol_model.objects
+            if getattr(getattr(obj, "classifier", None), "name", None) == "Clause"
+        ],
+        key=lambda o: getattr(o, "name_", ""),
+    )
+    result: list[list[tuple[int, bool]]] = []
+    for clause_obj in clauses:
+        lits = [
+            le.object
+            for le in clause_obj.link_ends()
+            if (
+                le.name in {"literal", "literal_end"}
+                or getattr(le.association_end, "name", None) in {"literal", "literal_end"}
+                or getattr(getattr(le.object, "classifier", None), "name", None) == "Literal"
+            )
+        ]
+        clause_tuples: list[tuple[int, bool]] = []
+        for lit_obj in lits:
+            is_neg = next(
+                slot.value.value
+                for slot in lit_obj.slots
+                if slot.attribute.name == "isNegated"
+            )
+            var_obj = next(
+                le.object
+                for le in lit_obj.link_ends()
+                if (
+                    le.name in {"variable", "variable_end"}
+                    or getattr(le.association_end, "name", None) in {"variable", "variable_end"}
+                    or getattr(getattr(le.object, "classifier", None), "name", None) == "Variable"
+                )
+            )
+            var_id = next(
+                slot.value.value
+                for slot in var_obj.slots
+                if slot.attribute.name == "id"
+            )
+            clause_tuples.append((var_id, is_neg))
+        clause_tuples.sort(key=lambda pair: (pair[0], pair[1]))
+        result.append(clause_tuples)
+    return result
+
+
+def test_t1_trace_decode_assignment():
+    trace = T1Trace(cell_to_vars={(0, 1): [121, 120]})
+    assert trace.encoding == "binary"
+    assert trace.decode_assignment({121: False, 120: False}) == {(0, 1): 1}
+    assert trace.decode_assignment({121: False, 120: True}) == {(0, 1): 2}
+    assert trace.decode_assignment({121: True, 120: False}) == {(0, 1): 3}
+    assert trace.decode_assignment({121: True, 120: True}) == {(0, 1): 4}
+
+
+def test_t1_single_empty_cell_clauses_and_trace():
+    # 1 empty cell at (0, 1); given peers in row 0, col 1, box 0 contain {1, 3, 4}, leaving {2}
+    problem_model = build_sudoku_board_model(
+        "tiny_board",
+        [
+            [1, 0, 3, 4],
+            [3, 4, 1, 2],
+            [2, 1, 4, 3],
+            [4, 3, 2, 1],
+        ],
+    )
+    sol_model, trace = transform_t1(problem_model, SolverConfig())
+
+    assert trace.cell_to_vars == {(0, 1): [121, 120]}
+    assert validate_solution_model(sol_model) == []
+
+    clauses = _extract_clauses_as_sorted_tuples(sol_model)
+    assert len(clauses) == 3
+    assert clauses == [
+        [(120, False), (121, False)],  # forbids 1 (b1=0, b0=0)
+        [(120, False), (121, True)],   # forbids 3 (b1=1, b0=0)
+        [(120, True), (121, True)],    # forbids 4 (b1=1, b0=1)
+    ]
+
+
+def test_t1_peer_uniqueness_filters_common_candidates_and_deduplicates_peers():
+    # Construct two empty cells (0, 0) and (0, 1) in the same row AND 2x2 box
+    # sharing given peers with values {3, 4}
+    c_0_0 = Cell("cell_0_0").attributes(row=0, column=0, box=0, isGiven=False).build()
+    c_0_1 = Cell("cell_0_1").attributes(row=0, column=1, box=0, isGiven=False).build()
+    g_0_2 = Cell("cell_0_2").attributes(row=0, column=2, box=1, isGiven=True, value=3).build()
+    g_0_3 = Cell("cell_0_3").attributes(row=0, column=3, box=1, isGiven=True, value=4).build()
+    g_1_0 = Cell("cell_1_0").attributes(row=1, column=0, box=0, isGiven=True, value=3).build()
+    g_1_1 = Cell("cell_1_1").attributes(row=1, column=1, box=0, isGiven=True, value=4).build()
+
+    empty_cells = [c_0_1, c_0_0]  # intentionally unsorted to verify deterministic sorting
+    given_cells = [g_0_2, g_0_3, g_1_0, g_1_1]
+
+    target_model = ObjectModel(name="TargetCNF", objects=set())
+    trace = T1Trace()
+    config = SolverConfig()
+
+    cell_vars = rule_r2_empty_cells_to_variables(empty_cells, target_model, config, trace)
+    assert list(trace.cell_to_vars.keys()) == [(0, 0), (0, 1)]
+
+    r4_clauses, allowed_values = rule_r4_given_clue_exclusion_clauses(
+        empty_cells, given_cells, cell_vars, config
+    )
+    assert allowed_values == {(0, 0): {1, 2}, (0, 1): {1, 2}}
+    assert len(r4_clauses) == 4  # 2 forbidden values ({3, 4}) for each of the 2 empty cells
+
+    r5_clauses = rule_r5_peer_uniqueness_clauses(
+        empty_cells, allowed_values, cell_vars, config
+    )
+    # Only 2 four-literal clauses (for common allowed values 1 and 2), NOT 4 or 8
+    assert len(r5_clauses) == 2
+    assert all(len(clause) == 4 for clause in r5_clauses)
+    assert [sorted(c) for c in r5_clauses] == [
+        [(110, False), (111, False), (120, False), (121, False)],  # forbids both = 1
+        [(110, True), (111, False), (120, True), (121, False)],    # forbids both = 2
+    ]
+
+
+def test_rule_r6_merges_duplicates_and_drops_tautologies():
+    formula_obj = Formula("test_f").attributes(name="test_cnf").build()
+    var_111 = Variable("var_0_0_b1").attributes(id=111).build()
+    var_110 = Variable("var_0_0_b0").attributes(id=110).build()
+    target_model = ObjectModel(name="R6Model", objects={formula_obj, var_111, var_110})
+    var_by_id = {111: var_111, 110: var_110}
+
+    raw_clauses = [
+        [(111, False), (111, False)],          # duplicate literals -> [(111, False)]
+        [(111, False), (111, True)],           # tautology -> dropped
+        [(111, False)],                        # identical to first simplified clause -> deduplicated
+        [(111, True), (110, False), (111, True)],  # duplicate + unsorted -> [(110, False), (111, True)]
+    ]
+
+    clauses = rule_r6_simplify_and_materialize_clauses(
+        raw_clauses, var_by_id, formula_obj, target_model
+    )
+    assert len(clauses) == 2
+    assert validate_solution_model(target_model) == []
+    assert _extract_clauses_as_sorted_tuples(target_model) == [
+        [(111, False)],
+        [(110, False), (111, True)],
+    ]
+
+
+def test_t1_rejects_invalid_or_fully_solved_board():
+    # 1. Invalid problem model (empty ObjectModel)
+    invalid_model = ObjectModel(name="Invalid", objects=set())
+    with pytest.raises(ValueError, match="Invalid Problem DSL model"):
+        transform_t1(invalid_model)
+
+    # 2. Fully solved board (0 empty cells)
+    solved_model = build_sudoku_board_model(
+        "solved",
+        [
+            [1, 2, 3, 4],
+            [3, 4, 1, 2],
+            [2, 1, 4, 3],
+            [4, 3, 2, 1],
+        ],
+    )
+    with pytest.raises(ValueError, match="empty"):
+        transform_t1(solved_model)
+
+    # 3. Deterministic execution across two runs
+    puzzle_model = build_sudoku_board_model(
+        "det_board",
+        [
+            [1, 0, 3, 4],
+            [3, 4, 0, 2],
+            [2, 1, 4, 3],
+            [4, 3, 2, 1],
+        ],
+    )
+    sol_1, trace_1 = transform_t1(puzzle_model)
+    sol_2, trace_2 = transform_t1(puzzle_model)
+
+    assert trace_1.cell_to_vars == trace_2.cell_to_vars
+    assert _extract_clauses_as_sorted_tuples(sol_1) == _extract_clauses_as_sorted_tuples(sol_2)
+
