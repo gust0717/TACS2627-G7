@@ -336,8 +336,20 @@ def rule_r6_simplify_and_materialize_clauses(
         seen_clauses.add(clause_key)
         simplified_clauses.append(unique_lits)
 
+    existing_clauses = {
+        le.object
+        for le in formula_obj.link_ends()
+        if (
+            le.name in {"clause", "clause_end"}
+            or getattr(le.association_end, "name", None) in {"clause", "clause_end"}
+            or getattr(getattr(le.object, "classifier", None), "name", None) == "Clause"
+        )
+    }
+    base_idx = len(existing_clauses)
+
     materialized_clauses: List[Any] = []
-    for c_idx, lits in enumerate(simplified_clauses):
+    for offset, lits in enumerate(simplified_clauses):
+        c_idx = base_idx + offset
         clause_obj = Clause(f"clause_{c_idx}").build()
         lit_objs = []
         for l_idx, (var_id, is_neg) in enumerate(lits):
@@ -349,11 +361,10 @@ def rule_r6_simplify_and_materialize_clauses(
             target_model.objects.add(lit_obj)
 
         clause_obj.literal = set(lit_objs)
+        clause_obj.formula = formula_obj
         target_model.objects.add(clause_obj)
         materialized_clauses.append(clause_obj)
 
-    existing_clauses = getattr(formula_obj, "clause", None) or set()
-    formula_obj.clause = set(existing_clauses) | set(materialized_clauses)
     return materialized_clauses
 
 

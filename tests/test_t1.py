@@ -413,17 +413,25 @@ def test_rule_r6_merges_duplicates_and_drops_tautologies():
     target_model = ObjectModel(name="R6Model", objects={formula_obj, var_111, var_110})
     var_by_id = {111: var_111, 110: var_110}
 
-    raw_clauses = [
+    raw_clauses_first = [
         [(111, False), (111, False)],          # duplicate literals -> [(111, False)]
         [(111, False), (111, True)],           # tautology -> dropped
         [(111, False)],                        # identical to first simplified clause -> deduplicated
-        [(111, True), (110, False), (111, True)],  # duplicate + unsorted -> [(110, False), (111, True)]
     ]
 
-    clauses = rule_r6_simplify_and_materialize_clauses(
-        raw_clauses, var_by_id, formula_obj, target_model
+    clauses_1 = rule_r6_simplify_and_materialize_clauses(
+        raw_clauses_first, var_by_id, formula_obj, target_model
     )
-    assert len(clauses) == 2
+    assert len(clauses_1) == 1
+
+    # Incremental second call when formula_obj already has exactly 1 linked Clause
+    raw_clauses_second = [
+        [(111, True), (110, False), (111, True)],  # duplicate + unsorted -> [(110, False), (111, True)]
+    ]
+    clauses_2 = rule_r6_simplify_and_materialize_clauses(
+        raw_clauses_second, var_by_id, formula_obj, target_model
+    )
+    assert len(clauses_2) == 1
     assert validate_solution_model(target_model) == []
     assert _extract_clauses_as_sorted_tuples(target_model) == [
         [(111, False)],

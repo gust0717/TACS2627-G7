@@ -31,6 +31,8 @@ class SolverConfig:
             )
         if self.shots <= 0:
             raise ValueError("shots must be a positive integer.")
+        if self.num_solutions < 0:
+            raise ValueError("num_solutions cannot be negative.")
 
     def compute_grover_rounds(self, num_variables: int) -> int:
         """
