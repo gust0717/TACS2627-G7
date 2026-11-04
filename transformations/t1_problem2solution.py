@@ -60,9 +60,9 @@ def _cell_box(cell_obj, box_size: int = 2) -> int:
     return (r // box_size) * box_size + (c // box_size)
 
 
-def _extract_var_ids(var_Pair: List) -> Tuple[int, int]:
+def _extract_var_ids(var_pair: List) -> Tuple[int, int]:
     """Extract `(id_b1, id_b0)` from a list of two Variable objects or integer IDs."""
-    v1, v0 = var_Pair[0], var_Pair[1]
+    v1, v0 = var_pair[0], var_pair[1]
     id_b1 = v1 if isinstance(v1, int) else int(_get_slot_value(v1, "id"))
     id_b0 = v0 if isinstance(v0, int) else int(_get_slot_value(v0, "id"))
     return id_b1, id_b0

@@ -463,3 +463,156 @@ def test_t1_rejects_invalid_or_fully_solved_board():
     assert trace_1.cell_to_vars == trace_2.cell_to_vars
     assert _extract_clauses_as_sorted_tuples(sol_1) == _extract_clauses_as_sorted_tuples(sol_2)
 
+
+def _count_vars_and_clauses(sol_model: ObjectModel) -> tuple[int, int]:
+    """Return `(num_variables, num_clauses)` in a Solution DSL ObjectModel."""
+    objects = getattr(sol_model, "objects", set()) or set()
+    num_vars = sum(
+        1 for o in objects if getattr(getattr(o, "classifier", None), "name", None) == "Variable"
+    )
+    num_clauses = sum(
+        1 for o in objects if getattr(getattr(o, "classifier", None), "name", None) == "Clause"
+    )
+    return num_vars, num_clauses
+
+
+def test_t1_classical_enumeration_tiny_unique_solution():
+    from tests.classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
+
+    # E = 1 empty cell at (0, 1); unique valid value is 2 (M = 1)
+    problem_model = build_sudoku_board_model(
+        "tiny",
+        [
+            [1, 0, 3, 4],
+            [3, 4, 1, 2],
+            [2, 1, 4, 3],
+            [4, 3, 2, 1],
+        ],
+    )
+    assert validate_problem_model(problem_model) == []
+
+    config = SolverConfig(num_solutions=1)
+    sol_model, trace = transform_t1(problem_model, config)
+    assert validate_solution_model(sol_model) == []
+
+    n, m = _count_vars_and_clauses(sol_model)
+    assert (n, m) == (2, 3)
+    assert n + m <= 20
+    assert config.compute_grover_rounds(n) == 1
+
+    sudoku_solutions = solve_sudoku_brute_force(problem_model)
+    sat_assignments = solve_sat_brute_force(sol_model)
+    decoded_sat_solutions = [trace.decode_assignment(a) for a in sat_assignments]
+
+    assert len(sudoku_solutions) == 1
+    assert len(sat_assignments) == 1
+    assert decoded_sat_solutions == sudoku_solutions == [{(0, 1): 2}]
+
+
+def test_t1_classical_enumeration_medium_unique_solution():
+    from tests.classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
+
+    # E = 3 empty cells at (0, 0), (0, 1), (2, 0); unique solution M = 1 requiring both R4 and R5
+    problem_model = build_sudoku_board_model(
+        "medium",
+        [
+            [0, 0, 3, 4],
+            [3, 4, 1, 2],
+            [0, 1, 4, 3],
+            [4, 3, 2, 1],
+        ],
+    )
+    assert validate_problem_model(problem_model) == []
+
+    config = SolverConfig(num_solutions=1)
+    sol_model, trace = transform_t1(problem_model, config)
+    assert validate_solution_model(sol_model) == []
+
+    n, m = _count_vars_and_clauses(sol_model)
+    assert (n, m) == (6, 10)
+    assert n + m <= 20
+    assert config.compute_grover_rounds(n) == 6
+
+    sudoku_solutions = solve_sudoku_brute_force(problem_model)
+    sat_assignments = solve_sat_brute_force(sol_model)
+    decoded_sat_solutions = [trace.decode_assignment(a) for a in sat_assignments]
+
+    assert len(sudoku_solutions) == 1
+    assert len(sat_assignments) == 1
+    assert decoded_sat_solutions == sudoku_solutions == [
+        {(0, 0): 1, (0, 1): 2, (2, 0): 2}
+    ]
+
+
+def test_t1_classical_enumeration_many_solutions():
+    from tests.classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
+
+    # E = 4 empty cells at (0, 0), (0, 1), (2, 0), (2, 1) forming a 2x2 intercalate with M = 2 solutions
+    problem_model = build_sudoku_board_model(
+        "many",
+        [
+            [0, 0, 3, 4],
+            [3, 4, 1, 2],
+            [0, 0, 4, 3],
+            [4, 3, 2, 1],
+        ],
+    )
+    assert validate_problem_model(problem_model) == []
+
+    config = SolverConfig(num_solutions=2)
+    sol_model, trace = transform_t1(problem_model, config)
+    assert validate_solution_model(sol_model) == []
+
+    n, m = _count_vars_and_clauses(sol_model)
+    assert (n, m) == (8, 16)
+    assert n <= 12  # within <= 12 search qubits requirement
+    assert config.compute_grover_rounds(n) == 8
+
+    sudoku_solutions = solve_sudoku_brute_force(problem_model)
+    sat_assignments = solve_sat_brute_force(sol_model)
+    decoded_sat_solutions = [trace.decode_assignment(a) for a in sat_assignments]
+
+    expected_solutions = [
+        {(0, 0): 1, (0, 1): 2, (2, 0): 2, (2, 1): 1},
+        {(0, 0): 2, (0, 1): 1, (2, 0): 1, (2, 1): 2},
+    ]
+    assert len(sudoku_solutions) == 2
+    assert len(sat_assignments) == 2
+    assert sudoku_solutions == expected_solutions
+    assert decoded_sat_solutions == sudoku_solutions
+
+
+def test_t1_classical_enumeration_unsatisfiable_none():
+    from tests.classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
+
+    # E = 2 empty cells at (0, 1) and (1, 3); all given clues satisfy ConsistentValues,
+    # but empty cell (0, 1)'s peers collectively contain {1, 2, 3, 4}, yielding M = 0
+    problem_model = build_sudoku_board_model(
+        "none",
+        [
+            [1, 0, 3, 4],
+            [3, 2, 1, 0],
+            [2, 1, 4, 3],
+            [4, 3, 2, 1],
+        ],
+    )
+    assert validate_problem_model(problem_model) == []
+
+    config = SolverConfig(num_solutions=0)
+    sol_model, trace = transform_t1(problem_model, config)
+    assert validate_solution_model(sol_model) == []
+
+    n, m = _count_vars_and_clauses(sol_model)
+    assert (n, m) == (4, 8)
+    assert n + m <= 20
+    assert config.compute_grover_rounds(n) == 0
+
+    sudoku_solutions = solve_sudoku_brute_force(problem_model)
+    sat_assignments = solve_sat_brute_force(sol_model)
+    decoded_sat_solutions = [trace.decode_assignment(a) for a in sat_assignments]
+
+    assert sudoku_solutions == []
+    assert sat_assignments == []
+    assert decoded_sat_solutions == []
+
+
