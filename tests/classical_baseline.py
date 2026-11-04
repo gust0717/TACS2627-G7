@@ -14,30 +14,13 @@ from typing import Dict, List, Tuple
 
 from besser.BUML.metamodel.object import ObjectModel
 
-from metamodels.problem_dsl import validate_problem_model
+from metamodels.problem_dsl import (
+    _cell_box,
+    _cell_coords,
+    _get_slot_value,
+    validate_problem_model,
+)
 from metamodels.solution_dsl import validate_solution_model
-
-
-def _get_slot_value(obj, attr_name: str):
-    """Return the primitive value stored in `obj`'s slot for `attr_name`, or None if unset."""
-    for slot in getattr(obj, "slots", []):
-        if getattr(slot.attribute, "name", None) == attr_name:
-            return slot.value.value
-    return None
-
-
-def _cell_coords(cell_obj) -> Tuple[int, int]:
-    """Return `(row, column)` coordinates of a Problem DSL `Cell` object."""
-    return (int(_get_slot_value(cell_obj, "row")), int(_get_slot_value(cell_obj, "column")))
-
-
-def _cell_box(cell_obj, box_size: int = 2) -> int:
-    """Return the box index of a Problem DSL `Cell` object."""
-    box_val = _get_slot_value(cell_obj, "box")
-    if isinstance(box_val, int) and not isinstance(box_val, bool):
-        return box_val
-    r, c = _cell_coords(cell_obj)
-    return (r // box_size) * box_size + (c // box_size)
 
 
 def solve_sudoku_brute_force(

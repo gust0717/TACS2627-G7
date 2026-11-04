@@ -224,7 +224,7 @@ def test_validate_problem_model_ocl_violations():
     assert any("PositionValid" in v for v in violations)
     assert any("BoxCoherent" in v for v in violations)
 
-    # 7. GivenFlagValid (including isGiven=True with value=None, and isGiven=False with value set) & ValueValid
+    # 7. GivenFlagValid (isGiven=True with value=None) & ValueValid (value > size)
     given_val_model = build_sudoku_board_model(
         "given_val",
         [
@@ -281,6 +281,9 @@ def test_solver_config_grover_rounds():
 
     with pytest.raises(ValueError, match="encoding"):
         SolverConfig(encoding="invalid")
+
+    with pytest.raises(ValueError, match="shots"):
+        SolverConfig(shots=0)
 
 
 def _extract_clauses_as_sorted_tuples(sol_model: ObjectModel) -> list[list[tuple[int, bool]]]:
@@ -447,7 +450,16 @@ def test_t1_rejects_invalid_or_fully_solved_board():
     with pytest.raises(ValueError, match="empty"):
         transform_t1(solved_model)
 
-    # 3. Deterministic execution across two runs
+    # 3. Valid 9x9 board (box_size=3, with at least one empty cell) rejected by 4x4 binary encoding guard
+    board_9x9 = build_sudoku_board_model(
+        "board_9x9",
+        [[0] * 9 for _ in range(9)],
+        box_size=3,
+    )
+    with pytest.raises(ValueError, match="size=4"):
+        transform_t1(board_9x9)
+
+    # 4. Deterministic execution across two runs
     puzzle_model = build_sudoku_board_model(
         "det_board",
         [

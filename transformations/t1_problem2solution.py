@@ -23,12 +23,17 @@ Follows the "one function per rule" pattern over B-UML ObjectModels
 """
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from besser.BUML.metamodel.object import ObjectModel
 
 from config.solver_config import SolverConfig
-from metamodels.problem_dsl import validate_problem_model
+from metamodels.problem_dsl import (
+    _cell_box,
+    _cell_coords,
+    _get_slot_value,
+    validate_problem_model,
+)
 from metamodels.solution_dsl import (
     Clause,
     Formula,
@@ -38,29 +43,7 @@ from metamodels.solution_dsl import (
 )
 
 
-def _get_slot_value(obj, attr_name: str):
-    """Return the primitive value stored in `obj`'s slot for `attr_name`, or None if unset."""
-    for slot in getattr(obj, "slots", []):
-        if getattr(slot.attribute, "name", None) == attr_name:
-            return slot.value.value
-    return None
-
-
-def _cell_coords(cell_obj) -> Tuple[int, int]:
-    """Return `(row, column)` coordinates of a Problem DSL `Cell` object."""
-    return (int(_get_slot_value(cell_obj, "row")), int(_get_slot_value(cell_obj, "column")))
-
-
-def _cell_box(cell_obj, box_size: int = 2) -> int:
-    """Return the 2x2 box index of a Problem DSL `Cell` object."""
-    box_val = _get_slot_value(cell_obj, "box")
-    if isinstance(box_val, int) and not isinstance(box_val, bool):
-        return box_val
-    r, c = _cell_coords(cell_obj)
-    return (r // box_size) * box_size + (c // box_size)
-
-
-def _extract_var_ids(var_pair: List) -> Tuple[int, int]:
+def _extract_var_ids(var_pair: List[Any]) -> Tuple[int, int]:
     """Extract `(id_b1, id_b0)` from a list of two Variable objects or integer IDs."""
     v1, v0 = var_pair[0], var_pair[1]
     id_b1 = v1 if isinstance(v1, int) else int(_get_slot_value(v1, "id"))
@@ -68,7 +51,7 @@ def _extract_var_ids(var_pair: List) -> Tuple[int, int]:
     return id_b1, id_b0
 
 
-def _forbid_value_literals(var_pair: List, value: int) -> List[Tuple[int, bool]]:
+def _forbid_value_literals(var_pair: List[Any], value: int) -> List[Tuple[int, bool]]:
     """
     Build the 2-literal De Morgan disjunction forbidding `cell == value`.
 
@@ -141,7 +124,7 @@ def rule_r2_empty_cells_to_variables(
     target_model: ObjectModel,
     config: SolverConfig,
     trace: T1Trace,
-) -> Dict[Tuple[int, int], List]:
+) -> Dict[Tuple[int, int], List[Any]]:
     """
     Rule R2: Transform each empty `Cell(r, c)` into 2 binary `Variable` objects `[b_1, b_0]`
     and record the forward mapping in `T1Trace`.
@@ -162,7 +145,7 @@ def rule_r2_empty_cells_to_variables(
 
     trace.encoding = config.encoding
     sorted_empty = sorted(empty_cells, key=_cell_coords)
-    cell_vars: Dict[Tuple[int, int], List] = {}
+    cell_vars: Dict[Tuple[int, int], List[Any]] = {}
 
     for cell_obj in sorted_empty:
         r, c = _cell_coords(cell_obj)
@@ -250,7 +233,7 @@ def rule_r4_given_clue_exclusion_clauses(
             if gval is not None and (r == gr or c == gc or b == gb):
                 forbidden.add(int(gval))
 
-        for val in sorted(forbidden):
+        for val in sorted(v for v in forbidden if 1 <= v <= 4):
             clauses.append(_forbid_value_literals(cell_vars[(r, c)], val))
 
         allowed_values[(r, c)] = {1, 2, 3, 4} - forbidden
@@ -316,7 +299,7 @@ def rule_r6_simplify_and_materialize_clauses(
     var_by_id: Dict[int, object],
     formula_obj,
     target_model: ObjectModel,
-) -> List:
+) -> List[Any]:
     """
     Rule R6: Simplify raw clauses (merge duplicate literals, drop tautologies containing
     both `x` and `~x`, and deduplicate identical clauses) and materialize B-UML `Clause`
@@ -353,7 +336,7 @@ def rule_r6_simplify_and_materialize_clauses(
         seen_clauses.add(clause_key)
         simplified_clauses.append(unique_lits)
 
-    materialized_clauses: List = []
+    materialized_clauses: List[Any] = []
     for c_idx, lits in enumerate(simplified_clauses):
         clause_obj = Clause(f"clause_{c_idx}").build()
         lit_objs = []
@@ -408,6 +391,10 @@ def transform_t1(
     board_obj = boards[0]
     board_name = _get_slot_value(board_obj, "name") or getattr(board_obj, "name_", "sudoku")
     board_size = int(_get_slot_value(board_obj, "size"))
+    if board_size != 4:
+        raise ValueError(
+            f"Transformation T1 binary encoding only supports 4x4 boards (size=4, got {board_size})."
+        )
 
     linked_cells = [
         le.object

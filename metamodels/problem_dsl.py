@@ -167,6 +167,20 @@ def _get_slot_value(obj, attr_name: str):
     return None
 
 
+def _cell_coords(cell_obj) -> tuple[int, int]:
+    """Return `(row, column)` coordinates of a Problem DSL `Cell` object."""
+    return (int(_get_slot_value(cell_obj, "row")), int(_get_slot_value(cell_obj, "column")))
+
+
+def _cell_box(cell_obj, box_size: int = 2) -> int:
+    """Return the box index of a Problem DSL `Cell` object."""
+    box_val = _get_slot_value(cell_obj, "box")
+    if _is_strict_int(box_val):
+        return box_val
+    r, c = _cell_coords(cell_obj)
+    return (r // box_size) * box_size + (c // box_size)
+
+
 def build_sudoku_board_model(
     name: str,
     grid: list[list[Optional[int]]],

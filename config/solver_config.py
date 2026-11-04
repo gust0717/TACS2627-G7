@@ -29,6 +29,8 @@ class SolverConfig:
             raise ValueError(
                 f"Unsupported encoding {self.encoding!r}. Supported encodings: {sorted(SUPPORTED_ENCODINGS)}."
             )
+        if self.shots <= 0:
+            raise ValueError("shots must be a positive integer.")
 
     def compute_grover_rounds(self, num_variables: int) -> int:
         """
