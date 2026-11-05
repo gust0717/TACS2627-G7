@@ -112,6 +112,8 @@ Figure 2: Example Sudoku problem instance represented as a BESSER object diagram
 
 ![Sudoku Solution Metamodel](Sudoku%20Solution%20Metamodel.png)
 
+The implementation of the metamodel can be found in `Sudoku Solution DSL.py` and `Sudoku Solution DSL.json`.
+
 ### 2.3 OCL Constraints
 
 | Constraint | Rule it enforces |
