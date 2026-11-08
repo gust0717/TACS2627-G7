@@ -1,0 +1,6 @@
+# BESSER fork provided by the course
+besser @ git+https://github.com/jacomecunha/BESSER.git
+qiskit==2.6.1
+qiskit-aer==0.18.2
+python-sat==1.9.dev21
+pytest==7.4.0
