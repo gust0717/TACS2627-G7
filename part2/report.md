@@ -76,6 +76,12 @@ The pruning described above corresponds to R2, while R4 and R5 generate the clau
 
 ## 6. Limitations
 
+During this assignment we faced the following limitations:
+
+- We had some issues with OCL constraints defined in both metamodels as the B-OCL interpreter could not run some of them. Thus, we decided to extract them into a dedicated file for each DSL and run them as preconditions and postconditions of each transformation:
+  - [`metamodels/problem_validator.py`](../metamodels/problem_validator.py)
+  - [`metamodels/solution_validator.py`](../metamodels/solution_validator.py)
+
 ## References
 
 <a id="1">[1]</a> Brambilla, M., Cabot, J., & Wimmer, M. (2017). Model-driven software engineering in practice (2nd ed.). Morgan & Claypool Publishers.
