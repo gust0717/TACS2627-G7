@@ -119,7 +119,7 @@ def transform_t2_cnf_to_quantum(
     # 1. Check the model
     violations = validate_solution_model(model)
     if violations:
-        raise ValueError("Invalid Solution DSL model: ", +"; ".join(violations))
+        raise ValueError("Invalid Solution DSL model: " + "; ".join(violations))
 
     # 2. Read the model
     var_map, clauses = read_model(model)
