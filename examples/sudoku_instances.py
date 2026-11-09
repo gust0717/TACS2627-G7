@@ -41,12 +41,26 @@ class Instance:
 INSTANCES: List[Instance] = [
     Instance(
         name="tiny",
-        description="1 empty cell, checkable by hand: (0,1) must be 2.",
+        description=(
+            "1 empty cell, checkable by hand: (0,1) must be 2. Only 1 search qubit, so Grover "
+            "cannot amplify (N=2, M=1 gives P=0.5 for any number of rounds)."
+        ),
         grid=[
             [1, 0, 3, 4],
             [3, 4, 1, 2],
             [2, 1, 4, 3],
             [4, 3, 2, 1],
+        ],
+        num_solutions=1,
+    ),
+    Instance(
+        name="small",
+        description="3 empty cells, unique solution, 3 search qubits, k=2 rounds (theoretical P=0.945).",
+        grid=[
+            [1, 2, 3, 4],
+            [3, 4, 1, 2],
+            [0, 1, 4, 3],
+            [4, 0, 2, 0],
         ],
         num_solutions=1,
     ),
@@ -63,7 +77,7 @@ INSTANCES: List[Instance] = [
     ),
     Instance(
         name="many",
-        description="4 empty cells forming a 2x2 rectangle: two valid completions (M=2).",
+        description="4 empty cells forming a 2x2 rectangle: two valid completions (M=2), 24 qubits in total.",
         grid=[
             [0, 0, 3, 4],
             [3, 4, 1, 2],
@@ -71,6 +85,17 @@ INSTANCES: List[Instance] = [
             [4, 3, 2, 1],
         ],
         num_solutions=2,
+    ),
+    Instance(
+        name="limit",
+        description="6 empty cells, unique solution, 9 search qubits and 24 qubits in total: near the simulator limit.",
+        grid=[
+            [0, 2, 3, 4],
+            [0, 0, 1, 0],
+            [2, 3, 4, 1],
+            [0, 0, 2, 3],
+        ],
+        num_solutions=1,
     ),
     Instance(
         name="none",
