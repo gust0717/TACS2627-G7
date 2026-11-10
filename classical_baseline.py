@@ -1,5 +1,5 @@
 """
-Classical baselines (`tests/classical_baseline.py`), Lecture T6, Slides 18-19, 22.
+Classical baselines (`classical_baseline.py`), Lecture T6, Slides 18-19, 22.
 
 1. `solve_sudoku_brute_force(problem_model)`: every valid completion of the Sudoku, by trying
    all values in the empty cells. Deliberately independent of the SAT encoding, so it can

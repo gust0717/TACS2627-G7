@@ -26,11 +26,11 @@ from typing import Dict, List, Optional, Tuple
 
 from besser.generators.qiskit import QiskitGenerator
 
+from classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
 from config.solver_config import SolverConfig
 from examples.sudoku_instances import INSTANCES, Instance
 from metamodels.problem_validator import validate_problem_model
-from tests.classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
-from transformations.t1_problem2solution import transform_t1
+from transformations.t1_problem2solution import UnsatisfiableProblemError, transform_t1
 from transformations.t2_solution_quantum import transform_t2_cnf_to_quantum
 from validation import InstanceMetrics, analyse_runs, classical_oracle_calls
 
@@ -50,6 +50,32 @@ class InstanceResult:
     seconds: float
     ok: bool
     problems: List[str]
+    note: str = ""  # set when T1 already proves there is no solution, so no circuit is built
+
+
+def rejected_by_t1(
+    instance: Instance, baseline_sudoku: List[Dict[Coords, int]], reason: str, started: float
+) -> InstanceResult:
+    """Result for a puzzle where T1 finds an empty cell with no candidate value (no formula, no circuit)."""
+    problems = []
+    if instance.num_solutions != 0:
+        problems.append(f"T1 reports no solution, expected M={instance.num_solutions}")
+    if baseline_sudoku:
+        problems.append("T1 reports no solution but the Sudoku baseline found one")
+    return InstanceResult(
+        instance=instance,
+        n=0,
+        m=0,
+        qubits=0,
+        rounds=0,
+        metrics=InstanceMetrics(n=0, num_solutions=0, rounds=0, shots_total=0),
+        quantum_solutions=[],
+        classical_calls=0.0,
+        seconds=time.time() - started,
+        ok=not problems,
+        problems=problems,
+        note=reason,
+    )
 
 
 def execute_generated_code(script: Path) -> Dict[str, int]:
@@ -67,8 +93,11 @@ def run_instance(instance: Instance, out_dir: Path, repeats: int, shots: Optiona
         raise ValueError(f"{instance.name}: invalid Problem DSL model: {violations}")
 
     # T1: Problem DSL -> Solution DSL (CNF), plus the classical baselines
-    solution, trace = transform_t1(problem)
     baseline_sudoku = solve_sudoku_brute_force(problem)
+    try:
+        solution, trace = transform_t1(problem)
+    except UnsatisfiableProblemError as error:
+        return rejected_by_t1(instance, baseline_sudoku, str(error), started)
     baseline_sat = solve_sat_brute_force(solution)
     num_solutions = len(baseline_sat)  # M comes from the baseline
 
@@ -141,6 +170,10 @@ def format_board(grid: List[List[int]], cells: Dict[Coords, int]) -> List[str]:
 def print_result(result: InstanceResult) -> None:
     inst, mt = result.instance, result.metrics
     print(f"\n=== {inst.name}: {inst.description}")
+    if result.note:
+        print(f"  no solution, detected by T1 before any circuit is built: {result.note}")
+        print(f"  validation: {'OK' if result.ok else 'FAILED - ' + '; '.join(result.problems)}")
+        return
     print(
         f"  CNF: n={result.n} variables, m={result.m} clauses; circuit: {result.qubits} qubits; "
         f"baseline M={mt.num_solutions}; Grover rounds k={result.rounds}"
@@ -173,6 +206,10 @@ def write_summary(results: List[InstanceResult], path: Path) -> None:
     ]
     for r in results:
         mt = r.metrics
+        if r.note:  # rejected by T1: nothing was built or measured
+            valid = "yes" if r.ok else "NO"
+            rows.append(f"| {r.instance.name} | - | - | - | 0 | - | - | - | n/a | - | - | {valid} (no solution, detected by T1) |")
+            continue
         rows.append(
             f"| {r.instance.name} | {r.n} | {r.m} | {r.qubits} | {mt.num_solutions} | {r.rounds} | "
             f"{mt.p_measured:.3f} | {mt.p_theory:.3f} | {'n/a' if mt.num_solutions == 0 else f'{mt.top1_successes}/{mt.runs}'} | {r.rounds} | "

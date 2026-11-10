@@ -10,7 +10,6 @@ class SolverConfig:
     shots: int = 1024
     num_solutions: int = 1
     grover_rounds: Optional[int] = None
-    backend: str = "aer_simulator"
 
     def __post_init__(self) -> None:
         if self.shots <= 0:
