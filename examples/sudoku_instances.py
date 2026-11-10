@@ -6,7 +6,8 @@ Each instance is a 4x4 Sudoku (Board + 16 Cell objects) built with
 1..4 = given clue (isGiven=True, value=v). Rows/columns/boxes are 0-indexed.
 
 The expected number of solutions (M) is checked against the classical baseline by
-`pipeline.py` (run with `python -m pipeline`); it is not used by the transformations.
+`pipeline.py` (run with `python -m pipeline`) and by `tests/test_t1.py`; it is not used by
+the transformations.
 """
 
 from dataclasses import dataclass
@@ -14,7 +15,6 @@ from typing import List
 
 from besser.BUML.metamodel.object import ObjectModel
 
-from config.solver_config import SolverConfig
 from metamodels.problem_validator import build_sudoku_board_model
 
 
@@ -28,13 +28,6 @@ class Instance:
 
     def problem_model(self) -> ObjectModel:
         return build_sudoku_board_model(self.name, [row[:] for row in self.grid])
-
-    def solver_config(self) -> SolverConfig:
-        return SolverConfig(
-            name=f"{self.name}_config",
-            num_solutions=self.num_solutions,
-            shots=self.shots,
-        )
 
 
 INSTANCES: List[Instance] = [

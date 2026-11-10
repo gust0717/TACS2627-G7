@@ -58,10 +58,6 @@ class InstanceMetrics:
         return theoretical_probability(self.n, self.num_solutions, self.rounds)
 
     @property
-    def success_rate(self) -> float:
-        return self.top1_successes / self.runs if self.runs else 0.0
-
-    @property
     def p_tolerance(self) -> float:
         """5 sigma of the binomial shot noise plus 0.01, for the agreement check with theory."""
         p = self.p_theory

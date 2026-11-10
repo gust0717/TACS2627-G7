@@ -143,6 +143,7 @@ def test_number_of_rounds_comes_from_config(rounds):
     assert len(diffusers) == rounds
 
 
+@pytest.mark.integration
 def test_oracle_on_every_input(tmp_path):
     var_map, clauses = read_model(make_model(MIXED))
     var_ids = [v.id for v in var_map]
@@ -193,6 +194,7 @@ def test_decode_counts_reports_no_solution():
     assert decode_counts({"0": 1024}, model) is None
 
 
+@pytest.mark.integration
 @pytest.mark.parametrize(
     "model",
     [
@@ -224,6 +226,7 @@ def test_grover_finds_a_valid_solution(model, tmp_path):
     ), f"success probability too low: {valid / config.shots:.2f}"
 
 
+@pytest.mark.integration
 def test_unsatisfiable_formula_says_no_solution(tmp_path):
     model = make_model(UNSATISFIABLE)
     config = SolverConfig(num_solutions=0)

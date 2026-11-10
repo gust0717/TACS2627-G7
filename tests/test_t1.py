@@ -16,6 +16,7 @@ from besser.BUML.metamodel.structural import (
     StringType,
 )
 
+from examples.sudoku_instances import INSTANCES
 from metamodels.problem_dsl import (
     Board,
     Board_boxSize,
@@ -504,7 +505,7 @@ def _count_vars_and_clauses(sol_model: ObjectModel) -> tuple[int, int]:
 
 def _assert_t1_matches_classical(problem_model, num_solutions):
     """Run T1 and check the decoded SAT solutions equal the Sudoku solutions 1-to-1."""
-    from tests.classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
+    from classical_baseline import solve_sat_brute_force, solve_sudoku_brute_force
 
     assert validate_problem_model(problem_model) == []
     sol_model, trace = transform_t1(problem_model)
@@ -523,6 +524,14 @@ def sorted_items(solution):
     return sorted(solution.items())
 
 
+@pytest.mark.integration
+@pytest.mark.parametrize("inst", INSTANCES, ids=lambda i: i.name)
+def test_t1_matches_classical_on_example_instances(inst):
+    # The demo instances, including `limit`, which is too slow to simulate in the e2e tests
+    _assert_t1_matches_classical(inst.problem_model(), inst.num_solutions)
+
+
+@pytest.mark.integration
 def test_t1_classical_enumeration_tiny_unique_solution():
     # E = 1 empty cell at (0, 1); unique valid value is 2 (M = 1)
     problem_model = build_sudoku_board_model(
@@ -541,6 +550,7 @@ def test_t1_classical_enumeration_tiny_unique_solution():
     assert solutions == [{(0, 1): 2}]
 
 
+@pytest.mark.integration
 def test_t1_classical_enumeration_medium_unique_solution():
     # E = 3 empty cells at (0, 0), (0, 1), (2, 0); candidates {1, 2}, {2}, {2}; M = 1 needs R5
     problem_model = build_sudoku_board_model(
@@ -568,6 +578,7 @@ def test_t1_classical_enumeration_medium_unique_solution():
     ]
 
 
+@pytest.mark.integration
 def test_t1_classical_enumeration_many_solutions():
     # E = 4 empty cells at (0, 0), (0, 1), (2, 0), (2, 1) forming a 2x2 intercalate with M = 2 solutions
     problem_model = build_sudoku_board_model(
@@ -591,6 +602,7 @@ def test_t1_classical_enumeration_many_solutions():
     ]
 
 
+@pytest.mark.integration
 def test_t1_classical_enumeration_unsatisfiable_none():
     # E = 4; every empty cell keeps one candidate, but (1, 2) and (2, 2) must both be 1
     # (column 2) and (0, 3) and (3, 3) must both be 2 (column 3), so M = 0
@@ -611,6 +623,7 @@ def test_t1_classical_enumeration_unsatisfiable_none():
     assert solutions == []
 
 
+@pytest.mark.integration
 def test_t1_matches_classical_for_every_two_empty_cells():
     # Blank every pair of cells of a solved grid; T1 must agree with brute force on each
     import itertools
