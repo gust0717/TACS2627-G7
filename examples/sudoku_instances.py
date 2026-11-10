@@ -5,9 +5,8 @@ Each instance is a 4x4 Sudoku (Board + 16 Cell objects) built with
 `build_sudoku_board_model`. Grid convention: 0 = empty cell (isGiven=False),
 1..4 = given clue (isGiven=True, value=v). Rows/columns/boxes are 0-indexed.
 
-The expected values (M, n, m) are checked against the classical baseline by
-`examples/run_examples.py` and `tests/test_examples.py`; they are not used by
-the transformations.
+The expected number of solutions (M) is checked against the classical baseline by
+`pipeline.py` (run with `python -m pipeline`); it is not used by the transformations.
 """
 
 from dataclasses import dataclass
