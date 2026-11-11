@@ -117,6 +117,16 @@ The final return is the circuit together with `var_ids` that maps each qubit pos
 
 ### 3.1 T3: Quantum DSL → Qiskit
 
+In this process, we turned the BESSER quantum model that T2 generated into executable code, for that, we used BESSER's `QiskitGenerator`, that receives the circuit and number of shots and writes a runnable Qiskit script. 
+
+After the generation of the script, it is executed several times on the Aer simulator, and each run produces a histogram of measured bitstrings. Each bitstring is then decoded into a variable assignment and mapped back to the Sudoku cells. Finally, the solved board is printed with the cells found by the quantum search. 
+
+The image below shows the output for the `small` instance. The circuit has 7 qubits (3 variable qubits, 3 clause ancillas and 1 target) and runs 2 Grover rounds, since the classical baseline finds a single solution (M = 1). The solution was measured in 2909 of 3072 shots, a probability of 0.947 against the theoretical 0.945, and the cells found by the quantum search are shown in brackets.
+
+<img src='small-instance.png' width="90%">
+
+The results are then validated against the classical baselines (see section 5.2).
+
 ## 4. Workflow
 
 As shown in section 1, the workflow is orchestrated by `pipeline.py` and it chains a set of steps in the following order:
@@ -140,6 +150,37 @@ We implemented unit, integration and end-to-end tests. The integration tests are
 
 In the end, the solutions of both scopes – problem and solution – must match. Each CNF variable is decoded to a cell (based on T1Trace), so it is possible to compare both solutions – brute force and PySAT – and validate the T1 transformation.
 
+### 5.2 Classical Baseline
+
+Beyond the tests described in section 5.1, we also added an end-to-end testing layer to validate the results returned when running the generated `qiskit_circuit.py` on the Aer simulator (as described in section 3.1).
+
+The results are validated automatically against two classical baselines:
+- Problem scope: brute-force search over the Sudoku cells to ensure the boards from measured bitstrings (decoded through `T1Trace`) match
+- Solution scope: PySAT which finds all the solutions that satisfy the CNF formula ($M$), and makes it possible to calculate the theoretical Grover probability for the number of solutions found ($M$) against the measured success probability.
+
+A summary table with the number of variables, clauses, qubits, Grover rounds and success rates is written to `generated/summary.md`, with one row per instance:
+
+| Instance | n | m  | Qubits | M | k  | P measured | P theory | Success rate | Grover calls | Classical calls | Valid |
+|----------|---|----|--------|---|----|------------|----------|--------------|--------------|-----------------|-------|
+| tiny     | 1 | 1  | 3      | 1 | 1  | 0.503      | 0.500    | 1/3          | 1            | 1.5             | yes   |
+| small    | 3 | 3  | 7      | 1 | 2  | 0.950      | 0.945    | 3/3          | 2            | 4.5             | yes   |
+| medium   | 4 | 6  | 11     | 1 | 3  | 0.962      | 0.961    | 3/3          | 3            | 8.5             | yes   |
+| many     | 8 | 16 | 25     | 2 | 8  | 0.996      | 0.996    | 3/3          | 8            | 85.7            | yes   |
+| limit    | 9 | 15 | 25     | 1 | 17 | 1.000      | 0.999    | 3/3          | 17           | 256.5           | yes   |
+| none     | 4 | 6  | 11     | 0 | 0  | 0.000      | 0.000    | n/a          | 0            | 16.0            | yes   |
+
+- *n*: CNF variables created by T1 (one qubit each)
+- *m*: CNF clauses (one ancilla qubit each)
+- *Qubits*: total qubits in the circuit ($n + m + 1$)
+- *M*: number of solutions found by PySAT
+- *k*: Grover rounds, chosen from n and M [3]
+- *P measured*: share of shots that returned a valid solution
+- *P theory*: probability predicted by Grover's algorithm for that n, M and k [3]
+- *Success rate*: runs (out of 3) whose most frequent outcome is a solution
+- *Grover calls*: oracle calls of the quantum search (equal to k)
+- *Classical calls*: average number of formula checks a classical search needs when it tries assignments one by one in random order
+- *Valid*: both baselines agree on M, every measured board is a Sudoku solution, and P measured matches P theory
+
 ## 6. Limitations
 
 During this assignment we faced the following limitations:
@@ -153,3 +194,5 @@ During this assignment we faced the following limitations:
 <a id="1">[1]</a> Brambilla, M., Cabot, J., & Wimmer, M. (2017). Model-driven software engineering in practice (2nd ed.). Morgan & Claypool Publishers.
 
 <a id="2">[2]</a> Lynce, I., & Ouaknine, J. (2006). Sudoku as a SAT problem. In Proceedings of the 9th International Symposium on Artificial Intelligence and Mathematics (ISAIM 2006).
+
+<a id="3">[3]</a> Boyer, M., Brassard, G., Høyer, P., & Tapp, A. (1998). Tight bounds on quantum searching. Fortschritte der Physik, 46(4–5), 493–505.
