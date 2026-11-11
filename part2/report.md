@@ -117,6 +117,17 @@ The final return is the circuit together with `var_ids` that maps each qubit pos
 
 ### 3.1 T3: Quantum DSL → Qiskit
 
+In this process, we turned the BESSER quantum model that T2 generated into executable code, for that, we used BESSER's `QiskitGenerator`, that receives the circuit and number of shots and writes a runnable Qiskit script. 
+
+After the generation of the script, it is executed several times on the Aer simulator, and each run produces a histogram of measured bitstrings. Each bitstring is then decoded into a variable assignment and mapped back to the Sudoku cells. Finally, the solved board is printed with the cells found by the quantum search.
+
+To finish, the results are validated automatically to check that the measured solutions are valid Sudoku solutions, and the measured success probability matches the theoretical Grover probability for the number of solutions found by a classical baseline. A summary table with the number of variables, clauses, qubits, Grover rounds and success rates is written for each instance.
+
+The image below shows the output for the `small` instance. The circuit has 7 qubits (3 variable qubits, 3 clause ancillas and 1 target) and runs 2 Grover rounds, since the classical baseline finds a single solution (M = 1). The solution was measured in 2909 of 3072 shots, a probability of 0.947 against the theoretical 0.945, and the cells found by the quantum search are shown in brackets.
+
+<img src='small-instance.png' width="90%">
+
+
 ## 4. Workflow
 
 As shown in section 1, the workflow is orchestrated by `pipeline.py` and it chains a set of steps in the following order:
