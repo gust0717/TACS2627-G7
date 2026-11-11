@@ -1,0 +1,1 @@
+"""Solver configuration package (`config/`)."""

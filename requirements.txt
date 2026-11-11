@@ -1,0 +1,7 @@
+# BESSER fork provided by the course
+# Editable install: a regular install of the fork omits besser/generators/qiskit/templates/qiskit_circuit.py.j2
+-e git+https://github.com/jacomecunha/BESSER.git#egg=besser
+qiskit==2.6.1
+qiskit-aer==0.18.2
+python-sat==1.9.dev21
+pytest==7.4.0
