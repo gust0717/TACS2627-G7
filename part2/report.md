@@ -66,6 +66,53 @@ The pruning described above corresponds to R2, while R4 and R5 generate the clau
 
 ### 2.2 T2: Solution DSL → Quantum DSL
 
+With the Solution DSL ready, the next step was to create the Quantum DSL from it, this was done in steps.
+
+#### Validate the solution model
+
+We created a function to make sure that the solution model was well structured and that it contained all the required fields.
+If some validation did not pass, the function returns a list of violations, and the transformation raises an error if the list is not empty, to stop the execution.
+
+#### Read the solution model
+
+We needed to read the model into Python data because the objects come without ordering, which we needed to have a deterministic qubit mapping, also, to turn object references into integer indices. 
+
+For that, we created a function that sorts variables by id and maps them to a qubit index. Then, it sorts clauses by name and each clause becomes a list of `{var_idx, is_negated}` dicts.
+
+
+#### Qubit numbering
+
+We then create the quantum circuit. It uses a single quantum register `q` with `n + m + 1` qubits (n variables, m clauses), laid out in blocks:
+- `q[0 .. n-1]`: one qubit per variable, holding the candidate assignment;
+- `q[n .. n+m-1]`: one ancilla qubit per clause, holding whether that clause is satisfied;
+- `q[n+m]`: the target qubit, used for the phase kickback.
+
+We needed to place the variables first so variable `i` sits on qubit `i`, so it can be measured into classical bit `i`. The classical register has only `n` bits because the ancillas and the target are working space and will not be measured.
+
+Finally, we decided to add a helper function to append the gates into the circuit inside the main function, so it could use the circuit directly, this also makes sure that only this function adds gates to the circuit. 
+
+#### State Initialization
+
+We initialize the qubits to make sure Grover’s algorithm has an unbiased starting point. For that, we use a Hadamard into every variable qubit to create an equal superposition of all assignments, the target qubit finishes at the `|−⟩` state. It runs right before the algorithm and helps to later create a phase kickback. 
+
+#### Grover rounds
+
+Grover's algorithm works with the amplitudes, since we initialized, every assignment has the same amplitude. Each Grover round makes the valid assignments’ amplitudes a bit larger and everyone else’s a bit smaller. After enough rounds, measuring almost surely will return a valid one.
+
+One Grover round is composed of two steps:
+- Oracle: flips the sign (phase) of valid assignments.
+  - Here, we built it in three phases: compute each clause into its ancilla, mark the target with a multi-controlled X that fires only when all clauses are satisfied, and uncompute the clauses so the ancillas return to `|0⟩` and do not stay entangled with the variables. 
+- Diffuser: “inversion about the mean”, which turns that sign flip into a real amplitude boost.
+
+Every round rotates the state by a fixed angle toward the solution's direction. 
+
+#### Measurement
+
+Finally, we append one measurement per variable qubit, each writing into the classical bit with the same index. The process of measurement will collapse the superposition into a bitstring.
+
+The final return is the circuit together with `var_ids` that maps each qubit position to a model variable. After execution, the measured bitstrings are decoded into assignments and checked against the clauses, because Grover's result is probabilistic. 
+
+
 ## 3. M2T Transformation
 
 ### 3.1 T3: Quantum DSL → Qiskit
